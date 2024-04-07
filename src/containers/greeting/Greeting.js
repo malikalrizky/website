@@ -6,7 +6,7 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-
+import Type from "../../components/Home/Type";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -23,17 +23,22 @@ export default function Greeting() {
             <div>
               <h1
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
+                style={{ fontFamily: "Montserrat" }}
               >
                 {" "}
                 {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                <span className="wave-emoji">{emoji("👋🏻")}</span>
               </h1>
+              <div style={{ padding: 1, textAlign: "left", fontFamily: "Montserrat", fontSize: "30px"}}>
+                <Type />
+              </div>
               <p
                 className={
                   isDark
                     ? "dark-mode greeting-text-p"
                     : "greeting-text-p subTitle"
                 }
+                style={{ fontFamily: "Montserrat" }}
               >
                 {greeting.subTitle}
               </p>
