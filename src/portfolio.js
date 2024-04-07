@@ -20,26 +20,26 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Malikal Rizky",
+  title: "Hi all, I'm Malik",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset and multiple years of experience of building secure Infrastructure and secure Software Development Lifecycle and CI/CD."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+    "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
+  github: "https://github.com/malikalrizky",
+  linkedin: "https://www.linkedin.com/in/mrizkyabdillah/",
+  gmail: "contact@malikalrizky.com",
+  gitlab: "",
+  facebook: "",
+  medium: "",
+  stackoverflow: "",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -49,15 +49,14 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "CLOUD INFRASTRUCTURE SECURITY AND DEVSECOPS ENGINEER WHO WANTS TO EXPLORE EVERY TECH STACK",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    emoji("🛡️ Implement robust security measures for cloud environments (AWS, Azure, GCP)"),
+    emoji("⚙️ Automate security and compliance into CI/CD pipelines (DevSecOps)"),
+    emoji("⚙️ Integrate security testing and vulnerability scanning early in development (Shift-Left approach)"), 
+    emoji("🔎 Conduct vulnerability assessments and penetration testing"), 
+    emoji("✅ Design and maintain ISO 27001-compliant systems"), //ISO 27001 skill
+    emoji("🧠 Continuously learn and apply emerging technologies") 
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -88,16 +87,16 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
     },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
+    // {
+    //   skillName: "swift",
+    //   fontAwesomeClassname: "fab fa-swift"
+    // },
     {
       skillName: "npm",
       fontAwesomeClassname: "fab fa-npm"
     },
     {
-      skillName: "sql-database",
+      skillName: "postgresql",
       fontAwesomeClassname: "fas fa-database"
     },
     {
@@ -126,24 +125,25 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      schoolName: "Gadjah Mada University",
+      logo: require("./assets/images/ugm.png"),
+      subHeader: "Engineering Physics",
+      duration: "2016 - 2020",
+      // desc: "Participated in the research of XXX and published 3 papers.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Project: Convolution Neural Network Models for Acute Lymphoblastic Leukemia Diagnosis",
+        "Project: Analysis of the Radioactivity Yield of Fluorine-18 from the Reaction of 18-O(p,n)18-F with Proton Beam Current Variations at the Medical Cyclotron Facility in Dharmais Hospital National Cancer Center BATAN (National Nuclear Energy Agency)",
+        "Project: Applying Deep Learning for the Optimization and Sustainability of Lithium Ferrophosphate (LFP) Batteries in Renewable Energy Applications"
       ]
     },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
-    }
+    // {
+    //   schoolName: "Stanford University",
+    //   logo: require("./assets/images/stanfordLogo.png"),
+    //   subHeader: "Bachelor of Science in Computer Science",
+    //   duration: "September 2013 - April 2017",
+    //   desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
+    //   descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+    // },
   ]
 };
 
@@ -153,12 +153,12 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
+      Stack: "Cloud", //Insert stack or technology you have experience in
       progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "DevSecOps",
+      progressPercentage: "90%"
     },
     {
       Stack: "Programming",
@@ -174,30 +174,53 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Cloud Infrastructure Security / DevSecOps Engineer",
+      company: "Grab",
+      companylogo: require("./assets/images/grab.png"),
+      date: "November 2023 – Present",
+      desc: "Grab is Southeast Asia's largest mobile tech company. We solve critical transportation challenges and make transport freedom a reality for over 620 millions people in Southeast Asia. We believe everyone should be able to go anywhere - and trust that they can book a safe ride. As part of this mission, the Security Department plays a crucial role in safeguarding our technology infrastructure, enabling seamless and secure movement for everyone. As a member of the Security Department, I am responsible for handling the Cloud Infrastructure Security across Grab & OVO in the form of:",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Cloud Security Posture Management (CSPM): Reduce vulnerability and ensured security across diverse platforms including AWS, GCP, Azure and on-premise data center with Tenable, Qualys, Wiz.io for Vulnerability Assessment and CSPM and Cybereason and Crowdstrike for endpoint protection. Successfully migrated from Tenable and Qualys to Wiz.io and Cybereason to Crowdstrike",
+        "Vulnerability Assessment and Patch Management: Utilizing tools such as Terraform, Ansible, and Packer to patch vulnerability on the base image",
+        "Container & Kubernetes Security: Manage and maintain security in containerized environments and Kubernetes orchestration. Focused on configurations, network policies, and role based access controls.",
+        "Security Information and Event Management (SIEM): Operated Wazuh for the audit process and ISO 27001 compliance, enhancing our capabilities in real-time monitoring, incident detection, and thorough reporting for potential threats, and effective incident response.",
+        "CI/CD Security: Developed and maintained secure CI/CD processes using Jenkins and GitLab, integrating security tools like Snyk to enhance both efficiency and security in our development pipeline without slowing it down. Reducing pain points of the security partner by reducing false positives in Static and Dynamic Application Security Testing (SAST & DAST) to identify vulnerabilities earlier in the development cycle.",
+        "Penetration Testing & Security Testing Automation: Supported penetration testing and helped automate security tests to ensure they are effective and efficient."
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "DevSecOps Engineer",
+      company: "Maxim",
+      companylogo: require("./assets/images/maxim.png"),
+      date: "October 2022 – November 2023",
+      desc: "Maxim is an international company that has offered a range of transportation services since 2003, impacting lives across more than 100 cities in 10 countries. As a vital part of this journey, I serve as the AWS CloudOps and DevSecOps Engineer, responsible for managing Maxim Foods and Goods' cloud infrastructure and applications on Amazon Web Services (AWS).",
+      descBullets: [
+        "Implemented cost-efficient cloud solutions, leading to around 25% reduction in monthly cloud expenses.",
+        "Reduced system downtime, response time and latency by around 50% by optimizing the system",
+        "Achieved zero security breaches by incorporating advanced security tools and best practices.",
+        "Achieved a 20% cost reduction by optimizing resource allocation and implementing auto-scaling.",
+        "Further reduced monthly cloud expenses by 15% through right-sizing and reserved instances.",
+        "Increased error tracing capabilities by 40% through advanced monitoring",
+        "Collaborated closely with the development team on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
+        "Zero Down Time using Blue Green Deployment",
+      ]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }
+      role: "DevSecOps Engineer",
+      company: "EV Connection Malaysia",
+      companylogo: require("./assets/images/evc.png"),
+      date: "September 2020 – October 2022",
+      desc: "",
+      descBullets: [
+        "Successfully drove a 30% increase in user bookings within a year through platform optimizations.",
+        "Implemented cost-efficient cloud solutions, leading to around 25% reduction in monthly cloud expenses.",
+        "Achieved a 99.5% uptime rate by deploying robust and high available microservices using Kubernetes.",
+        "Enhanced system reliability by using the ELK stack, resulting in a 30% reduction in reported issues.",
+        "Collaborated with developers on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
+        "Zero Down Time PostgreSQL major version upgrade using Blue Green Deployment",
+        "Increasing system reliability and reducing latency during events by implementing chaos engineering",
+      ]
+    },
   ]
 };
 
@@ -205,8 +228,8 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
@@ -239,64 +262,64 @@ const bigProjects = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+  title: emoji("Certifications 🏆 "),
+  // subtitle:
+  //   "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
 
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
+      title: "AWS Cloud Architect",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+        "Cloud Architect Certification from Amazon Web Services (AWS)",
+      image: require("./assets/images/aws.png"),
+      imageAlt: "AWS Cloud Architect",
       footerLink: [
         {
           name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
+          url: "https://www.credly.com/badges/43a24302-cfed-4a50-a98b-60918350bf26/linked_in_profile"
         },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
+        // {
+        //   name: "Award Letter",
+        //   url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
+        // },
+        // {
+        //   name: "Google Code-in Blog",
+        //   url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
+        // }
       ]
     },
     {
-      title: "Google Assistant Action",
+      title: "Certified Ethical Hacker",
       subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
+        "Certified Ethical Hacker Certification from EC-Council",
+      image: require("./assets/images/ec-council.png"),
+      imageAlt: "Certified Ethical Hacker EC-Council",
       footerLink: [
         {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
+          name: "Certification",
+          url: "https://www.coursera.org/account/accomplishments/specialization/Q4LZMCX9S5E8"
         }
       ]
     },
 
     {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
+      title: "Palo Alto Networks Cybersecurity",
+      // subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      image: require("./assets/images/palo-alto.png"),
+      imageAlt: "Palo Alto Networks Cybersecurity",
       footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
+        {name: "Certification", url: "https://coursera.org/share/6071ba577de8bdb325c84dd223e8d700"},
+        // {
+        //   name: "Final Project",
+        //   url: "https://pakistan-olx-1.firebaseapp.com/"
+        // }
       ]
     }
   ],
@@ -309,7 +332,7 @@ const blogSection = {
   title: "Blogs",
   subtitle:
     "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
       url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
@@ -324,7 +347,7 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -343,7 +366,7 @@ const talkSection = {
       event_url: "https://www.facebook.com/events/2339906106275053/"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -356,25 +379,25 @@ const podcastSection = {
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  number: "",
+  email_address: "contact@malikalrizky.com"
 };
 
 // Twitter Section
 
 const twitterDetails = {
   userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,
