@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset and multiple years of experience of building secure Infrastructure and secure Software Development Lifecycle and CI/CD."
   ),
-  resumeLink:
-    "", // Set to empty to hide the button
+  resumeLink: "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -49,14 +48,21 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CLOUD INFRASTRUCTURE SECURITY AND DEVSECOPS ENGINEER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle:
+    "CLOUD INFRASTRUCTURE SECURITY AND DEVSECOPS ENGINEER WHO WANTS TO EXPLORE EVERY TECH STACK",
   skills: [
-    emoji("🛡️ Implement robust security measures for cloud environments (AWS, Azure, GCP)"),
-    emoji("⚙️ Automate security and compliance into CI/CD pipelines (DevSecOps)"),
-    emoji("⚙️ Integrate security testing and vulnerability scanning early in development (Shift-Left approach)"), 
-    emoji("🔎 Conduct vulnerability assessments and penetration testing"), 
+    emoji(
+      "🛡️ Implement robust security measures for cloud environments (AWS, Azure, GCP)"
+    ),
+    emoji(
+      "⚙️ Automate security and compliance into CI/CD pipelines (DevSecOps)"
+    ),
+    emoji(
+      "⚙️ Integrate security testing and vulnerability scanning early in development (Shift-Left approach)"
+    ),
+    emoji("🔎 Conduct vulnerability assessments and penetration testing"),
     emoji("✅ Design and maintain ISO 27001-compliant systems"), //ISO 27001 skill
-    emoji("🧠 Continuously learn and apply emerging technologies") 
+    emoji("🧠 Continuously learn and apply emerging technologies")
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -135,7 +141,7 @@ const educationInfo = {
         "Project: Analysis of the Radioactivity Yield of Fluorine-18 from the Reaction of 18-O(p,n)18-F with Proton Beam Current Variations at the Medical Cyclotron Facility in Dharmais Hospital National Cancer Center BATAN (National Nuclear Energy Agency)",
         "Project: Applying Deep Learning for the Optimization and Sustainability of Lithium Ferrophosphate (LFP) Batteries in Renewable Energy Applications"
       ]
-    },
+    }
     // {
     //   schoolName: "Stanford University",
     //   logo: require("./assets/images/stanfordLogo.png"),
@@ -202,7 +208,7 @@ const workExperiences = {
         "Further reduced monthly cloud expenses by 15% through right-sizing and reserved instances.",
         "Increased error tracing capabilities by 40% through advanced monitoring",
         "Collaborated closely with the development team on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
-        "Zero Down Time using Blue Green Deployment",
+        "Zero Down Time using Blue Green Deployment"
       ]
     },
     {
@@ -218,9 +224,9 @@ const workExperiences = {
         "Enhanced system reliability by using the ELK stack, resulting in a 30% reduction in reported issues.",
         "Collaborated with developers on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
         "Zero Down Time PostgreSQL major version upgrade using Blue Green Deployment",
-        "Increasing system reliability and reducing latency during events by implementing chaos engineering",
+        "Increasing system reliability and reducing latency during events by implementing chaos engineering"
       ]
-    },
+    }
   ]
 };
 
@@ -276,15 +282,14 @@ const achievementSection = {
   achievementsCards: [
     {
       title: "AWS Cloud Architect",
-      subtitle:
-        "Cloud Architect Certification from Amazon Web Services (AWS)",
+      subtitle: "Cloud Architect Certification from Amazon Web Services (AWS)",
       image: require("./assets/images/aws.png"),
       imageAlt: "AWS Cloud Architect",
       footerLink: [
         {
           name: "Certification",
           url: "https://www.credly.com/badges/43a24302-cfed-4a50-a98b-60918350bf26/linked_in_profile"
-        },
+        }
         // {
         //   name: "Award Letter",
         //   url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
@@ -297,8 +302,7 @@ const achievementSection = {
     },
     {
       title: "Certified Ethical Hacker",
-      subtitle:
-        "Certified Ethical Hacker Certification from EC-Council",
+      subtitle: "Certified Ethical Hacker Certification from EC-Council",
       image: require("./assets/images/ec-council.png"),
       imageAlt: "Certified Ethical Hacker EC-Council",
       footerLink: [
@@ -315,7 +319,10 @@ const achievementSection = {
       image: require("./assets/images/palo-alto.png"),
       imageAlt: "Palo Alto Networks Cybersecurity",
       footerLink: [
-        {name: "Certification", url: "https://coursera.org/share/6071ba577de8bdb325c84dd223e8d700"},
+        {
+          name: "Certification",
+          url: "https://coursera.org/share/6071ba577de8bdb325c84dd223e8d700"
+        }
         // {
         //   name: "Final Project",
         //   url: "https://pakistan-olx-1.firebaseapp.com/"
