@@ -8,11 +8,11 @@ function Type() {
         strings: [
           "Cloud Infrastructure Security Engineer",
           "DevSecOps Engineer",
-          "Software Engineer",
+          "Software Engineer"
         ],
         autoStart: true,
         loop: true,
-        deleteSpeed: 50,
+        deleteSpeed: 50
       }}
     />
   );

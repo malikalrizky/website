@@ -23,13 +23,20 @@ export default function Greeting() {
             <div>
               <h1
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-                style={{ fontFamily: "Montserrat" }}
+                style={{fontFamily: "Montserrat"}}
               >
                 {" "}
                 {greeting.title}{" "}
                 <span className="wave-emoji">{emoji("👋🏻")}</span>
               </h1>
-              <div style={{ padding: 1, textAlign: "left", fontFamily: "Montserrat", fontSize: "30px"}}>
+              <div
+                style={{
+                  padding: 1,
+                  textAlign: "left",
+                  fontFamily: "Montserrat",
+                  fontSize: "30px"
+                }}
+              >
                 <Type />
               </div>
               <p
@@ -38,7 +45,7 @@ export default function Greeting() {
                     ? "dark-mode greeting-text-p"
                     : "greeting-text-p subTitle"
                 }
-                style={{ fontFamily: "Montserrat" }}
+                style={{fontFamily: "Montserrat"}}
               >
                 {greeting.subTitle}
               </p>
