@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -55,8 +55,8 @@ const Main = () => {
           {isShowingSplashAnimation && splashScreen.enabled ? (
             <SplashScreen />
           ) : (
-            <Switch>
-              <Route exact path="/">
+            <Routes>
+              <Route path="/" element={
                 <>
                   <Header />
                   <Greeting />
@@ -75,9 +75,9 @@ const Main = () => {
                   <Footer />
                   <ScrollToTopButton />
                 </>
-              </Route>
-              <Route path="/empty" component={EmptyPage} />
-            </Switch>
+              } />
+              <Route path="/empty" element={<EmptyPage />} />
+            </Routes>
           )}
         </StyleProvider>
       </div>
