@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -16,13 +17,17 @@ import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
+import EmptyPage from "./EmptyPage"; // make sure the path is correct
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+  const darkPref =
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)")
+      : {matches: false};
   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
@@ -44,32 +49,39 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "dark-mode" : null}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
-        {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <WorkExperience />
-            {/* <Projects /> */}
-            {/* <StartupProject /> */}
-            <Achievement />
-            <Education />
-            {/* <Blogs /> */}
-            {/* <Talks /> */}
-            {/* <Twitter /> */}
-            {/* <Podcast /> */}
-            <Profile />
-            <Footer />
-            <ScrollToTopButton />
-          </>
-        )}
-      </StyleProvider>
-    </div>
+    <Router>
+      <div className={isDark ? "dark-mode" : null}>
+        <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+          {isShowingSplashAnimation && splashScreen.enabled ? (
+            <SplashScreen />
+          ) : (
+            <Switch>
+              <Route exact path="/">
+                <>
+                  <Header />
+                  <Greeting />
+                  <Skills />
+                  <StackProgress />
+                  <WorkExperience />
+                  {/* <Projects /> */}
+                  {/* <StartupProject /> */}
+                  <Achievement />
+                  <Education />
+                  {/* <Blogs /> */}
+                  {/* <Talks /> */}
+                  {/* <Twitter /> */}
+                  {/* <Podcast /> */}
+                  <Profile />
+                  <Footer />
+                  <ScrollToTopButton />
+                </>
+              </Route>
+              <Route path="/empty" component={EmptyPage} />
+            </Switch>
+          )}
+        </StyleProvider>
+      </div>
+    </Router>
   );
 };
 
