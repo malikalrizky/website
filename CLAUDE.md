@@ -13,7 +13,7 @@ This is a React-based personal portfolio website that showcases professional exp
 - `npm test` - Run tests
 - `npm run format` - Format code with Prettier
 - `npm run check-format` - Check code formatting
-- `npm run deploy` - Deploy to GitHub Pages (builds and pushes to master branch)
+- `npm run deploy` - Deploy to GitHub Pages (builds and pushes to gh-pages branch)
 
 ## Key Architecture
 
