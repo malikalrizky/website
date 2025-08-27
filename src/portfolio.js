@@ -34,7 +34,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/malikalrizky",
   linkedin: "https://www.linkedin.com/in/mrizkyabdillah/",
-  gmail: "contact@malikalrizky.com",
+  gmail: "hi@malikal.dpdns.org",
   gitlab: "",
   facebook: "",
   medium: "",
@@ -394,7 +394,7 @@ const contactInfo = {
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "",
-  email_address: "contact@malikalrizky.com"
+  email_address: "hi@malikal.dpdns.org"
 };
 
 // Twitter Section
