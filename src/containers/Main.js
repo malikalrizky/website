@@ -56,26 +56,29 @@ const Main = () => {
             <SplashScreen />
           ) : (
             <Routes>
-              <Route path="/" element={
-                <>
-                  <Header />
-                  <Greeting />
-                  <Skills />
-                  <StackProgress />
-                  <WorkExperience />
-                  {/* <Projects /> */}
-                  {/* <StartupProject /> */}
-                  <Achievement />
-                  <Education />
-                  {/* <Blogs /> */}
-                  {/* <Talks /> */}
-                  {/* <Twitter /> */}
-                  {/* <Podcast /> */}
-                  <Profile />
-                  <Footer />
-                  <ScrollToTopButton />
-                </>
-              } />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header />
+                    <Greeting />
+                    <Skills />
+                    <StackProgress />
+                    <WorkExperience />
+                    {/* <Projects /> */}
+                    {/* <StartupProject /> */}
+                    <Achievement />
+                    <Education />
+                    {/* <Blogs /> */}
+                    {/* <Talks /> */}
+                    {/* <Twitter /> */}
+                    {/* <Podcast /> */}
+                    <Profile />
+                    <Footer />
+                    <ScrollToTopButton />
+                  </>
+                }
+              />
               <Route path="/empty" element={<EmptyPage />} />
             </Routes>
           )}
