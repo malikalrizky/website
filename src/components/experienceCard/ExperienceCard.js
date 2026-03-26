@@ -32,12 +32,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
 
   return (
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
-        </div>
-
+      <div className="timeline-logo-wrap">
         <img
           crossOrigin={"anonymous"}
           ref={imgRef}
@@ -46,8 +41,24 @@ export default function ExperienceCard({cardInfo, isDark}) {
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
         />
+        <div
+          className="timeline-dot"
+          style={{background: rgb(colorArrays) || "#6c63ff"}}
+        />
       </div>
       <div className="experience-text-details">
+        <div className="timeline-header">
+          <h5 className="experience-text-company">{cardInfo.company}</h5>
+          <h5
+            className={
+              isDark
+                ? "experience-text-date dark-mode-text"
+                : "experience-text-date"
+            }
+          >
+            {cardInfo.date}
+          </h5>
+        </div>
         <h5
           className={
             isDark
@@ -56,15 +67,6 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.role}
-        </h5>
-        <h5
-          className={
-            isDark
-              ? "experience-text-date dark-mode-text"
-              : "experience-text-date"
-          }
-        >
-          {cardInfo.date}
         </h5>
         <p
           className={
