@@ -184,6 +184,7 @@ const workExperiences = {
       company: "DKATALIS",
       companylogo: require("./assets/images/dkatalis_logo.jpeg"),
       date: "2025 – Present",
+      employmentType: "Full-time",
       desc: "Leads end-to-end cybersecurity incident response operations at a cloud-native fintech, triaging and remediating threats across cloud and application layers.",
       descBullets: [
         "Spearheaded cybersecurity incident response at a Singapore-based fintech, reducing mean time to contain (MTTC) for critical security events.",
@@ -196,6 +197,7 @@ const workExperiences = {
       company: "DKATALIS",
       companylogo: require("./assets/images/dkatalis_logo.jpeg"),
       date: "2024 – 2025",
+      employmentType: "Full-time",
       desc: "Focused on identity security across GCP and AWS, and served as the primary SecOps on-call covering end-to-end security operations. Promoted to Cybersecurity Incident Response Lead.",
       descBullets: [
         "Owned identity security across GCP and AWS, including IAM policy enforcement, privilege access management, and identity threat detection.",
@@ -208,6 +210,7 @@ const workExperiences = {
       company: "Grab",
       companylogo: require("./assets/images/grab.png"),
       date: "2023 – 2024",
+      employmentType: "Full-time",
       desc: "Secured Grab's large-scale cloud infrastructure by embedding DevSecOps practices into multi-cloud pipelines. Also covered OVO (PT Visionet Internasional), Grab's fintech arm, as part of the same security scope.",
       descBullets: [
         "Solely led development of an LLM-powered code triaging engine, reducing SAST/DAST false positives by 85%.",
@@ -220,6 +223,7 @@ const workExperiences = {
       company: "Grab",
       companylogo: require("./assets/images/grab.png"),
       date: "2023 – 2024",
+      employmentType: "Full-time",
       desc: "Designed and maintained cloud security architecture for Grab and OVO's infrastructure, ensuring compliance and threat resilience across GCP and AWS environments.",
       descBullets: [
         "Built an in-house cloud observability platform integrating logs, metrics, and threat intelligence across services.",
@@ -258,6 +262,7 @@ const workExperiences = {
       company: "Hungryhub",
       companylogo: require("./assets/images/hungryhub.jpeg"),
       date: "2020 – 2022",
+      employmentType: "Full-time",
       desc: "Drove platform reliability and growth for Thailand's leading restaurant reservation platform, achieving 99.8% uptime and a 30% increase in user bookings through infrastructure optimization and SRE practices.",
       descBullets: [
         "Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.",
