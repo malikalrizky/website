@@ -59,15 +59,22 @@ export default function ExperienceCard({cardInfo, isDark}) {
             {cardInfo.date}
           </h5>
         </div>
-        <h5
-          className={
-            isDark
-              ? "experience-text-role dark-mode-text"
-              : "experience-text-role"
-          }
-        >
-          {cardInfo.role}
-        </h5>
+        <div className="experience-role-row">
+          <h5
+            className={
+              isDark
+                ? "experience-text-role dark-mode-text"
+                : "experience-text-role"
+            }
+          >
+            {cardInfo.role}
+          </h5>
+          {cardInfo.employmentType && (
+            <span className={`employment-type-badge employment-type-${cardInfo.employmentType.toLowerCase().replace(" ", "-")}`}>
+              {cardInfo.employmentType}
+            </span>
+          )}
+        </div>
         <p
           className={
             isDark

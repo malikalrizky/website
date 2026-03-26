@@ -232,6 +232,7 @@ const workExperiences = {
       company: "Maxim Order Service",
       companylogo: require("./assets/images/maxim.png"),
       date: "2022 – 2023",
+      employmentType: "Full-time",
       desc: "Oversaw cloud infrastructure and DevSecOps operations for Maxim Foods & Goods across 100+ cities in 10 countries on AWS, delivering significant cost reductions and uptime improvements.",
       descBullets: [
         "Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.",
@@ -244,6 +245,7 @@ const workExperiences = {
       company: "Virtualspirit",
       companylogo: require("./assets/images/evc.png"),
       date: "2022 – 2023",
+      employmentType: "Freelance",
       desc: "Delivered cloud infrastructure and DevOps services as an IT vendor for clients including EV Connection — Malaysia's leading EV charging station provider — achieving 99.95% uptime through Kubernetes and CI/CD automation.",
       descBullets: [
         "Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.",

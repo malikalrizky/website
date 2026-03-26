@@ -72,13 +72,43 @@
   color: $buttonHover;
 }
 
+.experience-role-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.2rem;
+}
+
 .experience-text-role {
   color: $textColor;
   font-weight: 700;
   font-size: 20px;
-  margin: 0 0 0.2rem 0;
+  margin: 0;
   padding: 0;
   line-height: normal;
+}
+
+.employment-type-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.employment-type-full-time {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.employment-type-freelance {
+  background: rgba(255, 152, 0, 0.15);
+  color: #ff9800;
+  border: 1px solid rgba(255, 152, 0, 0.4);
 }
 
 .dark-mode-text {
