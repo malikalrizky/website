@@ -70,7 +70,11 @@ export default function ExperienceCard({cardInfo, isDark}) {
             {cardInfo.role}
           </h5>
           {cardInfo.employmentType && (
-            <span className={`employment-type-badge employment-type-${cardInfo.employmentType.toLowerCase().replace(" ", "-")}`}>
+            <span
+              className={`employment-type-badge employment-type-${cardInfo.employmentType
+                .toLowerCase()
+                .replace(" ", "-")}`}
+            >
               {cardInfo.employmentType}
             </span>
           )}
