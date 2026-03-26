@@ -180,51 +180,87 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Cloud Infrastructure Security / DevSecOps Engineer",
+      role: "Cybersecurity Incident Response Lead",
+      company: "DKATALIS",
+      companylogo: require("./assets/images/dkatalis_logo.jpeg"),
+      date: "2025 – Present",
+      desc: "Leads end-to-end cybersecurity incident response operations at a cloud-native fintech, triaging and remediating threats across cloud and application layers.",
+      descBullets: [
+        "Spearheaded cybersecurity incident response at a Singapore-based fintech, reducing mean time to contain (MTTC) for critical security events.",
+        "Oversaw threat detection and triage across cloud-native environments spanning AWS and GCP infrastructure.",
+        "Drove continuous improvement of incident response playbooks, strengthening organizational security posture across Indonesia and Singapore."
+      ]
+    },
+    {
+      role: "DevSecOps Engineer",
+      company: "DKATALIS",
+      companylogo: require("./assets/images/dkatalis_logo.jpeg"),
+      date: "2024 – 2025",
+      desc: "Focused on identity security across GCP and AWS, and served as the primary SecOps on-call covering end-to-end security operations. Promoted to Cybersecurity Incident Response Lead.",
+      descBullets: [
+        "Owned identity security across GCP and AWS, including IAM policy enforcement, privilege access management, and identity threat detection.",
+        "Served as SecOps on-call, triaging and responding to security alerts across SIEM, endpoint, and cloud security tooling.",
+        "Covered full security operations scope during on-call rotations — from threat detection and incident triage to containment and post-incident review."
+      ]
+    },
+    {
+      role: "DevSecOps Engineer",
       company: "Grab",
       companylogo: require("./assets/images/grab.png"),
-      date: "November 2023 – Present",
-      desc: "Grab is Southeast Asia's largest mobile tech company. We solve critical transportation challenges and make transport freedom a reality for over 620 millions people in Southeast Asia. We believe everyone should be able to go anywhere - and trust that they can book a safe ride. As part of this mission, the Security Department plays a crucial role in safeguarding our technology infrastructure, enabling seamless and secure movement for everyone. As a member of the Security Department, I am responsible for handling the Cloud Infrastructure Security across Grab & OVO in the form of:",
+      date: "2023 – 2024",
+      desc: "Secured Grab's large-scale cloud infrastructure by embedding DevSecOps practices into multi-cloud pipelines. Also covered OVO (PT Visionet Internasional), Grab's fintech arm, as part of the same security scope.",
       descBullets: [
-        "Cloud Security Posture Management (CSPM): Reduce vulnerability and ensured security across diverse platforms including AWS, GCP, Azure and on-premise data center with Tenable, Qualys, Wiz.io for Vulnerability Assessment and CSPM and Cybereason and Crowdstrike for endpoint protection. Successfully migrated from Tenable and Qualys to Wiz.io and Cybereason to Crowdstrike",
-        "Vulnerability Assessment and Patch Management: Utilizing tools such as Terraform, Ansible, and Packer to patch vulnerability on the base image",
-        "Container & Kubernetes Security: Manage and maintain security in containerized environments and Kubernetes orchestration. Focused on configurations, network policies, and role based access controls.",
-        "Security Information and Event Management (SIEM): Operated Wazuh for the audit process and ISO 27001 compliance, enhancing our capabilities in real-time monitoring, incident detection, and thorough reporting for potential threats, and effective incident response.",
-        "CI/CD Security: Developed and maintained secure CI/CD processes using Jenkins and GitLab, integrating security tools like Snyk to enhance both efficiency and security in our development pipeline without slowing it down. Reducing pain points of the security partner by reducing false positives in Static and Dynamic Application Security Testing (SAST & DAST) to identify vulnerabilities earlier in the development cycle.",
-        "Penetration Testing & Security Testing Automation: Supported penetration testing and helped automate security tests to ensure they are effective and efficient."
+        "Solely led development of an LLM-powered code triaging engine, reducing SAST/DAST false positives by 85%.",
+        "Established AI security guardrails and scaled DevSecOps practices across CI/CD pipelines organization-wide.",
+        "Deployed and tuned SIEM (Elastic Stack) for real-time threat detection across distributed microservices."
+      ]
+    },
+    {
+      role: "Cloud Infrastructure Security Engineer",
+      company: "Grab",
+      companylogo: require("./assets/images/grab.png"),
+      date: "2023 – 2024",
+      desc: "Designed and maintained cloud security architecture for Grab and OVO's infrastructure, ensuring compliance and threat resilience across GCP and AWS environments.",
+      descBullets: [
+        "Built an in-house cloud observability platform integrating logs, metrics, and threat intelligence across services.",
+        "Designed and implemented enterprise-grade IAM with SSO integration and full audit readiness.",
+        "Enabled compliance for PCI-DSS, ISO 27001, NIST, and regional regulators including MAS and GDPR."
       ]
     },
     {
       role: "DevSecOps Engineer",
-      company: "Maxim",
+      company: "Maxim Order Service",
       companylogo: require("./assets/images/maxim.png"),
-      date: "October 2022 – November 2023",
-      desc: "Maxim is an international company that has offered a range of transportation services since 2003, impacting lives across more than 100 cities in 10 countries. As a vital part of this journey, I serve as the AWS CloudOps and DevSecOps Engineer, responsible for managing Maxim Foods and Goods' cloud infrastructure and applications on Amazon Web Services (AWS).",
+      date: "2022 – 2023",
+      desc: "Oversaw cloud infrastructure and DevSecOps operations for Maxim Foods & Goods across 100+ cities in 10 countries on AWS, delivering significant cost reductions and uptime improvements.",
       descBullets: [
-        "Implemented cost-efficient cloud solutions, leading to around 25% reduction in monthly cloud expenses.",
-        "Reduced system downtime, response time and latency by around 50% by optimizing the system",
-        "Achieved zero security breaches by incorporating advanced security tools and best practices.",
-        "Achieved a 20% cost reduction by optimizing resource allocation and implementing auto-scaling.",
-        "Further reduced monthly cloud expenses by 15% through right-sizing and reserved instances.",
-        "Increased error tracing capabilities by 40% through advanced monitoring",
-        "Collaborated closely with the development team on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
-        "Zero Down Time using Blue Green Deployment"
+        "Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.",
+        "Reduced system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability.",
+        "Accelerated infrastructure provisioning by 35% through Terraform-based Infrastructure as Code adoption."
       ]
     },
     {
-      role: "DevSecOps Engineer",
-      company: "EV Connection Malaysia",
+      role: "DevOps Engineer",
+      company: "Virtualspirit",
       companylogo: require("./assets/images/evc.png"),
-      date: "September 2020 – October 2022",
-      desc: "",
+      date: "2022 – 2023",
+      desc: "Delivered cloud infrastructure and DevOps services as an IT vendor for clients including EV Connection — Malaysia's leading EV charging station provider — achieving 99.95% uptime through Kubernetes and CI/CD automation.",
       descBullets: [
-        "Successfully drove a 30% increase in user bookings within a year through platform optimizations.",
-        "Implemented cost-efficient cloud solutions, leading to around 25% reduction in monthly cloud expenses.",
-        "Achieved a 99.5% uptime rate by deploying robust and high available microservices using Kubernetes.",
-        "Enhanced system reliability by using the ELK stack, resulting in a 30% reduction in reported issues.",
-        "Collaborated with developers on identifying, analyzing and troubleshooting the system bottleneck and recurrence bugs, resulting in a 25% decrease in reported issues.",
-        "Zero Down Time PostgreSQL major version upgrade using Blue Green Deployment",
-        "Increasing system reliability and reducing latency during events by implementing chaos engineering"
+        "Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.",
+        "Deployed 5+ production applications for EV Connection within six months, achieving a 98% successful deployment rate.",
+        "Reduced cloud costs by 30% and cut release time by 25% through right-sizing, reserved instances, and optimized CI/CD pipelines."
+      ]
+    },
+    {
+      role: "DevOps Engineer / Site Reliability Engineer",
+      company: "Hungryhub",
+      companylogo: require("./assets/images/hungryhub.jpeg"),
+      date: "2020 – 2022",
+      desc: "Drove platform reliability and growth for Thailand's leading restaurant reservation platform, achieving 99.8% uptime and a 30% increase in user bookings through infrastructure optimization and SRE practices.",
+      descBullets: [
+        "Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.",
+        "Achieved 99.8% uptime with Kubernetes and ELK-based proactive monitoring, resolving 95% of issues before user impact.",
+        "Reduced cloud costs by 15% through efficient resource management, auto-scaling, and reserved instance strategies."
       ]
     }
   ]
