@@ -332,7 +332,7 @@ const achievementSection = {
     {
       title: "AWS Cloud Architect",
       subtitle: "Cloud Architect Certification from Amazon Web Services (AWS)",
-      image: require("./assets/images/aws.png"),
+      image: require("./assets/images/amazon_web_services_logo.jpeg"),
       imageAlt: "AWS Cloud Architect",
       footerLink: [
         {
@@ -352,7 +352,7 @@ const achievementSection = {
     {
       title: "Certified Ethical Hacker",
       subtitle: "Certified Ethical Hacker Certification from EC-Council",
-      image: require("./assets/images/ec-council.png"),
+      image: require("./assets/images/ec-council.jpeg"),
       imageAlt: "Certified Ethical Hacker EC-Council",
       footerLink: [
         {
