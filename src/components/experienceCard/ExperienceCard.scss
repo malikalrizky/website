@@ -143,12 +143,36 @@
   }
 
   .experience-text-role {
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .experience-text-company,
+  .experience-text-date {
+    font-size: 12px;
+  }
+
+  .experience-text-desc {
+    font-size: 13px;
+  }
+
+  .employment-type-badge {
+    font-size: 10px;
   }
 
   .timeline-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-text-role {
+    font-size: 14px;
+  }
+
+  .experience-text-desc {
+    font-size: 12.5px;
   }
 }
