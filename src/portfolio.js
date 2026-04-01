@@ -168,7 +168,7 @@ const techStack = {
     },
     {
       Stack: "Programming",
-      progressPercentage: "60%"
+      progressPercentage: "80%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -180,63 +180,74 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Cybersecurity Incident Response Lead",
+      role: "Lead Security Engineer, SOC Security Operations Center ",
       company: "DKATALIS",
       companylogo: require("./assets/images/dkatalis_logo.jpeg"),
       date: "2025 – Present",
-      desc: "Leads end-to-end cybersecurity incident response operations at a cloud-native fintech, triaging and remediating threats across cloud and application layers.",
+      employmentType: "Full-time",
+      desc: "Lead SOC operations for a Indonesia-based fintech, owning incident response strategy, detection engineering, threat hunting, and automation across AWS, GCP, Kubernetes, endpoints, and identity systems in multi-country environments.",
       descBullets: [
-        "Spearheaded cybersecurity incident response at a Singapore-based fintech, reducing mean time to contain (MTTC) for critical security events.",
-        "Oversaw threat detection and triage across cloud-native environments spanning AWS and GCP infrastructure.",
-        "Drove continuous improvement of incident response playbooks, strengthening organizational security posture across Indonesia and Singapore."
+        "Drive end-to-end incident command for identity, cloud, endpoint, and phishing events, cutting containment time by over 60% through tighter triage and escalation workflows.",
+        "Scale detection and response coverage across AWS, GCP, Kubernetes, and SaaS identity surfaces, increasing monitoring depth and reducing blind spots in production systems.",
+        "Operationalize SOC playbooks and SOAR-driven automations to reduce MTTR, lower false positives, improve analyst throughput, and standardize response quality.",
+        "Translate SOC risk and trend data into stakeholder-ready reporting, improving cross-functional alignment and audit/compliance readiness."
       ]
     },
     {
-      role: "DevSecOps Engineer",
+      role: "Security Engineer, DevSecOps",
       company: "DKATALIS",
       companylogo: require("./assets/images/dkatalis_logo.jpeg"),
       date: "2024 – 2025",
-      desc: "Focused on identity security across GCP and AWS, and served as the primary SecOps on-call covering end-to-end security operations. Promoted to Cybersecurity Incident Response Lead.",
+      employmentType: "Full-time",
+      desc: "Secure identity and cloud operations across AWS and GCP while serving as primary SecOps on-call, owning detection-to-remediation workflows and strengthening governance controls that support progression to Lead SOC.",
       descBullets: [
-        "Owned identity security across GCP and AWS, including IAM policy enforcement, privilege access management, and identity threat detection.",
-        "Served as SecOps on-call, triaging and responding to security alerts across SIEM, endpoint, and cloud security tooling.",
-        "Covered full security operations scope during on-call rotations — from threat detection and incident triage to containment and post-incident review."
+        "Own IAM and identity security governance across AWS and GCP, enforcing least-privilege access and improving access control maturity at scale.",
+        "Lead SecOps on-call response across SIEM, endpoint, and cloud telemetry, handling the full lifecycle from alert triage through containment and post-incident review.",
+        "Embed security controls into CI/CD workflows and partner with engineering teams to reduce exploitable risk before production release.",
+        "Solely led development of an LLM-powered security code review engine, reducing review time by 50%.",
+        "Drive control hardening and incident learnings that materially improve audit posture and support promotion into Lead SOC Security Operations Center leadership."
       ]
     },
     {
-      role: "DevSecOps Engineer",
+      role: "Security Engineer, DevSecOps",
       company: "Grab",
       companylogo: require("./assets/images/grab.png"),
       date: "2023 – 2024",
-      desc: "Secured Grab's large-scale cloud infrastructure by embedding DevSecOps practices into multi-cloud pipelines. Also covered OVO (PT Visionet Internasional), Grab's fintech arm, as part of the same security scope.",
+      employmentType: "Full-time",
+      desc: "Scale DevSecOps practices across Grab and OVO environments by combining AI-assisted triage, CI/CD security guardrails, and SIEM-driven detection improvements for high-volume engineering organizations.",
       descBullets: [
         "Solely led development of an LLM-powered code triaging engine, reducing SAST/DAST false positives by 85%.",
-        "Established AI security guardrails and scaled DevSecOps practices across CI/CD pipelines organization-wide.",
-        "Deployed and tuned SIEM (Elastic Stack) for real-time threat detection across distributed microservices."
+        "Establish AI-assisted AppSec triage standards and security guardrails that improve engineering adoption of secure SDLC controls across CI/CD pipelines.",
+        "Deploy and tune SIEM (Elastic Stack) use cases for distributed microservices, increasing actionable detection visibility across cloud workloads.",
+        "Partner with platform and product security stakeholders to align DevSecOps controls across enterprise and fintech operating scope."
       ]
     },
     {
-      role: "Cloud Infrastructure Security Engineer",
+      role: "Security Engineer, Cloud Infrastructure",
       company: "Grab",
       companylogo: require("./assets/images/grab.png"),
       date: "2023 – 2024",
-      desc: "Designed and maintained cloud security architecture for Grab and OVO's infrastructure, ensuring compliance and threat resilience across GCP and AWS environments.",
+      employmentType: "Full-time",
+      desc: "Design and operate cloud security architecture for Grab and OVO workloads on AWS and GCP, strengthening resilience, governance, and compliance enablement across large-scale platforms.",
       descBullets: [
-        "Built an in-house cloud observability platform integrating logs, metrics, and threat intelligence across services.",
-        "Designed and implemented enterprise-grade IAM with SSO integration and full audit readiness.",
-        "Enabled compliance for PCI-DSS, ISO 27001, NIST, and regional regulators including MAS and GDPR."
+        "Build an in-house cloud observability platform that unifies logs, metrics, and threat intelligence to speed investigation and response.",
+        "Design enterprise IAM and SSO control models that improve access governance, auditability, and risk reduction across teams.",
+        "Enable security control mapping and evidence readiness against industry frameworks and regional regulatory requirements.",
+        "Partner with engineering and governance teams to embed cloud security standards that scale consistently across business-critical services."
       ]
     },
     {
-      role: "DevSecOps Engineer",
+      role: "DevSecOps Engineer, Infrastructure and Platform",
       company: "Maxim Order Service",
       companylogo: require("./assets/images/maxim.png"),
       date: "2022 – 2023",
-      desc: "Oversaw cloud infrastructure and DevSecOps operations for Maxim Foods & Goods across 100+ cities in 10 countries on AWS, delivering significant cost reductions and uptime improvements.",
+      employmentType: "Full-time",
+      desc: "Lead infrastructure and DevSecOps operations for Maxim Foods & Goods across 100+ cities in 10 countries, improving cost efficiency, reliability, and delivery speed on AWS.",
       descBullets: [
         "Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.",
-        "Reduced system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability.",
-        "Accelerated infrastructure provisioning by 35% through Terraform-based Infrastructure as Code adoption."
+        "Reduce system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability and faster root-cause analysis.",
+        "Accelerate infrastructure provisioning by 35% through Terraform-based Infrastructure as Code and repeatable platform workflows.",
+        "Strengthen operational maturity and scalability across multi-country environments by standardizing platform security and reliability practices."
       ]
     },
     {
@@ -244,6 +255,7 @@ const workExperiences = {
       company: "Virtualspirit",
       companylogo: require("./assets/images/evc.png"),
       date: "2022 – 2023",
+      employmentType: "Freelance",
       desc: "Delivered cloud infrastructure and DevOps services as an IT vendor for clients including EV Connection — Malaysia's leading EV charging station provider — achieving 99.95% uptime through Kubernetes and CI/CD automation.",
       descBullets: [
         "Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.",
@@ -256,6 +268,7 @@ const workExperiences = {
       company: "Hungryhub",
       companylogo: require("./assets/images/hungryhub.jpeg"),
       date: "2020 – 2022",
+      employmentType: "Full-time",
       desc: "Drove platform reliability and growth for Thailand's leading restaurant reservation platform, achieving 99.8% uptime and a 30% increase in user bookings through infrastructure optimization and SRE practices.",
       descBullets: [
         "Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.",

@@ -1,7 +1,22 @@
+@import "../../_globalColor";
+
 .experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 0;
+
+  // vertical timeline line
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2.45rem;
+    top: 2.5rem;
+    bottom: 2.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, $buttonColor, $educationCardBorder);
+    z-index: 0;
+  }
 }
 
 .experience-heading {
@@ -33,5 +48,9 @@
   .experience-heading {
     font-size: 30px;
     text-align: center;
+  }
+
+  .experience-cards-div::before {
+    left: 1.7rem;
   }
 }
