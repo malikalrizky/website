@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.96886eb5.css",
-    "main.js": "/static/js/main.cc08dafb.js",
+    "main.js": "/static/js/main.aa57d456.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.e9c0e88b.chunk.js": "/static/js/64.e9c0e88b.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
@@ -10,8 +10,6 @@
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/palo-alto.png": "/static/media/palo-alto.91d1c1ab306ad1a71e60.png",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
-    "static/media/ec-council.png": "/static/media/ec-council.32353c06af3ebcfa0722.png",
-    "static/media/aws.png": "/static/media/aws.8ed80e2d18ffde9101ce.png",
     "static/media/manOnTable.svg": "/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
     "static/media/maxim.png": "/static/media/maxim.18d96bb00569920d1e35.png",
     "static/media/grab.png": "/static/media/grab.39faa1f229c19bb1c2ce.png",
@@ -24,7 +22,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.96886eb5.css.map": "/static/css/main.96886eb5.css.map",
-    "main.cc08dafb.js.map": "/static/js/main.cc08dafb.js.map",
+    "main.aa57d456.js.map": "/static/js/main.aa57d456.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.e9c0e88b.chunk.js.map": "/static/js/64.e9c0e88b.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -32,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.96886eb5.css",
-    "static/js/main.cc08dafb.js"
+    "static/js/main.aa57d456.js"
   ]
 }
