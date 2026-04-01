@@ -60,3 +60,27 @@ Required environment variables (copy from `env.example` to `.env`):
 - `fetch.js` - External data fetching logic
 - `src/containers/Main.js` - Main application layout and routing
 - `package.json` - Dependencies and build scripts
+
+## Safari Mobile Compatibility (DO NOT REVERT)
+
+The following fixes are critical for Safari mobile. Without them, sections render blank.
+
+### ExperienceCard.js (`src/components/experienceCard/ExperienceCard.js`)
+- **Use `useRef`, not `createRef`** — `createRef` recreates the ref every render in function components
+- **Do NOT add `crossOrigin="anonymous"`** to img tags for local webpack-bundled images — Safari taints the canvas and ColorThief throws a SecurityError
+- **`colorThief.getColor()` must be wrapped in try-catch** with a fallback color and a null/dimension guard before calling
+- **Do NOT use `react-reveal`** for the experience section — it's unmaintained (v1.2.2, last updated 2019), starts content at `opacity: 0`, and can fail to reveal on Safari mobile. Use CSS `@keyframes` animation instead.
+
+### Why this matters
+ColorThief extracts colors by drawing images onto a `<canvas>` and calling `getImageData()`. Safari mobile is strict about canvas CORS — setting `crossOrigin="anonymous"` on same-origin images causes Safari to taint the canvas. Without error handling, the crash blanks the entire Experiences section.
+
+## Deployment
+
+- Git remote uses SSH host alias `github-personal` for the personal GitHub account (`malikalrizky`)
+- The `gh-pages` npm package cannot parse SSH URLs with host aliases (e.g. `git@github-personal:user/repo.git`)
+- **To deploy**, use the `--repo` flag with `ssh://` format:
+  ```
+  npx gh-pages -b gh-pages -d build --repo ssh://git@github-personal/malikalrizky/website.git
+  ```
+- Do NOT change the git remote URL — use `--repo` instead
+- Custom domain: `malikal.dpdns.org` (set in `public/CNAME`)

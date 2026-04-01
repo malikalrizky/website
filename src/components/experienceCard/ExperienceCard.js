@@ -1,14 +1,23 @@
-import React, {useState, createRef} from "react";
+import React, {useState, useRef} from "react";
 import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
-  const imgRef = createRef();
+  const imgRef = useRef(null);
 
   function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
+    try {
+      if (!imgRef.current || imgRef.current.naturalWidth === 0) {
+        setColorArrays([55, 59, 68]);
+        return;
+      }
+      const colorThief = new ColorThief();
+      setColorArrays(colorThief.getColor(imgRef.current));
+    } catch (e) {
+      console.warn("ColorThief failed to extract color:", e);
+      setColorArrays([55, 59, 68]);
+    }
   }
 
   function rgb(values) {
@@ -34,7 +43,6 @@ export default function ExperienceCard({cardInfo, isDark}) {
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
       <div className="timeline-logo-wrap">
         <img
-          crossOrigin={"anonymous"}
           ref={imgRef}
           className="experience-roundedimg"
           src={cardInfo.companylogo}
