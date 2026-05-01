@@ -86,24 +86,34 @@ async function generateCV() {
   // Convert to PDF
   const {mdToPdf} = await import("md-to-pdf");
 
-  const pdf = await mdToPdf(
-    {content: markdown},
-    {
-      stylesheet: cssPath,
-      document_title: "Malikal Rizky - CV",
-      pdf_options: {
-        format: "A4",
-        margin: {top: "25mm", bottom: "25mm", left: "25mm", right: "25mm"},
-        printBackground: false
-      },
-      launch_options: {
-        executablePath:
-          process.env.CHROME_PATH ||
-          "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        args: ["--no-sandbox"]
+    const os = require('os');
+    let chromePath = process.env.CHROME_PATH;
+    if (!chromePath) {
+      if (os.platform() === 'darwin') {
+        chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+      } else if (os.platform() === 'linux') {
+        chromePath = '/usr/bin/google-chrome';
+      } else if (os.platform() === 'win32') {
+        chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
       }
     }
-  );
+
+    const pdf = await mdToPdf(
+      {content: markdown},
+      {
+        stylesheet: cssPath,
+        document_title: "Malikal Rizky - CV",
+        pdf_options: {
+          format: "A4",
+          margin: {top: "25mm", bottom: "25mm", left: "25mm", right: "25mm"},
+          printBackground: false
+        },
+        launch_options: {
+          executablePath: chromePath,
+          args: ["--no-sandbox", "--disable-setuid-sandbox"]
+        }
+      }
+    );
 
   if (pdf.content) {
     fs.writeFileSync(pdfPath, pdf.content);
