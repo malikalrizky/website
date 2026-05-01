@@ -83,8 +83,8 @@ Drove platform reliability and growth for Thailand's leading restaurant reservat
 ---
 ## Education
 
-### Gadjah Mada University
-**Engineering Physics | 2016 - 2020**
+### Utel University
+**Computer Engineering | 2016 - 2020**
 
 - Project: Convolution Neural Network Models for Acute Lymphoblastic Leukemia Diagnosis
 - Project: Analysis of the Radioactivity Yield of Fluorine-18 from the Reaction of 18-O(p,n)18-F with Proton Beam Current Variations at the Medical Cyclotron Facility in Dharmais Hospital National Cancer Center BATAN (National Nuclear Energy Agency)

@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.96886eb5.css",
-    "main.js": "/static/js/main.3d4feba3.js",
+    "main.js": "/static/js/main.59ef9008.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.e9c0e88b.chunk.js": "/static/js/64.e9c0e88b.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
     "static/js/769.604864af.chunk.js": "/static/js/769.604864af.chunk.js",
-    "static/media/ugm.png": "/static/media/ugm.2dfbc29f9f0a0df36791.png",
+    "static/media/utel.png": "/static/media/utel.2dfbc29f9f0a0df36791.png",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/palo-alto.png": "/static/media/palo-alto.91d1c1ab306ad1a71e60.png",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
@@ -22,7 +22,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.96886eb5.css.map": "/static/css/main.96886eb5.css.map",
-    "main.3d4feba3.js.map": "/static/js/main.3d4feba3.js.map",
+    "main.59ef9008.js.map": "/static/js/main.59ef9008.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.e9c0e88b.chunk.js.map": "/static/js/64.e9c0e88b.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -30,6 +30,6 @@
   },
   "entrypoints": [
     "static/css/main.96886eb5.css",
-    "static/js/main.3d4feba3.js"
+    "static/js/main.59ef9008.js"
   ]
 }
