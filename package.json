@@ -23,7 +23,7 @@
     "typewriter-effect": "^2.18.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run format",
     "start": "node fetch.js && react-scripts start",
     "build": "node fetch.js && node scripts/generate-cv.js && react-scripts build",
     "deploy": "rm -rf build && npm run build && gh-pages -b gh-pages -d build --repo ssh://git@github-personal/malikalrizky/website.git",
