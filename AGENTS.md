@@ -37,6 +37,7 @@ React-based personal portfolio: experience, skills, education, achievements. Dep
 ### Styling
 
 - SCSS per component; `src/_globalColor.scss`; theme via context and CSS classes
+- **Mobile Styling**: Ensure font sizes for `descBullet` and other descriptions are kept small/appropriate for mobile screens (user frequently corrects this).
 
 ## Important paths
 

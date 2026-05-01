@@ -25,7 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset and multiple years of experience of building secure Infrastructure and secure Software Development Lifecycle and CI/CD."
   ),
-  resumeLink: "", // Set to empty to hide the button
+  resumeLink: "/cv.pdf",
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -131,9 +131,9 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Gadjah Mada University",
-      logo: require("./assets/images/ugm.png"),
-      subHeader: "Engineering Physics",
+      schoolName: "Utel University",
+      logo: "",
+      subHeader: "Computer Engineering",
       duration: "2016 - 2020",
       // desc: "Participated in the research of XXX and published 3 papers.",
       descBullets: [

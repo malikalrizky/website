@@ -25,12 +25,13 @@
   "scripts": {
     "predeploy": "npm run build",
     "start": "node fetch.js && react-scripts start",
-    "build": "node fetch.js && react-scripts build",
+    "build": "node fetch.js && node scripts/generate-cv.js && react-scripts build",
     "deploy": "rm -rf build && npm run build && gh-pages -b gh-pages -d build --repo ssh://git@github-personal/malikalrizky/website.git",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
-    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
+    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\"",
+    "generate-cv": "node scripts/generate-cv.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "dotenv": "^8.2.0",
+    "md-to-pdf": "^5.2.5",
     "prettier": "^2.3.1"
   }
 }
