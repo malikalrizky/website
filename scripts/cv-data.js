@@ -116,9 +116,9 @@ const cvData = {
     }
   ],
   certifications: [
-    { name: "AWS Cloud Architect", issuer: "Amazon Web Services (AWS)" },
-    { name: "Certified Ethical Hacker", issuer: "EC-Council" },
-    { name: "Palo Alto Networks Cybersecurity", issuer: "Palo Alto Networks" }
+    {name: "AWS Cloud Architect", issuer: "Amazon Web Services (AWS)"},
+    {name: "Certified Ethical Hacker", issuer: "EC-Council"},
+    {name: "Palo Alto Networks Cybersecurity", issuer: "Palo Alto Networks"}
   ],
   skills: [
     "Cloud Security",

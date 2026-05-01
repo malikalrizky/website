@@ -84,16 +84,16 @@ async function generateCV() {
   console.log(`Markdown written to ${mdPath}`);
 
   // Convert to PDF
-  const { mdToPdf } = await import("md-to-pdf");
+  const {mdToPdf} = await import("md-to-pdf");
 
   const pdf = await mdToPdf(
-    { content: markdown },
+    {content: markdown},
     {
       stylesheet: cssPath,
       document_title: "Malikal Rizky - CV",
       pdf_options: {
         format: "A4",
-        margin: { top: "25mm", bottom: "25mm", left: "25mm", right: "25mm" },
+        margin: {top: "25mm", bottom: "25mm", left: "25mm", right: "25mm"},
         printBackground: false
       },
       launch_options: {
@@ -111,7 +111,7 @@ async function generateCV() {
   }
 }
 
-generateCV().catch((err) => {
+generateCV().catch(err => {
   console.error("Failed to generate CV:", err);
   process.exit(1);
 });
