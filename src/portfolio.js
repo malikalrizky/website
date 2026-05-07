@@ -4,6 +4,7 @@
 
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import career from "./data/career.json";
 
 // Splash Screen
 
@@ -23,7 +24,7 @@ const greeting = {
   username: "Malikal Rizky",
   title: "Hi all, I'm Malik",
   subTitle: emoji(
-    "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset and multiple years of experience of building secure Infrastructure and secure Software Development Lifecycle and CI/CD."
+    "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset—building paved-road automation, identity-first controls, and secure SDLC with CI/CD across AWS and GCP."
   ),
   resumeLink: "/cv.pdf",
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -129,28 +130,13 @@ https://fontawesome.com/icons?d=gallery */
 
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
-  schools: [
-    {
-      schoolName: "Utel University",
-      logo: "",
-      subHeader: "Computer Engineering",
-      duration: "2016 - 2020",
-      // desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Project: Convolution Neural Network Models for Acute Lymphoblastic Leukemia Diagnosis",
-        "Project: Analysis of the Radioactivity Yield of Fluorine-18 from the Reaction of 18-O(p,n)18-F with Proton Beam Current Variations at the Medical Cyclotron Facility in Dharmais Hospital National Cancer Center BATAN (National Nuclear Energy Agency)",
-        "Project: Applying Deep Learning for the Optimization and Sustainability of Lithium Ferrophosphate (LFP) Batteries in Renewable Energy Applications"
-      ]
-    }
-    // {
-    //   schoolName: "Stanford University",
-    //   logo: require("./assets/images/stanfordLogo.png"),
-    //   subHeader: "Bachelor of Science in Computer Science",
-    //   duration: "September 2013 - April 2017",
-    //   desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-    //   descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
-    // },
-  ]
+  schools: career.education.map((edu) => ({
+    schoolName: edu.school,
+    logo: "",
+    subHeader: edu.degree,
+    duration: edu.duration,
+    descBullets: edu.projects
+  }))
 };
 
 // Your top 3 proficient stacks/tech experience
@@ -174,109 +160,30 @@ const techStack = {
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
 
-// Work experience section
+// Work experience — copy comes from `src/data/career.json`; logos mapped here (not serializable in JSON).
+const companyLogoByCompany = {
+  DKATALIS: require("./assets/images/dkatalis_logo.jpeg"),
+  Grab: require("./assets/images/grab.png"),
+  "Maxim Order Service": require("./assets/images/maxim.png"),
+  Virtualspirit: require("./assets/images/evc.png"),
+  Hungryhub: require("./assets/images/hungryhub.jpeg")
+};
+
+function formatCvDateForSite(dateStr) {
+  return dateStr.replace(/ - /g, " – ");
+}
 
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
-  experience: [
-    {
-      role: "Lead Security Engineer, SOC Security Operations Center ",
-      company: "DKATALIS",
-      companylogo: require("./assets/images/dkatalis_logo.jpeg"),
-      date: "2025 – Present",
-      employmentType: "Full-time",
-      desc: "Lead SOC operations for a Indonesia-based fintech, owning incident response strategy, detection engineering, threat hunting, and automation across AWS, GCP, Kubernetes, endpoints, and identity systems in multi-country environments.",
-      descBullets: [
-        "Drive end-to-end incident command for identity, cloud, endpoint, and phishing events, cutting containment time by over 60% through tighter triage and escalation workflows.",
-        "Scale detection and response coverage across AWS, GCP, Kubernetes, and SaaS identity surfaces, increasing monitoring depth and reducing blind spots in production systems.",
-        "Operationalize SOC playbooks and SOAR-driven automations to reduce MTTR, lower false positives, improve analyst throughput, and standardize response quality.",
-        "Translate SOC risk and trend data into stakeholder-ready reporting, improving cross-functional alignment and audit/compliance readiness."
-      ]
-    },
-    {
-      role: "Security Engineer, DevSecOps",
-      company: "DKATALIS",
-      companylogo: require("./assets/images/dkatalis_logo.jpeg"),
-      date: "2024 – 2025",
-      employmentType: "Full-time",
-      desc: "Secure identity and cloud operations across AWS and GCP while serving as primary SecOps on-call, owning detection-to-remediation workflows and strengthening governance controls that support progression to Lead SOC.",
-      descBullets: [
-        "Own IAM and identity security governance across AWS and GCP, enforcing least-privilege access and improving access control maturity at scale.",
-        "Lead SecOps on-call response across SIEM, endpoint, and cloud telemetry, handling the full lifecycle from alert triage through containment and post-incident review.",
-        "Embed security controls into CI/CD workflows and partner with engineering teams to reduce exploitable risk before production release.",
-        "Solely led development of an LLM-powered security code review engine, reducing review time by 50%.",
-        "Drive control hardening and incident learnings that materially improve audit posture and support promotion into Lead SOC Security Operations Center leadership."
-      ]
-    },
-    {
-      role: "Security Engineer, DevSecOps",
-      company: "Grab",
-      companylogo: require("./assets/images/grab.png"),
-      date: "2023 – 2024",
-      employmentType: "Full-time",
-      desc: "Scale DevSecOps practices across Grab and OVO environments by combining AI-assisted triage, CI/CD security guardrails, and SIEM-driven detection improvements for high-volume engineering organizations.",
-      descBullets: [
-        "Solely led development of an LLM-powered code triaging engine, reducing SAST/DAST false positives by 85%.",
-        "Establish AI-assisted AppSec triage standards and security guardrails that improve engineering adoption of secure SDLC controls across CI/CD pipelines.",
-        "Deploy and tune SIEM (Elastic Stack) use cases for distributed microservices, increasing actionable detection visibility across cloud workloads.",
-        "Partner with platform and product security stakeholders to align DevSecOps controls across enterprise and fintech operating scope."
-      ]
-    },
-    {
-      role: "Security Engineer, Cloud Infrastructure",
-      company: "Grab",
-      companylogo: require("./assets/images/grab.png"),
-      date: "2023 – 2024",
-      employmentType: "Full-time",
-      desc: "Design and operate cloud security architecture for Grab and OVO workloads on AWS and GCP, strengthening resilience, governance, and compliance enablement across large-scale platforms.",
-      descBullets: [
-        "Build an in-house cloud observability platform that unifies logs, metrics, and threat intelligence to speed investigation and response.",
-        "Design enterprise IAM and SSO control models that improve access governance, auditability, and risk reduction across teams.",
-        "Enable security control mapping and evidence readiness against industry frameworks and regional regulatory requirements.",
-        "Partner with engineering and governance teams to embed cloud security standards that scale consistently across business-critical services."
-      ]
-    },
-    {
-      role: "DevSecOps Engineer, Infrastructure and Platform",
-      company: "Maxim Order Service",
-      companylogo: require("./assets/images/maxim.png"),
-      date: "2022 – 2023",
-      employmentType: "Full-time",
-      desc: "Lead infrastructure and DevSecOps operations for Maxim Foods & Goods across 100+ cities in 10 countries, improving cost efficiency, reliability, and delivery speed on AWS.",
-      descBullets: [
-        "Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.",
-        "Reduce system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability and faster root-cause analysis.",
-        "Accelerate infrastructure provisioning by 35% through Terraform-based Infrastructure as Code and repeatable platform workflows.",
-        "Strengthen operational maturity and scalability across multi-country environments by standardizing platform security and reliability practices."
-      ]
-    },
-    {
-      role: "DevOps Engineer",
-      company: "Virtualspirit",
-      companylogo: require("./assets/images/evc.png"),
-      date: "2022 – 2023",
-      employmentType: "Freelance",
-      desc: "Delivered cloud infrastructure and DevOps services as an IT vendor for clients including EV Connection — Malaysia's leading EV charging station provider — achieving 99.95% uptime through Kubernetes and CI/CD automation.",
-      descBullets: [
-        "Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.",
-        "Deployed 5+ production applications for EV Connection within six months, achieving a 98% successful deployment rate.",
-        "Reduced cloud costs by 30% and cut release time by 25% through right-sizing, reserved instances, and optimized CI/CD pipelines."
-      ]
-    },
-    {
-      role: "DevOps Engineer / Site Reliability Engineer",
-      company: "Hungryhub",
-      companylogo: require("./assets/images/hungryhub.jpeg"),
-      date: "2020 – 2022",
-      employmentType: "Full-time",
-      desc: "Drove platform reliability and growth for Thailand's leading restaurant reservation platform, achieving 99.8% uptime and a 30% increase in user bookings through infrastructure optimization and SRE practices.",
-      descBullets: [
-        "Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.",
-        "Achieved 99.8% uptime with Kubernetes and ELK-based proactive monitoring, resolving 95% of issues before user impact.",
-        "Reduced cloud costs by 15% through efficient resource management, auto-scaling, and reserved instance strategies."
-      ]
-    }
-  ]
+  experience: career.experience.map((job) => ({
+    role: job.role,
+    company: job.company,
+    companylogo: companyLogoByCompany[job.company],
+    date: formatCvDateForSite(job.date),
+    employmentType: job.type,
+    desc: job.desc,
+    descBullets: job.bullets
+  }))
 };
 
 /* Your Open Source Section to View Your Github Pinned Projects

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const cvData = require("./cv-data");
+const cvData = require("../src/data/career.json");
 
 function buildMarkdown(data) {
   const lines = [];
