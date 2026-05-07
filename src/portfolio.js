@@ -130,7 +130,7 @@ https://fontawesome.com/icons?d=gallery */
 
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
-  schools: career.education.map((edu) => ({
+  schools: career.education.map(edu => ({
     schoolName: edu.school,
     logo: "",
     subHeader: edu.degree,
@@ -175,7 +175,7 @@ function formatCvDateForSite(dateStr) {
 
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
-  experience: career.experience.map((job) => ({
+  experience: career.experience.map(job => ({
     role: job.role,
     company: job.company,
     companylogo: companyLogoByCompany[job.company],
