@@ -28,16 +28,16 @@ Lead 24x7 SOC operations at DKATALIS across Bank Jago and BFI, owning incident r
 ### Security Engineer, DevSecOps | DKATALIS
 **2024 - 2025 | Full-time**
 
-Secure identity and cloud operations for Bank Jago and BFI at DKATALIS across AWS and GCP while serving as primary SecOps on-call, owning detection-to-remediation workflows and strengthening governance controls that support progression to Lead SOC.
+Secure identity, cloud, and security operations for Bank Jago and BFI across AWS and GCP, combining IAM governance, DevSecOps automation, cloud security engineering, and operational incident response responsibilities.
 
-- Own IAM and identity security governance across AWS and GCP, including DLP governance, enforcing least-privilege access and improving access control and data protection maturity at scale.
-- Align infrastructure and application access with corporate workforce identity using Google Workspace where deployed for workforce integration, SSO to apps, and governance reviews.
-- Automate identity lifecycle and access revocation with corporate IdP integrations to tighten offboarding and reduce orphaned access.
-- Deliver self-service access request and approval workflows with engineering and identity stakeholders to reduce manual IAM overhead while preserving least-privilege and auditability.
-- Lead SecOps on-call response across SIEM, endpoint, and cloud telemetry, handling the full lifecycle from alert triage through containment and post-incident review.
-- Embed security controls into CI/CD pipelines, including secret scanning and Terraform-aligned IAM patterns, partnering with engineering to reduce exploitable risk before production release.
-- Solely led development of an LLM-powered security code review engine, reducing review time by 50%.
-- Drive control hardening and incident learnings that materially improve audit posture and support promotion into Lead SOC Security Operations Center leadership.
+- Own IAM and identity security governance across AWS and GCP, enforcing least-privilege access controls, DLP governance, and access review processes to improve security posture at scale.
+- Integrated infrastructure and application access with corporate identity platforms including Google Workspace SSO and automated identity lifecycle/offboarding workflows to reduce orphaned access risks.
+- Built self-service IAM access platform with approval workflows, ephemeral access enforcement, and automated service account key rotation to reduce manual overhead while improving auditability and least-privilege controls.
+- Implemented GCP organization, folder, and project policy governance with automated remediation using Terraform, Cloud Functions, Policy Intelligence, and custom API tooling to remove excessive privileges and stale IAM bindings.
+- Designed secure partner access architecture for GCP Cloud Storage using IP-restricted bucket policies and temporary service account credential workflows; contributed upstream `ip_filter` support merged into terraform-google-cloud-storage v12.0.0.
+- Lead SecOps on-call response across SIEM, endpoint, identity, and cloud telemetry, managing the full lifecycle from alert triage and containment through remediation and post-incident review.
+- Embedded security controls into CI/CD pipelines including secret scanning, Terraform-aligned IAM patterns, and preventive security checks to reduce exploitable risks before production deployment.
+- Solely led development of an LLM-powered security code review engine, reducing manual review time by 50% while improving secure development workflows.
 
 ### Security Engineer, DevSecOps | Grab
 **2023 - 2024 | Full-time**
