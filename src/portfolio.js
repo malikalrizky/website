@@ -287,8 +287,7 @@ const achievementSection = {
     },
     {
       title: "Open Source — terraform-google-cloud-storage",
-      subtitle:
-        "Upstream contribution merged in v12.0.0 (GCS ip_filter)",
+      subtitle: "Upstream contribution merged in v12.0.0 (GCS ip_filter)",
       image: require("./assets/images/talksCardBack.svg"),
       imageAlt: "terraform-google-cloud-storage open source contribution",
       footerLink: [
