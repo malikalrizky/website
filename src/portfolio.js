@@ -231,7 +231,7 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Certifications 🏆 "),
+  title: emoji("Certifications & contributions 🏆 "),
   // subtitle:
   //   "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
 
@@ -283,6 +283,19 @@ const achievementSection = {
         //   name: "Final Project",
         //   url: "https://pakistan-olx-1.firebaseapp.com/"
         // }
+      ]
+    },
+    {
+      title: "Open Source — terraform-google-cloud-storage",
+      subtitle:
+        "Upstream contribution merged in v12.0.0 (GCS ip_filter)",
+      image: require("./assets/images/talksCardBack.svg"),
+      imageAlt: "terraform-google-cloud-storage open source contribution",
+      footerLink: [
+        {
+          name: "Release",
+          url: "https://github.com/terraform-google-modules/terraform-google-cloud-storage/releases/tag/v12.0.0"
+        }
       ]
     }
   ],

@@ -23,7 +23,8 @@ React-based personal portfolio: experience, skills, education, achievements. Dep
 
 ### Layout
 
-- **src/portfolio.js** — content and section flags
+- **src/data/career.json** — single source for CV text, work experience, education, certifications, skills (`npm run generate-cv`; `portfolio.js` maps company logos)
+- **src/portfolio.js** — content and section flags; imports `career.json` for experience/education
 - **src/containers/** — page sections (Greeting, Skills, WorkExperience, …)
 - **src/components/** — shared UI
 - **src/contexts/StyleContext.js** — theme
@@ -41,7 +42,7 @@ React-based personal portfolio: experience, skills, education, achievements. Dep
 
 ## Important paths
 
-- `src/portfolio.js`, `fetch.js`, `src/containers/Main.js`, `package.json`
+- `src/data/career.json`, `src/portfolio.js`, `scripts/generate-cv.js`, `fetch.js`, `src/containers/Main.js`, `package.json`
 
 ## Safari mobile (do not revert)
 

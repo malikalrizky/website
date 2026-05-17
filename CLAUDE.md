@@ -24,7 +24,8 @@ This is a React-based personal portfolio website that showcases professional exp
 - Controlled by environment variables in `.env`
 
 ### Component Structure
-- **src/portfolio.js**: Central configuration file containing all portfolio content, certifications, work experience, and settings
+- **src/data/career.json**: Single source for CV export and for work experience + education copy on the site
+- **src/portfolio.js**: Central configuration (imports `career.json` for jobs/education; maps company logos; other sections stay here)
 - **src/containers/**: Page-level components (Greeting, Skills, WorkExperience, etc.)
 - **src/components/**: Reusable UI components (Header, Footer, Cards, etc.)
 - **src/contexts/StyleContext.js**: Theme management (dark/light mode)
@@ -44,10 +45,10 @@ Required environment variables (copy from `env.example` to `.env`):
 - `MEDIUM_USERNAME`: Medium username for blog posts (optional)
 
 ### Content Management
-- Portfolio content is primarily managed through `src/portfolio.js`
+- Work experience, education, certifications, skills, and CV summary live in `src/data/career.json` (run `npm run generate-cv` after edits)
+- Other portfolio content and section flags stay in `src/portfolio.js`
 - Sections can be enabled/disabled via `display: true/false` flags
 - GitHub profile data and repositories are fetched dynamically if configured
-- Static content includes work experience, skills, education, and certifications
 
 ### Styling
 - SCSS-based styling with component-specific stylesheets
@@ -56,7 +57,8 @@ Required environment variables (copy from `env.example` to `.env`):
 - Responsive design with mobile-first approach
 
 ## Important Files to Understand
-- `src/portfolio.js` - All portfolio content and configuration
+- `src/data/career.json` - CV and shared career copy (work, education, skills, etc.)
+- `src/portfolio.js` - Portfolio configuration (imports `career.json` for jobs/education)
 - `fetch.js` - External data fetching logic
 - `src/containers/Main.js` - Main application layout and routing
 - `package.json` - Dependencies and build scripts
