@@ -16,10 +16,10 @@ Security engineer with 6+ years across paved-road DevSecOps, cloud security plat
 
 Lead 24x7 SOC operations at DKATALIS across Bank Jago and BFI, owning incident response strategy, detection engineering, threat hunting, and automation across AWS, GCP, Kubernetes, endpoints, and identity systems in multi-country environments.
 
-- Drive end-to-end incident command for identity, cloud, endpoint, and phishing events, cutting containment time by over 60% through tighter triage and escalation workflows.
+- Drive end-to-end incident command for identity, cloud, endpoint, and phishing events, cutting containment time by over 60% through SOAR-driven enrichment, prioritization, and escalation workflows.
 - Scale detection and response coverage across AWS, GCP, Kubernetes, and SaaS identity surfaces using Wazuh, Google Security Command Center, and CrowdStrike Falcon, increasing monitoring depth and reducing blind spots in production systems.
-- Operationalize SOC playbooks and SOAR-driven automations mapped to MITRE ATT&CK to reduce MTTD and MTTR, lower false positives, improve analyst throughput, and standardize 24x7 monitoring and triage response quality.
-- Built in-house SOC tooling at DKATALIS — unified SIEM-style correlation, threat intelligence, detection and response, and blocking — supporting Bank Jago and BFI SOC operations.
+- Operationalize SOC playbooks and SOAR-driven automations mapped to MITRE ATT&CK — contextual enrichment, alert correlation, deduplication, and automated triage — to improve signal-to-noise, analyst throughput, and 24x7 triage consistency.
+- Built in-house SOC platform at DKATALIS — SIEM-style correlation, deduplication, threat intelligence enrichment, detection/response, and blocking — reducing repetitive manual investigations for Bank Jago and BFI SOC operations.
 - Translate SOC risk and trend data into stakeholder-ready reporting, improving cross-functional alignment and audit/compliance readiness.
 - Built SOC-driven kill-switch automation for rapid workforce and application access revocation via corporate IdP integrations, supporting HR offboarding and incident containment.
 - Partner with platform engineering on golden-image and immutable baseline practices (including Packer-style image pipelines) to reduce manual hardening drift across cloud workloads.
@@ -31,6 +31,7 @@ Lead 24x7 SOC operations at DKATALIS across Bank Jago and BFI, owning incident r
 Secure identity, cloud, and security operations for Bank Jago and BFI across AWS and GCP, combining IAM governance, DevSecOps automation, cloud security engineering, and operational incident response responsibilities.
 
 - Own IAM and identity security governance across AWS and GCP, enforcing least-privilege access controls, DLP governance, and access review processes to improve security posture at scale.
+- Led cross-functional Wiz CSPM remediation program across AWS and GCP, coordinating engineering teams to close critical misconfigurations and achieve maximum organizational cloud security posture score through IAM hardening, remediation governance, and preventive guardrails.
 - Integrated infrastructure and application access with corporate identity platforms including Google Workspace SSO and automated identity lifecycle/offboarding workflows to reduce orphaned access risks.
 - Built self-service IAM access platform with approval workflows, ephemeral access enforcement, and automated service account key rotation to reduce manual overhead while improving auditability and least-privilege controls.
 - Implemented GCP organization, folder, and project policy governance with automated remediation using Terraform, Cloud Functions, Policy Intelligence, and custom API tooling to remove excessive privileges and stale IAM bindings.
@@ -121,4 +122,4 @@ Drove platform reliability and growth for Thailand's leading restaurant reservat
 ---
 ## Skills
 
-Cloud Security | DevSecOps | AWS | GCP | Docker | Kubernetes | Terraform | Python | Bash | JavaScript | Golang | PostgreSQL | CI/CD | GitHub Actions | SSO | SAML | OIDC | SIEM | In-house security tooling | Wazuh | Google SCC | CrowdStrike Falcon | Teleport | DLP | MITRE ATT&CK | Google Workspace | JumpCloud | GCPW | Google Chrome MDM | Auth0 | Microsoft Entra ID | Cloudflare WAF | AWS WAF | Packer | Palo Alto Networks | Cisco Meraki | IAM | Incident Response | Vulnerability Assessment | Penetration Testing | ISO 27001 | ELK Stack | Grafana | Prometheus
+Cloud Security | DevSecOps | AWS | GCP | Docker | Kubernetes | Terraform | Python | Bash | JavaScript | Golang | PostgreSQL | CI/CD | GitHub Actions | SSO | SAML | OIDC | SIEM | SOAR | In-house security tooling | Wazuh | Google SCC | Wiz CSPM | CrowdStrike Falcon | Teleport | DLP | MITRE ATT&CK | Google Workspace | JumpCloud | GCPW | Google Chrome MDM | Auth0 | Microsoft Entra ID | Cloudflare WAF | AWS WAF | Packer | Palo Alto Networks | Cisco Meraki | IAM | Incident Response | Vulnerability Assessment | Penetration Testing | ISO 27001 | ELK Stack | Grafana | Prometheus
