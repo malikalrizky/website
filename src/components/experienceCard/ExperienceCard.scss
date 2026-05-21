@@ -57,7 +57,7 @@
 
 .experience-text-company {
   color: $buttonColor;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -83,14 +83,14 @@
 .experience-text-role {
   color: $textColor;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 21px;
   margin: 0;
   padding: 0;
   line-height: normal;
 }
 
 .employment-type-badge {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 20px;
@@ -111,23 +111,140 @@
   border: 1px solid rgba(255, 152, 0, 0.4);
 }
 
+.engagement-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.engagement-permanent {
+  background: rgba(33, 150, 243, 0.15);
+  color: #2196f3;
+  border: 1px solid rgba(33, 150, 243, 0.4);
+}
+
+.engagement-contract {
+  background: rgba(156, 39, 176, 0.15);
+  color: #9c27b0;
+  border: 1px solid rgba(156, 39, 176, 0.4);
+}
+
+.engagement-project {
+  background: rgba(96, 125, 139, 0.15);
+  color: #607d8b;
+  border: 1px solid rgba(96, 125, 139, 0.4);
+}
+
 .dark-mode-text {
   color: $textColorDark !important;
 }
 
 .experience-text-date {
   color: $subTitle;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   margin: 0;
   padding: 0;
   white-space: nowrap;
 }
 
+.experience-text-tagline {
+  color: $subTitle;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.4;
+}
+
 .experience-text-desc {
   text-align: left;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.5;
   margin: 0.4rem 0 0.5rem 0;
+}
+
+.experience-text-details ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.experience-text-details ul li,
+.experience-text-bullet {
+  font-size: 14px;
+  line-height: 1.45;
+  color: $subTitle;
+}
+
+.experience-text-regional-scope {
+  color: $subTitle;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.45;
+}
+
+.experience-card-dark .experience-text-regional-scope.dark-mode-text {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.experience-text-desc-role {
+  color: $cardSubtitle;
+}
+
+.experience-card-dark .experience-text-desc-role.dark-mode-text {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.experience-card-dark .experience-text-details ul li,
+.experience-card-dark .experience-text-bullet.dark-mode-text {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.experience-role-block {
+  margin-top: 0.5rem;
+}
+
+.experience-role-block + .experience-role-block {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid $lightBorder1;
+}
+
+.experience-card-dark .experience-role-block + .experience-role-block {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.experience-role-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.experience-text-role-sub {
+  color: $textColor;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-text-date-sub {
+  color: $subTitle;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 /* Media Query */
@@ -143,26 +260,47 @@
   }
 
   .experience-text-role {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.35;
+  }
+
+  .experience-text-role-sub {
+    font-size: 16px;
+  }
+
+  .experience-text-date-sub {
+    font-size: 12px;
+    white-space: normal;
   }
 
   .experience-text-company,
   .experience-text-date {
-    font-size: 12px;
-  }
-
-  .experience-text-desc {
     font-size: 13px;
   }
 
-  .experience-text-details ul li {
-    font-size: 12.5px;
+  .experience-text-date {
+    white-space: normal;
+  }
+
+  .experience-text-tagline,
+  .experience-text-regional-scope {
+    font-size: 13.5px;
+  }
+
+  .experience-text-desc,
+  .experience-text-desc-role {
+    font-size: 14px;
+  }
+
+  .experience-text-details ul li,
+  .experience-text-bullet {
+    font-size: 13.5px;
     line-height: 1.45;
   }
 
-  .employment-type-badge {
-    font-size: 10px;
+  .employment-type-badge,
+  .engagement-badge {
+    font-size: 11px;
   }
 
   .timeline-header {
@@ -174,14 +312,25 @@
 
 @media (max-width: 480px) {
   .experience-text-role {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .experience-text-desc {
-    font-size: 12.5px;
+  .experience-text-role-sub {
+    font-size: 15px;
   }
 
-  .experience-text-details ul li {
-    font-size: 12px;
+  .experience-text-tagline,
+  .experience-text-regional-scope {
+    font-size: 13px;
+  }
+
+  .experience-text-desc,
+  .experience-text-desc-role {
+    font-size: 13.5px;
+  }
+
+  .experience-text-details ul li,
+  .experience-text-bullet {
+    font-size: 13px;
   }
 }

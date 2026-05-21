@@ -26,12 +26,21 @@ export default function ExperienceCard({cardInfo, isDark}) {
       : "rgb(" + values.join(", ") + ")";
   }
 
+  const allBullets = [
+    cardInfo.regionalScope,
+    ...(cardInfo.descBullets || [])
+  ].filter(Boolean);
+
   const GetDescBullets = ({descBullets, isDark}) => {
     return descBullets
       ? descBullets.map((item, i) => (
           <li
             key={i}
-            className={isDark ? "subTitle dark-mode-text" : "subTitle"}
+            className={
+              isDark
+                ? "experience-text-bullet dark-mode-text"
+                : "experience-text-bullet"
+            }
           >
             {item}
           </li>
@@ -86,18 +95,38 @@ export default function ExperienceCard({cardInfo, isDark}) {
               {cardInfo.employmentType}
             </span>
           )}
+          {cardInfo.engagement && (
+            <span
+              className={`engagement-badge engagement-${cardInfo.engagement
+                .toLowerCase()
+                .replace(" ", "-")}`}
+            >
+              {cardInfo.engagement}
+            </span>
+          )}
         </div>
+        {cardInfo.companyTagline && (
+          <p
+            className={
+              isDark
+                ? "experience-text-tagline dark-mode-text"
+                : "experience-text-tagline"
+            }
+          >
+            {cardInfo.companyTagline}
+          </p>
+        )}
         <p
           className={
             isDark
-              ? "subTitle experience-text-desc dark-mode-text"
-              : "subTitle experience-text-desc"
+              ? "experience-text-desc dark-mode-text"
+              : "experience-text-desc"
           }
         >
           {cardInfo.desc}
         </p>
         <ul>
-          <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
+          <GetDescBullets descBullets={allBullets} isDark={isDark} />
         </ul>
       </div>
     </div>

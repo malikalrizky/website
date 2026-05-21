@@ -28,3 +28,5 @@ public/blogs.json
 
 # shell scripts (local tooling)
 *.sh
+
+/chat

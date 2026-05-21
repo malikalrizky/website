@@ -5,6 +5,13 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 import career from "./data/career.json";
+import {formatJobDateRange} from "./utils/formatJobDates";
+
+const {
+  groupExperience,
+  formatCompanyDateRange,
+  pickCompanyField
+} = require("./utils/groupExperience");
 
 // Splash Screen
 
@@ -134,7 +141,7 @@ const educationInfo = {
     schoolName: edu.school,
     logo: "",
     subHeader: edu.degree,
-    duration: edu.duration,
+    duration: formatJobDateRange(edu.startMonth, edu.endMonth),
     descBullets: edu.projects
   }))
 };
@@ -173,17 +180,54 @@ function formatCvDateForSite(dateStr) {
   return dateStr.replace(/ - /g, " – ");
 }
 
-const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
-  experience: career.experience.map(job => ({
+function mapJobToRoleDisplay(job) {
+  return {
     role: job.role,
-    company: job.company,
-    companylogo: companyLogoByCompany[job.company],
-    date: formatCvDateForSite(job.date),
+    date: formatCvDateForSite(formatJobDateRange(job.startMonth, job.endMonth)),
     employmentType: job.type,
+    engagement: job.engagement,
     desc: job.desc,
     descBullets: job.bullets
-  }))
+  };
+}
+
+function mapExperienceItems(experience) {
+  return groupExperience(experience).map(item => {
+    if (item.kind === "single") {
+      const job = item.job;
+      return {
+        kind: "single",
+        role: job.role,
+        company: job.company,
+        companylogo: companyLogoByCompany[job.company],
+        date: formatCvDateForSite(
+          formatJobDateRange(job.startMonth, job.endMonth)
+        ),
+        employmentType: job.type,
+        engagement: job.engagement,
+        companyTagline: job.companyTagline,
+        regionalScope: job.regionalScope,
+        desc: job.desc,
+        descBullets: job.bullets
+      };
+    }
+
+    const roles = item.roles;
+    return {
+      kind: "group",
+      company: item.company,
+      companylogo: companyLogoByCompany[item.company],
+      date: formatCvDateForSite(formatCompanyDateRange(roles)),
+      companyTagline: pickCompanyField(roles, "companyTagline"),
+      regionalScope: pickCompanyField(roles, "regionalScope"),
+      roles: roles.map(mapJobToRoleDisplay)
+    };
+  });
+}
+
+const workExperiences = {
+  display: true, //Set it to true to show workExperiences Section
+  experience: mapExperienceItems(career.experience)
 };
 
 /* Your Open Source Section to View Your Github Pinned Projects

@@ -45,7 +45,7 @@ Required environment variables (copy from `env.example` to `.env`):
 - `MEDIUM_USERNAME`: Medium username for blog posts (optional)
 
 ### Content Management
-- Work experience, education, certifications, skills, and CV summary live in `src/data/career.json` (run `npm run generate-cv` after edits)
+- Work experience, education, certifications, skills, and CV summary live in `src/data/career.json` (run `npm run generate-cv` after edits). Each job may include optional `companyTagline`, `regionalScope`, and `group` (same string ID merges roles into one site card and one CV company block).
 - Other portfolio content and section flags stay in `src/portfolio.js`
 - Sections can be enabled/disabled via `display: true/false` flags
 - GitHub profile data and repositories are fetched dynamically if configured

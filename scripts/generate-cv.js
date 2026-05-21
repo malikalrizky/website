@@ -1,11 +1,177 @@
 const fs = require("fs");
 const path = require("path");
 const cvData = require("../src/data/career.json");
+const {formatJobDateRange} = require("../src/utils/formatJobDates");
+const {
+  groupExperience,
+  formatCompanyDateRange,
+  pickCompanyField
+} = require("../src/utils/groupExperience");
+
+const DEFAULT_PRIMARY_MAX_BULLETS = 5;
+const DEFAULT_PRIOR_MAX_BULLETS = 6;
+const DEFAULT_SINGLE_MAX_BULLETS = 4;
+const CV_MAX_CERTIFICATIONS = 5;
+const CV_OMIT_EDUCATION_PROJECTS = true;
+
+const CV_SKILLS_LINES = [
+  "Identity & access: IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP",
+  "Cloud security & SOC: AWS, GCP, Terraform, Kubernetes, Wiz CSPM, SIEM/SOAR, Wazuh, Google SCC, CrowdStrike Falcon, MITRE ATT&CK",
+  "DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001"
+];
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function experienceForCv(experience) {
+  return experience.filter(job => job.cvInclude !== false);
+}
+
+function resolveMaxBullets(job, roleIndex) {
+  if (typeof job.cvMaxBullets === "number") {
+    return job.cvMaxBullets;
+  }
+  return roleIndex === 0
+    ? DEFAULT_PRIMARY_MAX_BULLETS
+    : DEFAULT_PRIOR_MAX_BULLETS;
+}
+
+function formatRoleMeta(job) {
+  const dateRange = formatJobDateRange(job.startMonth, job.endMonth);
+  return `${dateRange} | ${job.type}`;
+}
+
+function shouldOmitRoleDesc(job) {
+  return job.cvOmitDesc === true || !String(job.desc || "").trim();
+}
+
+function appendCompanyMeta(lines, companyTagline, regionalScope) {
+  const tagline = String(companyTagline || "").trim();
+  const regional = String(regionalScope || "").trim();
+  if (!tagline && !regional) {
+    return;
+  }
+
+  if (tagline && regional) {
+    lines.push(
+      '<p class="cv-company-meta"><em>' +
+        `<span class="cv-company-tagline">${escapeHtml(tagline)}</span>` +
+        '<span class="cv-company-meta-sep" aria-hidden="true"> · </span>' +
+        `<span class="cv-company-regional">${escapeHtml(regional)}</span>` +
+        "</em></p>"
+    );
+    return;
+  }
+
+  lines.push(
+    `<p class="cv-company-meta"><em>${escapeHtml(tagline || regional)}</em></p>`
+  );
+}
+
+function appendRoleBlock(lines, job, maxBullets) {
+  const bullets = job.bullets.slice(0, maxBullets);
+  const omitDesc = shouldOmitRoleDesc(job);
+
+  lines.push('<div class="cv-role">');
+  lines.push('<div class="cv-role-header">');
+  lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  if (job.promotionFrom) {
+    lines.push(
+      `<p class="cv-promotion">${escapeHtml(
+        `Promoted from ${job.promotionFrom}`
+      )}</p>`
+    );
+  }
+  lines.push(
+    `<p class="cv-role-meta"><em>${escapeHtml(formatRoleMeta(job))}</em></p>`
+  );
+  lines.push("</div>");
+
+  if (!omitDesc) {
+    lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
+  }
+
+  if (bullets.length) {
+    lines.push('<ul class="cv-role-bullets">');
+    for (const bullet of bullets) {
+      lines.push(`<li>${escapeHtml(bullet)}</li>`);
+    }
+    lines.push("</ul>");
+  }
+
+  lines.push("</div>");
+}
+
+function appendGroupedCompanyToCv(lines, item) {
+  const roles = item.roles;
+  const companyTagline = pickCompanyField(roles, "companyTagline");
+  const regionalScope = pickCompanyField(roles, "regionalScope");
+
+  lines.push('<div class="cv-company">');
+  lines.push(`<h3>${escapeHtml(item.company)}</h3>`);
+
+  appendCompanyMeta(lines, companyTagline, regionalScope);
+
+  roles.forEach((job, index) => {
+    appendRoleBlock(lines, job, resolveMaxBullets(job, index));
+  });
+
+  lines.push("</div>");
+}
+
+function appendSingleJobToCv(lines, job) {
+  const maxBullets =
+    typeof job.cvMaxBullets === "number"
+      ? job.cvMaxBullets
+      : DEFAULT_SINGLE_MAX_BULLETS;
+  const bullets = job.bullets.slice(0, maxBullets);
+  const omitDesc = shouldOmitRoleDesc(job);
+
+  lines.push('<div class="cv-company">');
+  lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
+
+  appendCompanyMeta(lines, job.companyTagline, job.regionalScope);
+
+  lines.push('<div class="cv-role cv-role--single">');
+  lines.push('<div class="cv-role-header">');
+  lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  if (job.promotionFrom) {
+    lines.push(
+      `<p class="cv-promotion">${escapeHtml(
+        `Promoted from ${job.promotionFrom}`
+      )}</p>`
+    );
+  }
+  lines.push(
+    `<p class="cv-role-meta"><em>${escapeHtml(formatRoleMeta(job))}</em></p>`
+  );
+  lines.push("</div>");
+
+  if (!omitDesc) {
+    lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
+  }
+
+  if (bullets.length) {
+    lines.push('<ul class="cv-role-bullets">');
+    for (const bullet of bullets) {
+      lines.push(`<li>${escapeHtml(bullet)}</li>`);
+    }
+    lines.push("</ul>");
+  }
+
+  lines.push("</div>");
+  lines.push("</div>");
+}
 
 function buildMarkdown(data) {
   const lines = [];
+  const cvExperience = experienceForCv(data.experience);
 
-  // Header
   lines.push(`# ${data.name}`);
   lines.push(`**${data.title}**`);
   lines.push("");
@@ -13,31 +179,25 @@ function buildMarkdown(data) {
     `${data.contact.email} | ${data.contact.linkedin} | ${data.contact.github}`
   );
 
-  // Professional Summary
   lines.push("");
   lines.push("---");
   lines.push("## Professional Summary");
   lines.push("");
   lines.push(data.summary);
 
-  // Experience
   lines.push("");
   lines.push("---");
   lines.push("## Experience");
 
-  for (const job of data.experience) {
+  for (const item of groupExperience(cvExperience)) {
     lines.push("");
-    lines.push(`### ${job.role} | ${job.company}`);
-    lines.push(`**${job.date} | ${job.type}**`);
-    lines.push("");
-    lines.push(job.desc);
-    lines.push("");
-    for (const bullet of job.bullets) {
-      lines.push(`- ${bullet}`);
+    if (item.kind === "single") {
+      appendSingleJobToCv(lines, item.job);
+      continue;
     }
+    appendGroupedCompanyToCv(lines, item);
   }
 
-  // Education
   lines.push("");
   lines.push("---");
   lines.push("## Education");
@@ -45,28 +205,31 @@ function buildMarkdown(data) {
   for (const edu of data.education) {
     lines.push("");
     lines.push(`### ${edu.school}`);
-    lines.push(`**${edu.degree} | ${edu.duration}**`);
-    lines.push("");
-    for (const project of edu.projects) {
-      lines.push(`- ${project}`);
+    const eduDates = formatJobDateRange(edu.startMonth, edu.endMonth);
+    lines.push(`*${edu.degree} | ${eduDates}*`);
+    if (!CV_OMIT_EDUCATION_PROJECTS) {
+      lines.push("");
+      for (const project of edu.projects) {
+        lines.push(`- ${project}`);
+      }
     }
   }
 
-  // Certifications
   lines.push("");
   lines.push("---");
   lines.push("## Certifications");
   lines.push("");
-  for (const cert of data.certifications) {
+  for (const cert of data.certifications.slice(0, CV_MAX_CERTIFICATIONS)) {
     lines.push(`- ${cert.name} - ${cert.issuer}`);
   }
 
-  // Skills
   lines.push("");
   lines.push("---");
   lines.push("## Skills");
   lines.push("");
-  lines.push(data.skills.join(" | "));
+  for (const line of CV_SKILLS_LINES) {
+    lines.push(line);
+  }
 
   lines.push("");
   return lines.join("\n");
@@ -79,11 +242,9 @@ async function generateCV() {
   const pdfPath = path.join(outputDir, "cv.pdf");
   const cssPath = path.join(__dirname, "cv-style.css");
 
-  // Write markdown file
   fs.writeFileSync(mdPath, markdown, "utf-8");
   console.log(`Markdown written to ${mdPath}`);
 
-  // Convert to PDF
   const {mdToPdf} = await import("md-to-pdf");
 
   const os = require("os");
@@ -106,7 +267,7 @@ async function generateCV() {
       document_title: "Malikal Rizky - CV",
       pdf_options: {
         format: "A4",
-        margin: {top: "25mm", bottom: "25mm", left: "25mm", right: "25mm"},
+        margin: {top: "18mm", bottom: "18mm", left: "18mm", right: "18mm"},
         printBackground: false
       },
       launch_options: {
