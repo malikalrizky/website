@@ -19,15 +19,18 @@
       "promotionFrom": "Security Engineer — DevSecOps",
       "companyTagline": "Indonesia-headquartered fintech technology company",
       "regionalScope": "Regional collaboration: Indonesia and Singapore engineering and security stakeholders.",
-      "cvMaxBullets": 5,
       "cvOmitDesc": true,
+      "cvMaxBullets": 8,
       "desc": "Lead 24×7 SOC for Bank Jago and BFI: incident response, detection engineering, and SOAR automation across multi-cloud, Kubernetes, endpoints, and identity systems.",
       "bullets": [
         "Lead incident command for identity and federation outages, cloud, endpoint, and phishing events; cut containment time 60%+ via SOAR enrichment, prioritization, and escalation.",
-        "Operationalize MITRE ATT&CK-aligned playbooks—enrichment, correlation, deduplication, automated triage—to raise analyst throughput and 24×7 consistency.",
-        "Built in-house SOC platform (correlation, threat intelligence enrichment, detection/response, blocking) for Bank Jago and BFI, reducing repetitive manual investigations.",
+        "Operationalize SOC playbooks and SOAR-driven automations mapped to MITRE ATT&CK—enrichment, correlation, deduplication, automated triage—to raise analyst throughput and 24×7 consistency.",
+        "Built in-house SOC/SOAR platform (correlation, threat intelligence enrichment, detection/response, blocking) for Bank Jago and BFI, reducing repetitive manual investigations.",
         "Delivered IdP-integrated kill-switch automation to accelerate workforce and application access revocation during incidents.",
-        "Expanded detection coverage across multi-cloud, Kubernetes, and SaaS identity with Wazuh, Google Security Command Center, and CrowdStrike Falcon."
+        "Expanded detection coverage across multi-cloud, Kubernetes, and SaaS identity with Wazuh, Google Security Command Center, and CrowdStrike Falcon.",
+        "Translate SOC risk and trend data into stakeholder-ready reporting, improving cross-functional alignment and audit/compliance readiness.",
+        "Partner with platform engineering on golden-image and immutable baseline practices (including Packer-style image pipelines) to reduce manual hardening drift across cloud workloads.",
+        "Tune Cloudflare WAF rules and managed protections for internet-facing services, improving signal-to-noise and application-layer coverage."
       ]
     },
     {
@@ -38,8 +41,8 @@
       "endMonth": "2024-12",
       "type": "Full-time",
       "engagement": "Permanent",
-      "cvMaxBullets": 6,
       "cvOmitDesc": true,
+      "cvMaxBullets": 10,
       "desc": "Identity systems and cloud security for Bank Jago and BFI: IAM governance, federation, PAM, and Security-as-Code on AWS and GCP.",
       "bullets": [
         "Owned IAM and identity security across AWS/GCP: least privilege, DLP, and periodic access reviews for Bank Jago and BFI.",
@@ -47,7 +50,11 @@
         "Standardized SSO and identity lifecycle with Google Workspace SAML, OAuth2/OIDC, and automated offboarding to reduce orphaned access.",
         "Replaced long-lived keys with GitLab OIDC to GCP workload identity for GKE CI/CD at Bank Jago and BFI.",
         "Operated CyberArk PAM and built a self-service IAM platform with approvals, ephemeral access, and automated service-account key rotation.",
-        "Automated GCP IAM and policy remediation with Terraform and Cloud Functions; embedded CI/CD secret scanning and IAM-as-code patterns in pipelines."
+        "Implemented GCP organization, folder, and project policy governance with automated remediation using Terraform, Cloud Functions, Policy Intelligence, and custom API tooling to remove excessive privileges and stale IAM bindings.",
+        "Designed secure partner access architecture for GCP Cloud Storage using IP-restricted bucket policies and temporary service account credential workflows; contributed upstream `ip_filter` support merged into terraform-google-cloud-storage v12.0.0.",
+        "Lead SecOps on-call response across SIEM, endpoint, identity, and cloud telemetry, managing the full lifecycle from alert triage and containment through remediation and post-incident review.",
+        "Embedded security controls into CI/CD pipelines including secret scanning, Terraform-aligned IAM patterns, and preventive security checks to reduce exploitable risks before production deployment.",
+        "Solely led development of an LLM-powered security code review engine, reducing manual review time by 50% while improving secure development workflows."
       ]
     },
     {
@@ -60,14 +67,15 @@
       "engagement": "Contract",
       "companyTagline": "Singapore-headquartered superapp and technology company",
       "regionalScope": "Regional collaboration: Southeast Asia platform and product security stakeholders.",
-      "cvMaxBullets": 4,
       "cvOmitDesc": true,
+      "cvMaxBullets": 5,
       "desc": "DevSecOps and AppSec automation for Grab and OVO: AI-assisted triage, CI/CD guardrails, and detection engineering.",
       "bullets": [
         "Built LLM-powered SAST/DAST triage engine, reducing false positives 85% and accelerating secure SDLC adoption across CI/CD pipelines.",
         "Established AI-assisted AppSec triage standards and pipeline guardrails for high-volume engineering teams.",
         "Tuned SIEM, EDR, and cloud-native detections for distributed microservices, improving actionable alert visibility.",
-        "Aligned DevSecOps with Google Workspace and JumpCloud identity anchors; optimized Cloudflare WAF for production microservices."
+        "Aligned DevSecOps with Google Workspace and JumpCloud identity anchors; optimized Cloudflare WAF for production microservices.",
+        "Partner with platform and product security stakeholders to align DevSecOps controls across enterprise and fintech operating scope."
       ]
     },
     {
@@ -78,13 +86,15 @@
       "endMonth": "2023-12",
       "type": "Full-time",
       "engagement": "Contract",
-      "cvMaxBullets": 2,
       "cvOmitDesc": true,
+      "cvMaxBullets": 5,
       "desc": "Cloud security architecture for Grab and OVO on AWS and GCP: observability, IAM, and governance at scale.",
       "bullets": [
         "Built in-house cloud observability platform unifying logs, metrics, and threat intelligence for investigations and squad-level visibility.",
         "Designed enterprise IAM, SSO, and Zero Trust infrastructure access models improving governance and auditability.",
-        "Enabled security control mapping and evidence readiness for industry frameworks and regional regulatory requirements."
+        "Enabled security control mapping and evidence readiness for industry frameworks and regional regulatory requirements.",
+        "Partner with platform teams on golden-image pipelines and hardened, immutable baselines for AWS and GCP workloads.",
+        "Partner with engineering and governance teams to embed cloud security standards that scale consistently across business-critical services."
       ]
     },
     {
@@ -96,12 +106,15 @@
       "engagement": "Contract",
       "companyTagline": "Global food and goods delivery technology company",
       "regionalScope": "Regional collaboration: engineering and operations across 10 countries and 100+ cities.",
-      "cvMaxBullets": 2,
       "cvOmitDesc": true,
+      "cvMaxBullets": 3,
       "desc": "Infrastructure and DevSecOps for Maxim across 100+ cities in 10 countries on AWS.",
       "bullets": [
-        "Cut monthly AWS costs 25% and system downtime 30% via right-sizing, reserved instances, and ELK/Grafana/Prometheus observability.",
-        "Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations."
+        "Reduce system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability and faster root-cause analysis.",
+        "Accelerate infrastructure provisioning by 35% through Terraform-based Infrastructure as Code and repeatable platform workflows.",
+        "Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.",
+        "Strengthen operational maturity and scalability across multi-country environments by standardizing platform security and reliability practices.",
+        "Collaborate with engineering on AWS WAF and edge protection for AWS-hosted production services."
       ]
     },
     {
@@ -113,13 +126,14 @@
       "engagement": "Project",
       "companyTagline": "Japan-headquartered BPO and employer-of-record (EOR) platform technology company",
       "regionalScope": "Regional collaboration: GCP security, Sprinto compliance, and Auth0/OIDC for platform clients including GoGlobal.",
-      "cvMaxBullets": 3,
       "cvOmitDesc": true,
+      "cvMaxBullets": 4,
       "desc": "Freelance DevSecOps for Tofu's GCP-hosted BPO and EOR platform: SOC 2/ISO 27001 readiness, cloud remediation, and Auth0 client authentication.",
       "bullets": [
         "Led SOC 2 and ISO 27001 certification readiness on GCP with Sprinto; coordinated evidence, control mapping, and remediation to successful certification.",
+        "Configured Auth0 client authentication for Tofu's BPO/EOR platform—including GoGlobal—with OIDC/OAuth2 flows and SSO for customer-facing services.",
         "Closed hundreds of Sprinto-tracked vulnerabilities and cloud misconfigurations to zero, clearing audit blockers on GCP.",
-        "Configured Auth0 client authentication for Tofu's BPO/EOR platform—including GoGlobal—with OIDC/OAuth2 flows and SSO for customer-facing services."
+        "Hardened delivery for Hasura-backed services with GitHub Actions security controls and GCP-aligned DevSecOps practices for engineering teams."
       ]
     },
     {
@@ -131,12 +145,13 @@
       "engagement": "Project",
       "companyTagline": "Malaysia-headquartered IT services and cloud engineering company",
       "regionalScope": "Regional collaboration: infrastructure and DevOps for clients including Malaysia's EV Connection.",
-      "cvMaxBullets": 2,
       "cvOmitDesc": true,
+      "cvMaxBullets": 3,
       "desc": "Cloud infrastructure and DevOps for regional clients including EV Connection (Malaysia EV charging), with Kubernetes and CI/CD automation.",
       "bullets": [
-        "Achieved 99.95% uptime architecting Kubernetes microservices for EV Connection; deployed 5+ production apps in six months with 98% successful release rate.",
-        "Reduced cloud costs 30% and cut release time 25% through right-sizing, reserved instances, and optimized CI/CD pipelines.",
+        "Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.",
+        "Reduced cloud costs by 30% and cut release time by 25% through right-sizing, reserved instances, and optimized CI/CD pipelines.",
+        "Deployed 5+ production applications for EV Connection within six months, achieving a 98% successful deployment rate.",
         "Implemented edge security configurations including WAF-related controls for client production environments."
       ]
     },
@@ -149,12 +164,13 @@
       "engagement": "Contract",
       "companyTagline": "Thailand-headquartered restaurant reservation and food-tech platform",
       "regionalScope": "Regional collaboration: product and engineering teams for Hungryhub's Thailand market.",
-      "cvMaxBullets": 2,
       "cvOmitDesc": true,
+      "cvMaxBullets": 3,
       "desc": "Platform reliability and growth for Thailand's leading restaurant reservation platform: 99.8% uptime and 30% booking growth via SRE practices.",
       "bullets": [
-        "Achieved 99.8% uptime with Kubernetes and ELK-based monitoring, resolving 95% of issues before user impact.",
-        "Drove 30% booking growth and 15% cloud cost reduction via performance tuning, auto-scaling, and reserved-instance strategy."
+        "Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.",
+        "Achieved 99.8% uptime with Kubernetes and ELK-based proactive monitoring, resolving 95% of issues before user impact.",
+        "Reduced cloud costs by 15% through efficient resource management, auto-scaling, and reserved instance strategies."
       ]
     }
   ],
@@ -175,7 +191,9 @@
       "startMonth": "2016-08",
       "endMonth": "2020-07",
       "projects": [
-        "Research projects in medical imaging (CNN diagnosis), nuclear instrumentation, and deep learning for LFP battery optimization."
+        "Project: Convolution Neural Network Models for Acute Lymphoblastic Leukemia Diagnosis",
+        "Project: Analysis of the Radioactivity Yield of Fluorine-18 from the Reaction of 18-O(p,n)18-F with Proton Beam Current Variations at the Medical Cyclotron Facility in Dharmais Hospital National Cancer Center BATAN (National Nuclear Energy Agency)",
+        "Project: Applying Deep Learning for the Optimization and Sustainability of Lithium Ferrophosphate (LFP) Batteries in Renewable Energy Applications"
       ]
     }
   ],

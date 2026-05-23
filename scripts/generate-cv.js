@@ -8,18 +8,14 @@ const {
   pickCompanyField
 } = require("../src/utils/groupExperience");
 
-const DEFAULT_PRIMARY_MAX_BULLETS = 5;
-const DEFAULT_PRIOR_MAX_BULLETS = 6;
-const DEFAULT_SINGLE_MAX_BULLETS = 4;
+const CV_MAX_EDUCATION_PROJECTS = 1;
 const CV_MAX_CERTIFICATIONS = 5;
-const CV_OMIT_EDUCATION_PROJECTS = true;
 
 const CV_SKILLS_LINES = [
   "Identity & access: IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP",
   "Cloud security & SOC: AWS, GCP, Terraform, Kubernetes, Wiz CSPM, SIEM/SOAR, Wazuh, Google SCC, CrowdStrike Falcon, MITRE ATT&CK",
-  "DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001"
+  "DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001, ELK, Grafana, Prometheus"
 ];
-
 function escapeHtml(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -32,13 +28,18 @@ function experienceForCv(experience) {
   return experience.filter(job => job.cvInclude !== false);
 }
 
-function resolveMaxBullets(job, roleIndex) {
+function resolveMaxBullets(job) {
   if (typeof job.cvMaxBullets === "number") {
     return job.cvMaxBullets;
   }
-  return roleIndex === 0
-    ? DEFAULT_PRIMARY_MAX_BULLETS
-    : DEFAULT_PRIOR_MAX_BULLETS;
+  return job.bullets.length;
+}
+
+function resolveMaxEducationProjects(edu) {
+  if (typeof edu.cvMaxProjects === "number") {
+    return edu.cvMaxProjects;
+  }
+  return CV_MAX_EDUCATION_PROJECTS;
 }
 
 function formatRoleMeta(job) {
@@ -117,18 +118,15 @@ function appendGroupedCompanyToCv(lines, item) {
 
   appendCompanyMeta(lines, companyTagline, regionalScope);
 
-  roles.forEach((job, index) => {
-    appendRoleBlock(lines, job, resolveMaxBullets(job, index));
+  roles.forEach(job => {
+    appendRoleBlock(lines, job, resolveMaxBullets(job));
   });
 
   lines.push("</div>");
 }
 
 function appendSingleJobToCv(lines, job) {
-  const maxBullets =
-    typeof job.cvMaxBullets === "number"
-      ? job.cvMaxBullets
-      : DEFAULT_SINGLE_MAX_BULLETS;
+  const maxBullets = resolveMaxBullets(job);
   const bullets = job.bullets.slice(0, maxBullets);
   const omitDesc = shouldOmitRoleDesc(job);
 
@@ -204,15 +202,24 @@ function buildMarkdown(data) {
 
   for (const edu of data.education) {
     lines.push("");
-    lines.push(`### ${edu.school}`);
     const eduDates = formatJobDateRange(edu.startMonth, edu.endMonth);
-    lines.push(`*${edu.degree} | ${eduDates}*`);
-    if (!CV_OMIT_EDUCATION_PROJECTS) {
-      lines.push("");
-      for (const project of edu.projects) {
-        lines.push(`- ${project}`);
+    lines.push('<div class="cv-education-entry">');
+    lines.push(`<h3>${escapeHtml(edu.school)}</h3>`);
+    lines.push(
+      `<p class="cv-education-meta"><em>${escapeHtml(
+        `${edu.degree} | ${eduDates}`
+      )}</em></p>`
+    );
+    if (edu.projects && edu.projects.length) {
+      const maxProjects = resolveMaxEducationProjects(edu);
+      const projects = edu.projects.slice(0, maxProjects);
+      lines.push("<ul>");
+      for (const project of projects) {
+        lines.push(`<li>${escapeHtml(project)}</li>`);
       }
+      lines.push("</ul>");
     }
+    lines.push("</div>");
   }
 
   lines.push("");
