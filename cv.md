@@ -22,10 +22,13 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 </div>
 <ul class="cv-role-bullets">
 <li>Lead incident command for identity and federation outages, cloud, endpoint, and phishing events; cut containment time 60%+ via SOAR enrichment, prioritization, and escalation.</li>
-<li>Operationalize MITRE ATT&amp;CK-aligned playbooks—enrichment, correlation, deduplication, automated triage—to raise analyst throughput and 24×7 consistency.</li>
-<li>Built in-house SOC platform (correlation, threat intelligence enrichment, detection/response, blocking) for Bank Jago and BFI, reducing repetitive manual investigations.</li>
+<li>Operationalize SOC playbooks and SOAR-driven automations mapped to MITRE ATT&amp;CK—enrichment, correlation, deduplication, automated triage—to raise analyst throughput and 24×7 consistency.</li>
+<li>Built in-house SOC/SOAR platform (correlation, threat intelligence enrichment, detection/response, blocking) for Bank Jago and BFI, reducing repetitive manual investigations.</li>
 <li>Delivered IdP-integrated kill-switch automation to accelerate workforce and application access revocation during incidents.</li>
 <li>Expanded detection coverage across multi-cloud, Kubernetes, and SaaS identity with Wazuh, Google Security Command Center, and CrowdStrike Falcon.</li>
+<li>Translate SOC risk and trend data into stakeholder-ready reporting, improving cross-functional alignment and audit/compliance readiness.</li>
+<li>Partner with platform engineering on golden-image and immutable baseline practices (including Packer-style image pipelines) to reduce manual hardening drift across cloud workloads.</li>
+<li>Tune Cloudflare WAF rules and managed protections for internet-facing services, improving signal-to-noise and application-layer coverage.</li>
 </ul>
 </div>
 <div class="cv-role">
@@ -39,7 +42,11 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <li>Standardized SSO and identity lifecycle with Google Workspace SAML, OAuth2/OIDC, and automated offboarding to reduce orphaned access.</li>
 <li>Replaced long-lived keys with GitLab OIDC to GCP workload identity for GKE CI/CD at Bank Jago and BFI.</li>
 <li>Operated CyberArk PAM and built a self-service IAM platform with approvals, ephemeral access, and automated service-account key rotation.</li>
-<li>Automated GCP IAM and policy remediation with Terraform and Cloud Functions; embedded CI/CD secret scanning and IAM-as-code patterns in pipelines.</li>
+<li>Implemented GCP organization, folder, and project policy governance with automated remediation using Terraform, Cloud Functions, Policy Intelligence, and custom API tooling to remove excessive privileges and stale IAM bindings.</li>
+<li>Designed secure partner access architecture for GCP Cloud Storage using IP-restricted bucket policies and temporary service account credential workflows; contributed upstream `ip_filter` support merged into terraform-google-cloud-storage v12.0.0.</li>
+<li>Lead SecOps on-call response across SIEM, endpoint, identity, and cloud telemetry, managing the full lifecycle from alert triage and containment through remediation and post-incident review.</li>
+<li>Embedded security controls into CI/CD pipelines including secret scanning, Terraform-aligned IAM patterns, and preventive security checks to reduce exploitable risks before production deployment.</li>
+<li>Solely led development of an LLM-powered security code review engine, reducing manual review time by 50% while improving secure development workflows.</li>
 </ul>
 </div>
 </div>
@@ -57,6 +64,7 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <li>Established AI-assisted AppSec triage standards and pipeline guardrails for high-volume engineering teams.</li>
 <li>Tuned SIEM, EDR, and cloud-native detections for distributed microservices, improving actionable alert visibility.</li>
 <li>Aligned DevSecOps with Google Workspace and JumpCloud identity anchors; optimized Cloudflare WAF for production microservices.</li>
+<li>Partner with platform and product security stakeholders to align DevSecOps controls across enterprise and fintech operating scope.</li>
 </ul>
 </div>
 <div class="cv-role">
@@ -67,6 +75,9 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <ul class="cv-role-bullets">
 <li>Built in-house cloud observability platform unifying logs, metrics, and threat intelligence for investigations and squad-level visibility.</li>
 <li>Designed enterprise IAM, SSO, and Zero Trust infrastructure access models improving governance and auditability.</li>
+<li>Enabled security control mapping and evidence readiness for industry frameworks and regional regulatory requirements.</li>
+<li>Partner with platform teams on golden-image pipelines and hardened, immutable baselines for AWS and GCP workloads.</li>
+<li>Partner with engineering and governance teams to embed cloud security standards that scale consistently across business-critical services.</li>
 </ul>
 </div>
 </div>
@@ -80,8 +91,9 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <p class="cv-role-meta"><em>Jun 2022 – Jun 2023 | Full-time</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Cut monthly AWS costs 25% and system downtime 30% via right-sizing, reserved instances, and ELK/Grafana/Prometheus observability.</li>
-<li>Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations.</li>
+<li>Reduce system downtime by 30% by deploying ELK Stack, Grafana, Prometheus, and New Relic for real-time observability and faster root-cause analysis.</li>
+<li>Accelerate infrastructure provisioning by 35% through Terraform-based Infrastructure as Code and repeatable platform workflows.</li>
+<li>Cut monthly AWS cloud costs by 25% through right-sizing, reserved instances, and auto-scaling optimizations.</li>
 </ul>
 </div>
 </div>
@@ -96,8 +108,9 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 </div>
 <ul class="cv-role-bullets">
 <li>Led SOC 2 and ISO 27001 certification readiness on GCP with Sprinto; coordinated evidence, control mapping, and remediation to successful certification.</li>
-<li>Closed hundreds of Sprinto-tracked vulnerabilities and cloud misconfigurations to zero, clearing audit blockers on GCP.</li>
 <li>Configured Auth0 client authentication for Tofu's BPO/EOR platform—including GoGlobal—with OIDC/OAuth2 flows and SSO for customer-facing services.</li>
+<li>Closed hundreds of Sprinto-tracked vulnerabilities and cloud misconfigurations to zero, clearing audit blockers on GCP.</li>
+<li>Hardened delivery for Hasura-backed services with GitHub Actions security controls and GCP-aligned DevSecOps practices for engineering teams.</li>
 </ul>
 </div>
 </div>
@@ -111,8 +124,9 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <p class="cv-role-meta"><em>Jun 2022 – Jun 2023 | Freelance</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Achieved 99.95% uptime architecting Kubernetes microservices for EV Connection; deployed 5+ production apps in six months with 98% successful release rate.</li>
-<li>Reduced cloud costs 30% and cut release time 25% through right-sizing, reserved instances, and optimized CI/CD pipelines.</li>
+<li>Achieved 99.95% uptime by architecting robust microservices infrastructure using Kubernetes for EV Connection and other clients.</li>
+<li>Reduced cloud costs by 30% and cut release time by 25% through right-sizing, reserved instances, and optimized CI/CD pipelines.</li>
+<li>Deployed 5+ production applications for EV Connection within six months, achieving a 98% successful deployment rate.</li>
 </ul>
 </div>
 </div>
@@ -126,8 +140,9 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 <p class="cv-role-meta"><em>Jun 2020 – Jun 2022 | Full-time</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Achieved 99.8% uptime with Kubernetes and ELK-based monitoring, resolving 95% of issues before user impact.</li>
-<li>Drove 30% booking growth and 15% cloud cost reduction via performance tuning, auto-scaling, and reserved-instance strategy.</li>
+<li>Drove a 30% increase in user bookings by optimizing platform performance and reliability for Hungryhub's Thailand market.</li>
+<li>Achieved 99.8% uptime with Kubernetes and ELK-based proactive monitoring, resolving 95% of issues before user impact.</li>
+<li>Reduced cloud costs by 15% through efficient resource management, auto-scaling, and reserved instance strategies.</li>
 </ul>
 </div>
 </div>
@@ -135,11 +150,21 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 ---
 ## Education
 
-### Utel University
-*Computer Engineering | Jan 2023 – May 2025*
+<div class="cv-education-entry">
+<h3>Utel University</h3>
+<p class="cv-education-meta"><em>Computer Engineering | Jan 2023 – May 2025</em></p>
+<ul>
+<li>Project: Built a real-time streaming pipeline utilizing Apache Kafka, Spark Streaming, and Elasticsearch/Kibana for live social media data analysis.</li>
+</ul>
+</div>
 
-### Gadjah Mada University
-*Engineering Physics | Aug 2016 – Jul 2020*
+<div class="cv-education-entry">
+<h3>Gadjah Mada University</h3>
+<p class="cv-education-meta"><em>Engineering Physics | Aug 2016 – Jul 2020</em></p>
+<ul>
+<li>Project: Convolution Neural Network Models for Acute Lymphoblastic Leukemia Diagnosis</li>
+</ul>
+</div>
 
 ---
 ## Certifications
@@ -155,4 +180,4 @@ Security engineer with 6+ years across enterprise identity (SAML/OIDC, workload 
 
 Identity & access: IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP
 Cloud security & SOC: AWS, GCP, Terraform, Kubernetes, Wiz CSPM, SIEM/SOAR, Wazuh, Google SCC, CrowdStrike Falcon, MITRE ATT&CK
-DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001
+DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001, ELK, Grafana, Prometheus
