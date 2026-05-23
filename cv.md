@@ -1,5 +1,5 @@
 # Malikal Rizky
-**Senior Security Software Engineer**
+**Senior Security Software Engineer / Cloud Infrastructure Security Engineer / DevSecOps Engineer**
 
 hi@malikal.dpdns.org | linkedin.com/in/mrizkyabdillah | github.com/malikalrizky
 
