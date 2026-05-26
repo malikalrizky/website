@@ -13,12 +13,35 @@ const DEFAULT_SINGLE_MAX_BULLETS = 2;
 const CV_MAX_CERTIFICATIONS = 5;
 const CV_OMIT_EDUCATION_PROJECTS = true;
 
-const CV_SKILLS_LINES = [
-  "**Cloud & Infrastructure:** AWS, GCP, Kubernetes, Terraform, Docker, Cloudflare/AWS WAF",
-  "**IAM & Identity:** IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP",
-  "**Detection & SOC:** SIEM/SOAR, MITRE ATT&CK, Wazuh, Google SCC, CrowdStrike Falcon, Wiz CSPM, incident response",
-  "**DevSecOps & CI/CD:** GitLab, GitHub Actions, secret scanning, IAM-as-code, ISO 27001, Sprinto",
-  "**Programming & Automation:** Python, Bash, JavaScript, Golang, PostgreSQL"
+const CV_SKILLS = [
+  {
+    label: "Cloud & Infrastructure",
+    items:
+      "AWS, GCP, Kubernetes, Terraform, Docker, Cloudflare/AWS WAF, Wiz CSPM, Google SCC"
+  },
+  {
+    label: "IAM & Identity Security",
+    items:
+      "SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk PAM, Auth0, Google Workspace, JumpCloud, ManageEngine"
+  },
+  {
+    label: "Security Operations",
+    items:
+      "Wazuh, CrowdStrike, Trend Micro XDR, SIEM/SOAR, incident response, detection engineering"
+  },
+  {
+    label: "Application Security",
+    items:
+      "SAST/DAST, Semgrep, secure SDLC, API security, CI/CD security, secret scanning, threat modeling, penetration testing, security architecture"
+  },
+  {
+    label: "Governance & Compliance",
+    items: "ISO 27001, SOC 2, Sprinto"
+  },
+  {
+    label: "Programming & Automation",
+    items: "Python, Bash, JavaScript, Golang, SQL"
+  }
 ];
 
 function escapeHtml(text) {
@@ -44,11 +67,86 @@ function resolveMaxBullets(job, roleIndex) {
 
 function formatRoleMeta(job) {
   const dateRange = formatJobDateRange(job.startMonth, job.endMonth);
-  return `${dateRange} | ${job.type}`;
+  const parts = [dateRange, job.type];
+  if (job.engagement) {
+    parts.push(job.engagement);
+  }
+  return parts.join(" | ");
 }
 
 function shouldOmitRoleDesc(job) {
   return job.cvOmitDesc === true || !String(job.desc || "").trim();
+}
+
+function appendHeader(lines, data) {
+  lines.push('<div class="cv-header">');
+  lines.push('<div class="cv-header-main">');
+  lines.push(`<h1>${escapeHtml(data.name)}</h1>`);
+  lines.push(`<p class="cv-title">${escapeHtml(data.title)}</p>`);
+  lines.push("</div>");
+  lines.push('<div class="cv-header-contact">');
+  lines.push(`<p>${escapeHtml(data.contact.email)}</p>`);
+  lines.push(`<p>${escapeHtml(data.contact.linkedin)}</p>`);
+  lines.push(`<p>${escapeHtml(data.contact.github)}</p>`);
+  lines.push("</div>");
+  lines.push("</div>");
+}
+
+function appendCompactCertifications(lines, certifications) {
+  const names = certifications
+    .slice(0, CV_MAX_CERTIFICATIONS)
+    .map(cert => cert.name);
+  if (!names.length) {
+    return;
+  }
+  lines.push(`<p class="cv-compact-list">${escapeHtml(names.join(", "))}</p>`);
+}
+
+function appendSkillLines(lines) {
+  for (const skill of CV_SKILLS) {
+    lines.push(
+      `<p class="cv-skill-line"><strong>${escapeHtml(
+        skill.label
+      )}:</strong> ${escapeHtml(skill.items)}</p>`
+    );
+  }
+}
+
+function appendTailSections(lines, data) {
+  lines.push('<div class="cv-tail">');
+  lines.push('<h2 class="cv-section-heading">Skills</h2>');
+  appendSkillLines(lines);
+
+  lines.push('<h3 class="cv-subsection">Certifications</h3>');
+  appendCompactCertifications(lines, data.certifications);
+
+  lines.push('<h3 class="cv-subsection">Education</h3>');
+  appendCompactEducation(lines, data.education);
+  lines.push("</div>");
+}
+
+function appendCompactEducation(lines, education) {
+  for (const edu of education) {
+    const eduDates = formatJobDateRange(edu.startMonth, edu.endMonth);
+    lines.push(
+      `<p class="cv-education-line">${escapeHtml(edu.school)} — ${escapeHtml(
+        edu.degree
+      )} · ${escapeHtml(eduDates)}</p>`
+    );
+    if (!CV_OMIT_EDUCATION_PROJECTS) {
+      for (const project of edu.projects) {
+        lines.push(
+          `<p class="cv-education-project">- ${escapeHtml(project)}</p>`
+        );
+      }
+    }
+  }
+}
+
+function resolveCvCompanyMeta(jobOrRole) {
+  return String(
+    jobOrRole.cvCompanyTagline || jobOrRole.companyTagline || ""
+  ).trim();
 }
 
 function appendCompanyMeta(lines, companyTagline) {
@@ -114,7 +212,9 @@ function appendRoleBlock(lines, job, maxBullets) {
 
 function appendGroupedCompanyToCv(lines, item) {
   const roles = item.roles;
-  const companyTagline = pickCompanyField(roles, "companyTagline");
+  const companyTagline =
+    pickCompanyField(roles, "cvCompanyTagline") ||
+    pickCompanyField(roles, "companyTagline");
 
   lines.push('<div class="cv-company">');
   lines.push(`<h3>${escapeHtml(item.company)}</h3>`);
@@ -134,9 +234,11 @@ function appendConsultingJobToCv(lines, job) {
       ? job.cvMaxBullets
       : DEFAULT_SINGLE_MAX_BULLETS;
   const omitDesc = shouldOmitRoleDesc(job);
-  const tagline = String(job.companyTagline || "").trim();
+  const tagline = resolveCvCompanyMeta(job);
   const dateRange = formatJobDateRange(job.startMonth, job.endMonth);
-  const metaParts = [tagline, dateRange, job.type].filter(Boolean);
+  const metaParts = [tagline, dateRange, job.type, job.engagement].filter(
+    Boolean
+  );
 
   lines.push('<div class="cv-company">');
   lines.push(`<h3>${escapeHtml(job.role)}</h3>`);
@@ -174,7 +276,7 @@ function appendSingleJobToCv(lines, job) {
   lines.push('<div class="cv-company">');
   lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
 
-  appendCompanyMeta(lines, job.companyTagline);
+  appendCompanyMeta(lines, resolveCvCompanyMeta(job));
 
   lines.push('<div class="cv-role cv-role--single">');
   lines.push('<div class="cv-role-header">');
@@ -206,12 +308,7 @@ function buildMarkdown(data) {
   const lines = [];
   const cvExperience = experienceForCv(data.experience);
 
-  lines.push(`# ${data.name}`);
-  lines.push(`**${data.title}**`);
-  lines.push("");
-  lines.push(
-    `${data.contact.email} | ${data.contact.linkedin} | ${data.contact.github}`
-  );
+  appendHeader(lines, data);
 
   lines.push("");
   lines.push("---");
@@ -233,37 +330,7 @@ function buildMarkdown(data) {
   }
 
   lines.push("");
-  lines.push("---");
-  lines.push("## Skills");
-  lines.push("");
-  for (const line of CV_SKILLS_LINES) {
-    lines.push(line);
-  }
-
-  lines.push("");
-  lines.push("---");
-  lines.push("## Certifications");
-  lines.push("");
-  for (const cert of data.certifications.slice(0, CV_MAX_CERTIFICATIONS)) {
-    lines.push(`- ${cert.name} - ${cert.issuer}`);
-  }
-
-  lines.push("");
-  lines.push("---");
-  lines.push("## Education");
-
-  for (const edu of data.education) {
-    lines.push("");
-    lines.push(`### ${edu.school}`);
-    const eduDates = formatJobDateRange(edu.startMonth, edu.endMonth);
-    lines.push(`*${edu.degree} | ${eduDates}*`);
-    if (!CV_OMIT_EDUCATION_PROJECTS) {
-      lines.push("");
-      for (const project of edu.projects) {
-        lines.push(`- ${project}`);
-      }
-    }
-  }
+  appendTailSections(lines, data);
 
   lines.push("");
   return lines.join("\n");
@@ -301,7 +368,7 @@ async function generateCV() {
       document_title: "Malikal Rizky - CV",
       pdf_options: {
         format: "A4",
-        margin: {top: "16mm", bottom: "16mm", left: "16mm", right: "16mm"},
+        margin: {top: "14mm", bottom: "14mm", left: "14mm", right: "14mm"},
         printBackground: false
       },
       launch_options: {

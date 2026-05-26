@@ -192,7 +192,7 @@ function mapJobToRoleDisplay(job) {
 }
 
 function experienceForSite(experience) {
-  return experience.filter(job => job.cvOnly !== true);
+  return experience.filter(job => job.siteInclude !== false);
 }
 
 function mapExperienceItems(experience) {

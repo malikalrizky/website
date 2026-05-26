@@ -32,6 +32,21 @@
   border: 3px solid $lightBorder1;
 }
 
+.experience-roundedimg-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $buttonColor;
+  background: rgba(108, 99, 255, 0.12);
+}
+
+.experience-card-dark .experience-roundedimg-placeholder {
+  color: $buttonHover;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .timeline-dot {
   width: 0.7rem;
   height: 0.7rem;

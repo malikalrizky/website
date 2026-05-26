@@ -4,7 +4,7 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     Arial, sans-serif;
   font-size: 10pt;
-  line-height: 1.42;
+  line-height: 1.38;
   color: #111;
 }
 
@@ -16,18 +16,18 @@ h1 {
   text-transform: none;
 }
 
-h1 + p {
-  margin-top: 0;
-}
-
 h2 {
   font-size: 10.5pt;
   font-weight: 700;
   text-transform: none;
   border-bottom: 1px solid #ccc;
   padding-bottom: 3px;
-  margin-top: 14px;
+  margin-top: 10px;
   margin-bottom: 6px;
+  page-break-before: avoid;
+  break-before: avoid-page;
+  page-break-after: avoid;
+  break-after: avoid-page;
 }
 
 h3 {
@@ -72,8 +72,76 @@ hr {
   display: none;
 }
 
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 6px;
+}
+
+.cv-header-main h1 {
+  margin: 0;
+}
+
+.cv-title {
+  font-size: 10pt;
+  margin: 2px 0 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.cv-header-contact {
+  text-align: right;
+  font-size: 9pt;
+  line-height: 1.35;
+  flex-shrink: 0;
+}
+
+.cv-header-contact p {
+  margin: 0 0 1px;
+}
+
+.cv-tail {
+  margin-top: 4px;
+}
+
+.cv-tail .cv-section-heading {
+  margin-top: 8px;
+}
+
+.cv-subsection {
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 8px 0 2px;
+  border: none;
+  padding: 0;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
+.cv-skill-line {
+  margin-bottom: 2px;
+}
+
+.cv-skill-line strong {
+  font-weight: 600;
+}
+
+.cv-compact-list,
+.cv-education-line {
+  font-size: 9.5pt;
+  margin-bottom: 2px;
+}
+
+.cv-company:last-of-type {
+  margin-bottom: 4px;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
 .cv-company {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   page-break-inside: auto;
 }
 
@@ -91,7 +159,7 @@ hr {
 .cv-company-meta {
   font-size: 9pt;
   color: #555;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .cv-role {
@@ -148,8 +216,8 @@ hr {
 
 .cv-role-bullets li {
   font-size: 9.5pt;
-  line-height: 1.42;
-  margin-bottom: 3px;
+  line-height: 1.38;
+  margin-bottom: 2px;
 }
 
 .cv-clients {

@@ -5,6 +5,7 @@ import ColorThief from "colorthief";
 export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = useRef(null);
+  const logoLabel = (cardInfo.company || cardInfo.role || "?").trim().charAt(0);
 
   function getColorArrays() {
     try {
@@ -51,13 +52,22 @@ export default function ExperienceCard({cardInfo, isDark}) {
   return (
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
       <div className="timeline-logo-wrap">
-        <img
-          ref={imgRef}
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-          onLoad={() => getColorArrays()}
-        />
+        {cardInfo.companylogo ? (
+          <img
+            ref={imgRef}
+            className="experience-roundedimg"
+            src={cardInfo.companylogo}
+            alt={cardInfo.company}
+            onLoad={() => getColorArrays()}
+          />
+        ) : (
+          <div
+            className="experience-roundedimg experience-roundedimg-placeholder"
+            aria-hidden="true"
+          >
+            {logoLabel}
+          </div>
+        )}
         <div
           className="timeline-dot"
           style={{background: rgb(colorArrays) || "#6c63ff"}}
