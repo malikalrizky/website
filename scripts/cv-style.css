@@ -1,15 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 9.5pt;
-  line-height: 1.35;
-  color: #000;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.42;
+  color: #111;
 }
 
 h1 {
-  font-size: 18pt;
+  font-size: 20pt;
+  font-weight: 700;
   margin-bottom: 2px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 h1 + p {
@@ -17,16 +21,17 @@ h1 + p {
 }
 
 h2 {
-  font-size: 11pt;
-  text-transform: uppercase;
-  border-bottom: 1px solid #000;
-  padding-bottom: 2px;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  font-size: 10.5pt;
+  font-weight: 700;
+  text-transform: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+  margin-top: 14px;
+  margin-bottom: 6px;
 }
 
 h3 {
-  font-size: 11pt;
+  font-size: 10.5pt;
   font-weight: 700;
   margin-bottom: 2px;
   margin-top: 10px;
@@ -45,7 +50,7 @@ h4 {
 
 em {
   font-style: italic;
-  color: #444;
+  color: #555;
 }
 
 p {
@@ -60,14 +65,13 @@ ul {
 }
 
 li {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 hr {
   display: none;
 }
 
-/* Grouped experience blocks — keep each role on one page when possible */
 .cv-company {
   margin-bottom: 10px;
   page-break-inside: auto;
@@ -79,28 +83,22 @@ hr {
 }
 
 .cv-company-dates {
-  font-size: 9.5pt;
-  color: #333;
+  font-size: 9pt;
+  color: #555;
   margin-bottom: 2px;
 }
 
 .cv-company-meta {
-  font-size: 9.5pt;
-  color: #444;
+  font-size: 9pt;
+  color: #555;
   margin-bottom: 4px;
-}
-
-.cv-company-meta-sep {
-  font-style: normal;
-  color: #888;
-  padding: 0 0.2em;
 }
 
 .cv-role {
   margin-top: 6px;
   margin-bottom: 2px;
   padding-top: 4px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e8e8e8;
   page-break-inside: auto;
 }
 
@@ -131,14 +129,15 @@ hr {
 }
 
 .cv-role-meta {
-  font-size: 9.5pt;
-  color: #444;
+  font-size: 9pt;
+  color: #555;
   margin-bottom: 0;
 }
 
 .cv-role-desc {
-  font-size: 10pt;
+  font-size: 9.5pt;
   margin-bottom: 4px;
+  color: #333;
 }
 
 .cv-role-bullets {
@@ -149,6 +148,13 @@ hr {
 
 .cv-role-bullets li {
   font-size: 9.5pt;
-  line-height: 1.35;
-  margin-bottom: 1px;
+  line-height: 1.42;
+  margin-bottom: 3px;
+}
+
+.cv-clients {
+  font-size: 9pt;
+  color: #555;
+  margin-top: 4px;
+  margin-bottom: 0;
 }

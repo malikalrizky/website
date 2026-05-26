@@ -4,20 +4,21 @@ const cvData = require("../src/data/career.json");
 const {formatJobDateRange} = require("../src/utils/formatJobDates");
 const {
   groupExperience,
-  formatCompanyDateRange,
   pickCompanyField
 } = require("../src/utils/groupExperience");
 
-const DEFAULT_PRIMARY_MAX_BULLETS = 5;
-const DEFAULT_PRIOR_MAX_BULLETS = 6;
-const DEFAULT_SINGLE_MAX_BULLETS = 4;
+const DEFAULT_PRIMARY_MAX_BULLETS = 4;
+const DEFAULT_PRIOR_MAX_BULLETS = 3;
+const DEFAULT_SINGLE_MAX_BULLETS = 2;
 const CV_MAX_CERTIFICATIONS = 5;
 const CV_OMIT_EDUCATION_PROJECTS = true;
 
 const CV_SKILLS_LINES = [
-  "Identity & access: IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP",
-  "Cloud security & SOC: AWS, GCP, Terraform, Kubernetes, Wiz CSPM, SIEM/SOAR, Wazuh, Google SCC, CrowdStrike Falcon, MITRE ATT&CK",
-  "DevSecOps & engineering: CI/CD, GitLab, GitHub Actions, secret scanning, Cloudflare/AWS WAF, incident response, ISO 27001"
+  "**Cloud & Infrastructure:** AWS, GCP, Kubernetes, Terraform, Docker, Cloudflare/AWS WAF",
+  "**IAM & Identity:** IAM, SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk, Auth0, Google Workspace, JumpCloud, DLP",
+  "**Detection & SOC:** SIEM/SOAR, MITRE ATT&CK, Wazuh, Google SCC, CrowdStrike Falcon, Wiz CSPM, incident response",
+  "**DevSecOps & CI/CD:** GitLab, GitHub Actions, secret scanning, IAM-as-code, ISO 27001, Sprinto",
+  "**Programming & Automation:** Python, Bash, JavaScript, Golang, PostgreSQL"
 ];
 
 function escapeHtml(text) {
@@ -50,31 +51,42 @@ function shouldOmitRoleDesc(job) {
   return job.cvOmitDesc === true || !String(job.desc || "").trim();
 }
 
-function appendCompanyMeta(lines, companyTagline, regionalScope) {
+function appendCompanyMeta(lines, companyTagline) {
   const tagline = String(companyTagline || "").trim();
-  const regional = String(regionalScope || "").trim();
-  if (!tagline && !regional) {
+  if (!tagline) {
     return;
   }
 
-  if (tagline && regional) {
-    lines.push(
-      '<p class="cv-company-meta"><em>' +
-        `<span class="cv-company-tagline">${escapeHtml(tagline)}</span>` +
-        '<span class="cv-company-meta-sep" aria-hidden="true"> · </span>' +
-        `<span class="cv-company-regional">${escapeHtml(regional)}</span>` +
-        "</em></p>"
-    );
+  lines.push(`<p class="cv-company-meta"><em>${escapeHtml(tagline)}</em></p>`);
+}
+
+function appendCvClients(lines, job) {
+  const clients = job.cvClients;
+  if (!Array.isArray(clients) || !clients.length) {
     return;
   }
 
   lines.push(
-    `<p class="cv-company-meta"><em>${escapeHtml(tagline || regional)}</em></p>`
+    `<p class="cv-clients"><strong>Selected Clients:</strong> ${escapeHtml(
+      clients.join(", ")
+    )}</p>`
   );
 }
 
-function appendRoleBlock(lines, job, maxBullets) {
+function appendRoleBullets(lines, job, maxBullets) {
   const bullets = job.bullets.slice(0, maxBullets);
+  if (!bullets.length) {
+    return;
+  }
+
+  lines.push('<ul class="cv-role-bullets">');
+  for (const bullet of bullets) {
+    lines.push(`<li>${escapeHtml(bullet)}</li>`);
+  }
+  lines.push("</ul>");
+}
+
+function appendRoleBlock(lines, job, maxBullets) {
   const omitDesc = shouldOmitRoleDesc(job);
 
   lines.push('<div class="cv-role">');
@@ -96,26 +108,18 @@ function appendRoleBlock(lines, job, maxBullets) {
     lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
   }
 
-  if (bullets.length) {
-    lines.push('<ul class="cv-role-bullets">');
-    for (const bullet of bullets) {
-      lines.push(`<li>${escapeHtml(bullet)}</li>`);
-    }
-    lines.push("</ul>");
-  }
-
+  appendRoleBullets(lines, job, maxBullets);
   lines.push("</div>");
 }
 
 function appendGroupedCompanyToCv(lines, item) {
   const roles = item.roles;
   const companyTagline = pickCompanyField(roles, "companyTagline");
-  const regionalScope = pickCompanyField(roles, "regionalScope");
 
   lines.push('<div class="cv-company">');
   lines.push(`<h3>${escapeHtml(item.company)}</h3>`);
 
-  appendCompanyMeta(lines, companyTagline, regionalScope);
+  appendCompanyMeta(lines, companyTagline);
 
   roles.forEach((job, index) => {
     appendRoleBlock(lines, job, resolveMaxBullets(job, index));
@@ -124,18 +128,53 @@ function appendGroupedCompanyToCv(lines, item) {
   lines.push("</div>");
 }
 
-function appendSingleJobToCv(lines, job) {
+function appendConsultingJobToCv(lines, job) {
   const maxBullets =
     typeof job.cvMaxBullets === "number"
       ? job.cvMaxBullets
       : DEFAULT_SINGLE_MAX_BULLETS;
-  const bullets = job.bullets.slice(0, maxBullets);
+  const omitDesc = shouldOmitRoleDesc(job);
+  const tagline = String(job.companyTagline || "").trim();
+  const dateRange = formatJobDateRange(job.startMonth, job.endMonth);
+  const metaParts = [tagline, dateRange, job.type].filter(Boolean);
+
+  lines.push('<div class="cv-company">');
+  lines.push(`<h3>${escapeHtml(job.role)}</h3>`);
+  lines.push(
+    `<p class="cv-company-meta"><em>${escapeHtml(
+      metaParts.join(" · ")
+    )}</em></p>`
+  );
+
+  lines.push('<div class="cv-role cv-role--single">');
+
+  if (!omitDesc) {
+    lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
+  }
+
+  appendRoleBullets(lines, job, maxBullets);
+  appendCvClients(lines, job);
+
+  lines.push("</div>");
+  lines.push("</div>");
+}
+
+function appendSingleJobToCv(lines, job) {
+  if (job.cvOnly) {
+    appendConsultingJobToCv(lines, job);
+    return;
+  }
+
+  const maxBullets =
+    typeof job.cvMaxBullets === "number"
+      ? job.cvMaxBullets
+      : DEFAULT_SINGLE_MAX_BULLETS;
   const omitDesc = shouldOmitRoleDesc(job);
 
   lines.push('<div class="cv-company">');
   lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
 
-  appendCompanyMeta(lines, job.companyTagline, job.regionalScope);
+  appendCompanyMeta(lines, job.companyTagline);
 
   lines.push('<div class="cv-role cv-role--single">');
   lines.push('<div class="cv-role-header">');
@@ -156,13 +195,8 @@ function appendSingleJobToCv(lines, job) {
     lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
   }
 
-  if (bullets.length) {
-    lines.push('<ul class="cv-role-bullets">');
-    for (const bullet of bullets) {
-      lines.push(`<li>${escapeHtml(bullet)}</li>`);
-    }
-    lines.push("</ul>");
-  }
+  appendRoleBullets(lines, job, maxBullets);
+  appendCvClients(lines, job);
 
   lines.push("</div>");
   lines.push("</div>");
@@ -181,7 +215,7 @@ function buildMarkdown(data) {
 
   lines.push("");
   lines.push("---");
-  lines.push("## Professional Summary");
+  lines.push("## Summary");
   lines.push("");
   lines.push(data.summary);
 
@@ -200,6 +234,22 @@ function buildMarkdown(data) {
 
   lines.push("");
   lines.push("---");
+  lines.push("## Skills");
+  lines.push("");
+  for (const line of CV_SKILLS_LINES) {
+    lines.push(line);
+  }
+
+  lines.push("");
+  lines.push("---");
+  lines.push("## Certifications");
+  lines.push("");
+  for (const cert of data.certifications.slice(0, CV_MAX_CERTIFICATIONS)) {
+    lines.push(`- ${cert.name} - ${cert.issuer}`);
+  }
+
+  lines.push("");
+  lines.push("---");
   lines.push("## Education");
 
   for (const edu of data.education) {
@@ -213,22 +263,6 @@ function buildMarkdown(data) {
         lines.push(`- ${project}`);
       }
     }
-  }
-
-  lines.push("");
-  lines.push("---");
-  lines.push("## Certifications");
-  lines.push("");
-  for (const cert of data.certifications.slice(0, CV_MAX_CERTIFICATIONS)) {
-    lines.push(`- ${cert.name} - ${cert.issuer}`);
-  }
-
-  lines.push("");
-  lines.push("---");
-  lines.push("## Skills");
-  lines.push("");
-  for (const line of CV_SKILLS_LINES) {
-    lines.push(line);
   }
 
   lines.push("");
@@ -267,7 +301,7 @@ async function generateCV() {
       document_title: "Malikal Rizky - CV",
       pdf_options: {
         format: "A4",
-        margin: {top: "18mm", bottom: "18mm", left: "18mm", right: "18mm"},
+        margin: {top: "16mm", bottom: "16mm", left: "16mm", right: "16mm"},
         printBackground: false
       },
       launch_options: {

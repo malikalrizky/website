@@ -191,6 +191,10 @@ function mapJobToRoleDisplay(job) {
   };
 }
 
+function experienceForSite(experience) {
+  return experience.filter(job => job.cvOnly !== true);
+}
+
 function mapExperienceItems(experience) {
   return groupExperience(experience).map(item => {
     if (item.kind === "single") {
@@ -227,7 +231,7 @@ function mapExperienceItems(experience) {
 
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
-  experience: mapExperienceItems(career.experience)
+  experience: mapExperienceItems(experienceForSite(career.experience))
 };
 
 /* Your Open Source Section to View Your Github Pinned Projects
