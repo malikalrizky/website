@@ -92,14 +92,15 @@
       "endMonth": "2023-06",
       "type": "Full-time",
       "engagement": "Contract",
-      "companyTagline": "Global food and goods delivery technology company",
+      "companyTagline": "Global transportation technology company",
       "regionalScope": "Regional collaboration: engineering and operations across 10 countries and 100+ cities.",
-      "cvMaxBullets": 2,
+      "cvMaxBullets": 3,
       "cvOmitDesc": true,
       "desc": "Infrastructure and DevSecOps for Maxim across 100+ cities in 10 countries on AWS.",
       "bullets": [
         "Cut monthly AWS costs 25% and system downtime 30% via right-sizing, reserved instances, and ELK/Grafana/Prometheus observability.",
-        "Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations."
+        "Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations.",
+        "Built regional DevSecOps and observability platforms using Terraform, ELK, Grafana, and Prometheus for distributed operations across 10+ countries."
       ]
     },
     {
@@ -181,8 +182,7 @@
       "bullets": [
         "Delivered SOC 2 and ISO 27001 readiness on GCP with Sprinto; closed hundreds of cloud vulnerabilities and audit blockers for Japan-based BPO/EOR platforms including GoGlobal.",
         "Built Kubernetes microservices and observability for regional clients—99.95% uptime, up to 30% cloud cost reduction.",
-        "Implemented OIDC/SSO with Auth0, Google Workspace, and workload identity federation across customer-facing platforms and CI/CD systems.",
-        "Designed multi-country DevSecOps and monitoring with Terraform, ELK, Grafana, and Prometheus supporting operations across 10+ countries."
+        "Implemented OIDC/SSO with Auth0, Google Workspace, and workload identity federation across customer-facing platforms and CI/CD systems."
       ]
     }
   ],

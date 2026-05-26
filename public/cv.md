@@ -78,7 +78,7 @@ Lead security engineer with 6+ years leading & buildingsecurity engineering init
 
 <div class="cv-company">
 <h3>Maxim Order Service</h3>
-<p class="cv-company-meta"><em>Global food and goods delivery technology company</em></p>
+<p class="cv-company-meta"><em>Global transportation technology company</em></p>
 <div class="cv-role cv-role--single">
 <div class="cv-role-header">
 <h4>DevSecOps Engineer, Infrastructure and Platform</h4>
@@ -87,6 +87,7 @@ Lead security engineer with 6+ years leading & buildingsecurity engineering init
 <ul class="cv-role-bullets">
 <li>Cut monthly AWS costs 25% and system downtime 30% via right-sizing, reserved instances, and ELK/Grafana/Prometheus observability.</li>
 <li>Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations.</li>
+<li>Built regional DevSecOps and observability platforms using Terraform, ELK, Grafana, and Prometheus for distributed operations across 10+ countries.</li>
 </ul>
 </div>
 </div>
@@ -114,7 +115,6 @@ Lead security engineer with 6+ years leading & buildingsecurity engineering init
 <li>Delivered SOC 2 and ISO 27001 readiness on GCP with Sprinto; closed hundreds of cloud vulnerabilities and audit blockers for Japan-based BPO/EOR platforms including GoGlobal.</li>
 <li>Built Kubernetes microservices and observability for regional clients—99.95% uptime, up to 30% cloud cost reduction.</li>
 <li>Implemented OIDC/SSO with Auth0, Google Workspace, and workload identity federation across customer-facing platforms and CI/CD systems.</li>
-<li>Designed multi-country DevSecOps and monitoring with Terraform, ELK, Grafana, and Prometheus supporting operations across 10+ countries.</li>
 </ul>
 <p class="cv-clients"><strong>Selected Clients:</strong> Tofu (Japan), Virtualspirit (Malaysia), EV Connection (Malaysia), EngageRocket (Singapore), Tebengan (Indonesia)</p>
 </div>
