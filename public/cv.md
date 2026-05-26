@@ -4,6 +4,7 @@
 <p class="cv-title">Lead Senior Security Software Engineer — Platform, Identity &amp; Detection</p>
 </div>
 <div class="cv-header-contact">
+<p>+6285161380913</p>
 <p>hi@malikal.dpdns.org</p>
 <p>linkedin.com/in/mrizkyabdillah</p>
 <p>github.com/malikalrizky</p>

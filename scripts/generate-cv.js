@@ -85,6 +85,9 @@ function appendHeader(lines, data) {
   lines.push(`<p class="cv-title">${escapeHtml(data.title)}</p>`);
   lines.push("</div>");
   lines.push('<div class="cv-header-contact">');
+  if (data.contact.phone) {
+    lines.push(`<p>${escapeHtml(data.contact.phone)}</p>`);
+  }
   lines.push(`<p>${escapeHtml(data.contact.email)}</p>`);
   lines.push(`<p>${escapeHtml(data.contact.linkedin)}</p>`);
   lines.push(`<p>${escapeHtml(data.contact.github)}</p>`);
