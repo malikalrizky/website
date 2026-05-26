@@ -30,8 +30,9 @@ const illustration = {
 const greeting = {
   username: "Malikal Rizky",
   title: "Hi all, I'm Malik",
+  roleTitle: career.title,
   subTitle: emoji(
-    "A passionate Cloud Infrastructure Security and DevSecOps Engineer 🚀 with a shift-left mindset—building paved-road automation, identity-first controls, and secure SDLC with CI/CD across AWS and GCP."
+    "Lead security engineer building identity platforms, SOC automation, and cloud security at scale for regulated fintech and regional tech companies across AWS and GCP."
   ),
   resumeLink: "/cv.pdf",
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -57,7 +58,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "CLOUD INFRASTRUCTURE SECURITY AND DEVSECOPS ENGINEER WHO WANTS TO EXPLORE EVERY TECH STACK",
+    "LEAD SENIOR SECURITY SOFTWARE ENGINEER — PLATFORM, IDENTITY & DETECTION",
   skills: [
     emoji(
       "🛡️ Implement robust security measures for cloud environments (AWS, Azure, GCP)"
@@ -212,7 +213,8 @@ function mapExperienceItems(experience) {
         companyTagline: job.companyTagline,
         regionalScope: job.regionalScope,
         desc: job.desc,
-        descBullets: job.bullets
+        descBullets: job.bullets,
+        clients: job.cvClients || []
       };
     }
 

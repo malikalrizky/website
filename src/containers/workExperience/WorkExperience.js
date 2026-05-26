@@ -39,7 +39,8 @@ export default function WorkExperience() {
                         regionalScope: card.regionalScope,
                         descBullets: card.descBullets,
                         employmentType: card.employmentType,
-                        engagement: card.engagement
+                        engagement: card.engagement,
+                        clients: card.clients
                       }}
                     />
                   );

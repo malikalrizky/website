@@ -138,6 +138,17 @@ export default function ExperienceCard({cardInfo, isDark}) {
         <ul>
           <GetDescBullets descBullets={allBullets} isDark={isDark} />
         </ul>
+        {cardInfo.clients && cardInfo.clients.length > 0 && (
+          <p
+            className={
+              isDark
+                ? "experience-text-clients dark-mode-text"
+                : "experience-text-clients"
+            }
+          >
+            <strong>Selected Clients:</strong> {cardInfo.clients.join(", ")}
+          </p>
+        )}
       </div>
     </div>
   );

@@ -202,6 +202,17 @@
   line-height: 1.45;
 }
 
+.experience-text-clients {
+  color: $subTitle;
+  font-size: 14px;
+  margin: 0.5rem 0 0;
+  line-height: 1.45;
+}
+
+.experience-card-dark .experience-text-clients.dark-mode-text {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
 .experience-card-dark .experience-text-regional-scope.dark-mode-text {
   color: rgba(255, 255, 255, 0.65) !important;
 }

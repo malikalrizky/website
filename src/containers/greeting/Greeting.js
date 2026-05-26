@@ -29,6 +29,18 @@ export default function Greeting() {
                 {greeting.title}{" "}
                 <span className="wave-emoji">{emoji("👋🏻")}</span>
               </h1>
+              {greeting.roleTitle && (
+                <p
+                  className={
+                    isDark
+                      ? "greeting-role-title dark-mode-text"
+                      : "greeting-role-title"
+                  }
+                  style={{fontFamily: "Montserrat"}}
+                >
+                  {greeting.roleTitle}
+                </p>
+              )}
               <div
                 style={{
                   padding: 1,
