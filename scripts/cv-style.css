@@ -150,6 +150,11 @@ hr {
   break-after: avoid-page;
 }
 
+.cv-company-title-inline .cv-title-sep {
+  font-weight: 400;
+  color: #555;
+}
+
 .cv-company-dates {
   font-size: 9pt;
   color: #555;

@@ -15,32 +15,35 @@ const CV_OMIT_EDUCATION_PROJECTS = true;
 
 const CV_SKILLS = [
   {
-    label: "Cloud & Infrastructure",
-    items:
-      "AWS, GCP, Kubernetes, Terraform, Docker, Cloudflare/AWS WAF, Wiz CSPM, Google SCC"
+    label: "Cloud & Platform",
+    items: "AWS, GCP, Kubernetes, Terraform, Docker, ELK, Grafana, Prometheus"
   },
   {
-    label: "IAM & Identity Security",
+    label: "Security Engineering",
     items:
-      "SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk PAM, Auth0, Google Workspace, JumpCloud, ManageEngine"
+      "SIEM/SOAR, Wazuh, CrowdStrike, Trend Micro XDR, Detection Engineering, Threat Hunting, MITRE ATT&CK"
   },
   {
-    label: "Security Operations",
+    label: "Identity & Access Management",
     items:
-      "Wazuh, CrowdStrike, Trend Micro XDR, SIEM/SOAR, incident response, detection engineering"
+      "OAuth2/OIDC, SAML, SSO, Auth0, CyberArk PAM, Google Workspace, Workload Identity Federation"
   },
   {
-    label: "Application Security",
+    label: "DevSecOps & Application Security",
     items:
-      "SAST/DAST, Semgrep, secure SDLC, API security, CI/CD security, secret scanning, threat modeling, penetration testing, security architecture"
+      "CI/CD Security, SAST/DAST, Semgrep, API Security, Secret Scanning, Threat Modeling"
+  },
+  {
+    label: "Cloud & Infrastructure Security",
+    items: "Cloudflare WAF, Google SCC, Wiz CSPM, Zero Trust"
+  },
+  {
+    label: "Programming & Automation",
+    items: "Python, Bash, Golang, JavaScript, SQL"
   },
   {
     label: "Governance & Compliance",
     items: "ISO 27001, SOC 2, Sprinto"
-  },
-  {
-    label: "Programming & Automation",
-    items: "Python, Bash, JavaScript, Golang, SQL"
   }
 ];
 
@@ -147,9 +150,26 @@ function appendCompactEducation(lines, education) {
 }
 
 function resolveCvCompanyMeta(jobOrRole) {
-  return String(
-    jobOrRole.cvCompanyTagline || jobOrRole.companyTagline || ""
-  ).trim();
+  if (jobOrRole.cvOmitCompanyTagline === true) {
+    return "";
+  }
+  if (Object.prototype.hasOwnProperty.call(jobOrRole, "cvCompanyTagline")) {
+    return String(jobOrRole.cvCompanyTagline || "").trim();
+  }
+  return String(jobOrRole.companyTagline || "").trim();
+}
+
+function resolveGroupCompanyTagline(roles) {
+  const cvTagline = pickCompanyField(roles, "cvCompanyTagline");
+  if (cvTagline !== undefined) {
+    return String(cvTagline).trim();
+  }
+  for (const role of roles) {
+    if (role.companyTagline && role.cvOmitCompanyTagline !== true) {
+      return String(role.companyTagline).trim();
+    }
+  }
+  return "";
 }
 
 function appendCompanyMeta(lines, companyTagline) {
@@ -187,12 +207,14 @@ function appendRoleBullets(lines, job, maxBullets) {
   lines.push("</ul>");
 }
 
-function appendRoleBlock(lines, job, maxBullets) {
+function appendRoleBlock(lines, job, maxBullets, {skipRoleTitle = false} = {}) {
   const omitDesc = shouldOmitRoleDesc(job);
 
   lines.push('<div class="cv-role">');
   lines.push('<div class="cv-role-header">');
-  lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  if (!skipRoleTitle) {
+    lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  }
   if (job.promotionFrom) {
     lines.push(
       `<p class="cv-promotion">${escapeHtml(
@@ -215,17 +237,21 @@ function appendRoleBlock(lines, job, maxBullets) {
 
 function appendGroupedCompanyToCv(lines, item) {
   const roles = item.roles;
-  const companyTagline =
-    pickCompanyField(roles, "cvCompanyTagline") ||
-    pickCompanyField(roles, "companyTagline");
+  const primaryRole = roles[0];
+  const inlineHeader = primaryRole.cvInlineRoleHeader === true;
 
   lines.push('<div class="cv-company">');
-  lines.push(`<h3>${escapeHtml(item.company)}</h3>`);
-
-  appendCompanyMeta(lines, companyTagline);
+  if (inlineHeader) {
+    appendInlineCompanyRoleHeader(lines, primaryRole);
+  } else {
+    lines.push(`<h3>${escapeHtml(item.company)}</h3>`);
+    appendCompanyMeta(lines, resolveGroupCompanyTagline(roles));
+  }
 
   roles.forEach((job, index) => {
-    appendRoleBlock(lines, job, resolveMaxBullets(job, index));
+    appendRoleBlock(lines, job, resolveMaxBullets(job, index), {
+      skipRoleTitle: inlineHeader && index === 0
+    });
   });
 
   lines.push("</div>");
@@ -264,6 +290,17 @@ function appendConsultingJobToCv(lines, job) {
   lines.push("</div>");
 }
 
+function appendInlineCompanyRoleHeader(lines, job) {
+  const suffix = job.cvCompanySuffix ? ` ${job.cvCompanySuffix}` : "";
+  lines.push(
+    `<h3 class="cv-company-title-inline">${escapeHtml(
+      job.company
+    )}<span class="cv-title-sep"> | </span>${escapeHtml(job.role)}${escapeHtml(
+      suffix
+    )}</h3>`
+  );
+}
+
 function appendSingleJobToCv(lines, job) {
   if (job.cvOnly) {
     appendConsultingJobToCv(lines, job);
@@ -275,15 +312,21 @@ function appendSingleJobToCv(lines, job) {
       ? job.cvMaxBullets
       : DEFAULT_SINGLE_MAX_BULLETS;
   const omitDesc = shouldOmitRoleDesc(job);
+  const inlineHeader = job.cvInlineRoleHeader === true;
 
   lines.push('<div class="cv-company">');
-  lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
-
-  appendCompanyMeta(lines, resolveCvCompanyMeta(job));
+  if (inlineHeader) {
+    appendInlineCompanyRoleHeader(lines, job);
+  } else {
+    lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
+    appendCompanyMeta(lines, resolveCvCompanyMeta(job));
+  }
 
   lines.push('<div class="cv-role cv-role--single">');
   lines.push('<div class="cv-role-header">');
-  lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  if (!inlineHeader) {
+    lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
+  }
   if (job.promotionFrom) {
     lines.push(
       `<p class="cv-promotion">${escapeHtml(

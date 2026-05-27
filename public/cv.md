@@ -1,7 +1,7 @@
 <div class="cv-header">
 <div class="cv-header-main">
 <h1>Malikal Rizky</h1>
-<p class="cv-title">Lead Senior Security Software Engineer — Platform, Identity &amp; Detection</p>
+<p class="cv-title">Tech Lead Senior Security Software Engineer — SOC / DevSecOps / Security Platform Engineering</p>
 </div>
 <div class="cv-header-contact">
 <p>+6285161380913</p>
@@ -14,25 +14,22 @@
 ---
 ## Summary
 
-Lead security engineer with 6+ years leading & buildingsecurity engineering initiatives across cloud infrastructure, IAM, SOC, and DevSecOps environments in multinational fintech and platform organizations. Built IAM automation, SOAR workflows, and detection engineering platforms across AWS/GCP environments for regulated organizations including Bank Jago and BFI.
+Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud infrastructure, and security automation across AWS/GCP environments. Experienced building SOC, IAM, observability, and detection engineering platforms for multinational fintech and technology organizations.
 
 ---
 ## Experience
 
 <div class="cv-company">
-<h3>DKATALIS</h3>
-<p class="cv-company-meta"><em>Led security operations and engineering initiatives across Bank Jago and BFI environments within DKATALIS regional fintech operations.</em></p>
+<h3 class="cv-company-title-inline">DKATALIS<span class="cv-title-sep"> | </span>Tech Lead — SOC &amp; Security Engineering (Bank Jago &amp; BFI)</h3>
 <div class="cv-role">
 <div class="cv-role-header">
-<h4>Lead Security Engineer — SOC</h4>
 <p class="cv-promotion">Promoted from Security Engineer — DevSecOps</p>
 <p class="cv-role-meta"><em>Jan 2025 – Present | Full-time | Permanent</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Lead 24×7 SOC incident command for Bank Jago and BFI across identity, cloud, endpoint, and phishing; cut containment time 60%+ via SOAR-driven enrichment, prioritization, and escalation.</li>
-<li>Built in-house SOC platform with correlation, threat intel enrichment, detection/response, blocking, and pentesting workflows—reducing manual investigations and standardizing analyst workflows.</li>
-<li>Operationalized MITRE ATT&amp;CK-aligned playbooks with automated enrichment, correlation, deduplication, and triage to improve analyst throughput and 24×7 consistency.</li>
-<li>Delivered IdP-integrated kill-switch automation; expanded detection coverage across multi-cloud, Kubernetes, and SaaS identity (Wazuh, Google SCC, CrowdStrike).</li>
+<li>Led SOC engineering and response automation initiatives across Bank Jago and BFI regulated fintech environments, reducing incident containment time by 60%+ through SOAR-driven enrichment, prioritization, and escalation workflows supporting critical banking operations.</li>
+<li>Architected and led development of centralized SOC detection and response platform integrating threat intelligence, SOAR enrichment, EDL management, AI-assisted threat hunting, pentest workflows, and MITRE ATT&amp;CK-aligned playbook orchestration pipelines—standardizing investigation and remediation workflows across critical cloud and identity assets while reducing manual investigations by 50%+.</li>
+<li>Designed IdP-integrated kill-switch and containment orchestration workflows across distributed cloud and SaaS environments—reducing high-risk account containment execution time by 90%+ from approximately 15 minutes to under 1 minute.</li>
 </ul>
 </div>
 <div class="cv-role">
@@ -41,27 +38,24 @@ Lead security engineer with 6+ years leading & buildingsecurity engineering init
 <p class="cv-role-meta"><em>Jun 2024 – Dec 2024 | Full-time | Permanent</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Owned AWS/GCP IAM for regulated fintech—least privilege, DLP, and access reviews; led Wiz CSPM remediation to maximum organizational posture score.</li>
-<li>Standardized enterprise SSO and identity lifecycle (Google Workspace SAML, OAuth2/OIDC) with automated offboarding to reduce orphaned access.</li>
-<li>Replaced long-lived CI/CD keys with GitLab OIDC to GCP workload identity for GKE at Bank Jago and BFI.</li>
-<li>Built self-service IAM with CyberArk PAM, ephemeral access, and Terraform/Cloud Functions automation for IAM remediation and CI/CD secret scanning.</li>
+<li>Led AWS/GCP IAM and platform security initiatives for regulated fintech environments including least-privilege enforcement, DLP controls, and enterprise access governance.</li>
+<li>Improved cloud security posture to maximum Wiz CSPM organizational score through large-scale remediation and security standardization initiatives.</li>
+<li>Standardized enterprise SSO and identity lifecycle automation using Google Workspace, SAML, OAuth2/OIDC, and automated offboarding workflows reducing orphaned access and manual provisioning effort.</li>
+<li>Modernized CI/CD authentication by replacing long-lived credentials with GitLab OIDC and GCP workload identity federation across GKE environments.</li>
 </ul>
 </div>
 </div>
 
 <div class="cv-company">
-<h3>Grab</h3>
-<p class="cv-company-meta"><em>Singapore-headquartered superapp company</em></p>
+<h3 class="cv-company-title-inline">Grab<span class="cv-title-sep"> | </span>Security Engineer — DevSecOps</h3>
 <div class="cv-role">
 <div class="cv-role-header">
-<h4>Security Engineer — DevSecOps</h4>
 <p class="cv-role-meta"><em>Dec 2023 – Jun 2024 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Built LLM-powered SAST/DAST triage engine reducing false positives 85% across high-volume CI/CD pipelines.</li>
-<li>Established AI-assisted AppSec triage standards and pipeline guardrails for distributed engineering teams.</li>
-<li>Tuned SIEM, EDR, and cloud-native detections for distributed microservices, improving actionable alert signal for platform teams.</li>
-<li>Aligned DevSecOps with Google Workspace/JumpCloud identity anchors; optimized Cloudflare WAF for production microservices.</li>
+<li>Built LLM-powered SAST/DAST triage platform reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.</li>
+<li>Defined AI-assisted AppSec triage standards and scalable DevSecOps guardrails for globally distributed engineering teams and large-scale microservices platforms.</li>
+<li>Improved actionable detection quality across SIEM, EDR, and cloud-native monitoring systems by tuning detection logic for distributed production workloads and reducing operational alert noise for platform teams.</li>
 </ul>
 </div>
 <div class="cv-role">
@@ -70,67 +64,63 @@ Lead security engineer with 6+ years leading & buildingsecurity engineering init
 <p class="cv-role-meta"><em>Jun 2023 – Dec 2023 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Built in-house cloud observability platform unifying logs, metrics, and threat intelligence for investigations and squad-level visibility.</li>
-<li>Designed enterprise IAM, SSO, and Zero Trust infrastructure access models improving governance and auditability.</li>
-<li>Enabled security control mapping and evidence readiness for industry frameworks and regional regulatory requirements.</li>
+<li>Built centralized in-house cloud observability platform integrating logs, metrics, and threat intelligence pipelines improving investigation visibility and engineering monitoring coverage.</li>
+<li>Designed enterprise IAM, SSO, and Zero Trust infrastructure access architecture improving governance, auditability, and operational scalability across cloud environments.</li>
+<li>Enabled security evidence readiness and control mapping initiatives supporting regional compliance and audit requirements.</li>
 </ul>
 </div>
 </div>
 
 <div class="cv-company">
-<h3>Maxim Order Service</h3>
-<p class="cv-company-meta"><em>Global transportation technology company</em></p>
+<h3 class="cv-company-title-inline">Maxim Order Service<span class="cv-title-sep"> | </span>DevSecOps Engineer, Infrastructure and Platform</h3>
 <div class="cv-role cv-role--single">
 <div class="cv-role-header">
-<h4>DevSecOps Engineer, Infrastructure and Platform</h4>
 <p class="cv-role-meta"><em>Jun 2022 – Jun 2023 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Cut monthly AWS costs 25% and system downtime 30% via right-sizing, reserved instances, and ELK/Grafana/Prometheus observability.</li>
-<li>Accelerated infrastructure provisioning 35% with Terraform IaC and standardized platform security across multi-country operations.</li>
+<li>Reduced AWS infrastructure costs by 25% and production downtime by 30% through infrastructure optimization, observability improvements, and capacity right-sizing initiatives across distributed regional operations.</li>
+<li>Accelerated infrastructure provisioning by 35% through Terraform-based infrastructure standardization and infrastructure-as-code automation across multi-region cloud environments.</li>
 <li>Built regional DevSecOps and observability platforms using Terraform, ELK, Grafana, and Prometheus for distributed operations across 10+ countries.</li>
 </ul>
 </div>
 </div>
 
 <div class="cv-company">
-<h3>Hungryhub</h3>
-<p class="cv-company-meta"><em>Thailand-headquartered restaurant reservation and food-tech platform</em></p>
+<h3 class="cv-company-title-inline">Hungryhub<span class="cv-title-sep"> | </span>DevOps Engineer / Site Reliability Engineer</h3>
 <div class="cv-role cv-role--single">
 <div class="cv-role-header">
-<h4>DevOps Engineer / Site Reliability Engineer</h4>
 <p class="cv-role-meta"><em>Jun 2020 – Jun 2022 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Achieved 99.8% uptime with Kubernetes and ELK-based monitoring, resolving 95% of issues before user impact.</li>
-<li>Drove 30% booking growth and 15% cloud cost reduction via performance tuning, auto-scaling, and reserved-instance strategy.</li>
+<li>Maintained 99.8% platform uptime and reduced cloud infrastructure costs by 15% through Kubernetes reliability improvements, observability optimization, autoscaling, and reserved-instance strategies supporting high-traffic production workloads.</li>
 </ul>
 </div>
 </div>
 
 <div class="cv-company">
 <h3>Independent Security &amp; DevSecOps Consultant</h3>
-<p class="cv-company-meta"><em>Southeast Asia &amp; Japan · Jan 2021 – Present · Freelance · Project</em></p>
+<p class="cv-company-meta"><em>Southeast Asia, Japan, and Europe · Jan 2021 – Present · Freelance · Project</em></p>
 <div class="cv-role cv-role--single">
 <ul class="cv-role-bullets">
-<li>Delivered SOC 2 and ISO 27001 readiness on GCP with Sprinto; closed hundreds of cloud vulnerabilities and audit blockers for Japan-based BPO/EOR platforms including GoGlobal.</li>
-<li>Built Kubernetes microservices and observability for regional clients—99.95% uptime, up to 30% cloud cost reduction.</li>
-<li>Implemented OIDC/SSO with Auth0, Google Workspace, and workload identity federation across customer-facing platforms and CI/CD systems.</li>
+<li>Delivered SOC 2, ISO 27001, and GDPR-aligned security initiatives across GCP environments, closing hundreds of cloud vulnerabilities and audit blockers for regional technology clients across Southeast Asia, Japan, and Europe, including Singapore public-sector related environments.</li>
+<li>Built Kubernetes, observability, and CI/CD security solutions supporting up to 99.95% uptime and up to 30% infrastructure cost reduction for regional clients.</li>
+<li>Implemented enterprise SSO, OIDC, workload identity federation, and PII protection controls across customer-facing platforms and engineering systems using Auth0 and Google Workspace.</li>
 </ul>
-<p class="cv-clients"><strong>Selected Clients:</strong> Tofu (Japan), Virtualspirit (Malaysia), EV Connection (Malaysia), EngageRocket (Singapore), Tebengan (Indonesia)</p>
+<p class="cv-clients"><strong>Selected Clients:</strong> Tofu (Japan &amp; Europe), Virtualspirit (Malaysia), EV Connection (Malaysia), EngageRocket (Singapore &amp; Europe), Tebengan (Indonesia)</p>
 </div>
 </div>
 
 <div class="cv-tail">
 <h2 class="cv-section-heading">Skills</h2>
-<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure:</strong> AWS, GCP, Kubernetes, Terraform, Docker, Cloudflare/AWS WAF, Wiz CSPM, Google SCC</p>
-<p class="cv-skill-line"><strong>IAM &amp; Identity Security:</strong> SSO, SAML, OAuth2/OIDC, workload identity federation, CyberArk PAM, Auth0, Google Workspace, JumpCloud, ManageEngine</p>
-<p class="cv-skill-line"><strong>Security Operations:</strong> Wazuh, CrowdStrike, Trend Micro XDR, SIEM/SOAR, incident response, detection engineering</p>
-<p class="cv-skill-line"><strong>Application Security:</strong> SAST/DAST, Semgrep, secure SDLC, API security, CI/CD security, secret scanning, threat modeling, penetration testing, security architecture</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Platform:</strong> AWS, GCP, Kubernetes, Terraform, Docker, ELK, Grafana, Prometheus</p>
+<p class="cv-skill-line"><strong>Security Engineering:</strong> SIEM/SOAR, Wazuh, CrowdStrike, Trend Micro XDR, Detection Engineering, Threat Hunting, MITRE ATT&amp;CK</p>
+<p class="cv-skill-line"><strong>Identity &amp; Access Management:</strong> OAuth2/OIDC, SAML, SSO, Auth0, CyberArk PAM, Google Workspace, Workload Identity Federation</p>
+<p class="cv-skill-line"><strong>DevSecOps &amp; Application Security:</strong> CI/CD Security, SAST/DAST, Semgrep, API Security, Secret Scanning, Threat Modeling</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure Security:</strong> Cloudflare WAF, Google SCC, Wiz CSPM, Zero Trust</p>
+<p class="cv-skill-line"><strong>Programming &amp; Automation:</strong> Python, Bash, Golang, JavaScript, SQL</p>
 <p class="cv-skill-line"><strong>Governance &amp; Compliance:</strong> ISO 27001, SOC 2, Sprinto</p>
-<p class="cv-skill-line"><strong>Programming &amp; Automation:</strong> Python, Bash, JavaScript, Golang, SQL</p>
 <h3 class="cv-subsection">Certifications</h3>
-<p class="cv-compact-list">AWS Cloud Architect, Certified Ethical Hacker, Palo Alto Networks Cybersecurity, AWS Security: Incident Response on AWS, Google Cybersecurity Professional Certificate</p>
+<p class="cv-compact-list">AWS/GCP Cloud Architect, CISSP, CEH, Palo Alto Networks Cybersecurity</p>
 <h3 class="cv-subsection">Education</h3>
 <p class="cv-education-line">Utel University — Computer Engineering · Jan 2023 – May 2025</p>
 <p class="cv-education-line">Gadjah Mada University — Engineering Physics · Aug 2016 – Jul 2020</p>

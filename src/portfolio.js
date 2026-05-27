@@ -58,7 +58,7 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "LEAD SENIOR SECURITY SOFTWARE ENGINEER — PLATFORM, IDENTITY & DETECTION",
+    "TECH LEAD SENIOR SECURITY SOFTWARE ENGINEER — SOC / DevSecOps / Platform Engineering",
   skills: [
     emoji(
       "🛡️ Implement robust security measures for cloud environments (AWS, Azure, GCP)"
@@ -307,7 +307,7 @@ const achievementSection = {
       ]
     },
     {
-      title: "Certified Ethical Hacker",
+      title: "CEH",
       subtitle: "Certified Ethical Hacker Certification from EC-Council",
       image: require("./assets/images/ec-council.jpeg"),
       imageAlt: "Certified Ethical Hacker EC-Council",
