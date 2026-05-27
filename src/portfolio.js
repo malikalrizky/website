@@ -34,7 +34,7 @@ const greeting = {
   subTitle: emoji(
     "Lead security engineer building identity platforms, SOC automation, and cloud security at scale for regulated fintech and regional tech companies across AWS and GCP."
   ),
-  resumeLink: "/cv.pdf",
+  resumeLink: "/Malikal_Rizky_CV.pdf",
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 

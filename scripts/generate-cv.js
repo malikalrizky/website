@@ -462,7 +462,7 @@ async function generateCV() {
   const markdown = buildMarkdown(cvData);
   const outputDir = path.join(__dirname, "..", "public");
   const mdPath = path.join(outputDir, "cv.md");
-  const pdfPath = path.join(outputDir, "cv.pdf");
+  const pdfPath = path.join(outputDir, "Malikal_Rizky_CV.pdf");
   const cssPath = path.join(__dirname, "cv-style.css");
 
   fs.writeFileSync(mdPath, markdown, "utf-8");
