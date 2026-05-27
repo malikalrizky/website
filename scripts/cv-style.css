@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
 
 body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+  font-family: Inter, "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica,
     Arial, sans-serif;
   font-size: 10pt;
-  line-height: 1.38;
-  color: #111;
+  font-weight: 500;
+  line-height: 1.36;
+  color: #000;
 }
 
 h1 {
@@ -21,20 +22,20 @@ h2 {
   font-weight: 700;
   text-transform: none;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 3px;
-  margin-top: 10px;
-  margin-bottom: 6px;
-  page-break-before: avoid;
-  break-before: avoid-page;
-  page-break-after: avoid;
-  break-after: avoid-page;
+  padding-bottom: 2px;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 h3 {
   font-size: 10.5pt;
   font-weight: 700;
-  margin-bottom: 2px;
-  margin-top: 10px;
+  margin-bottom: 1px;
+  margin-top: 6px;
+}
+
+.cv-company > h3 {
+  margin-top: 4px;
 }
 
 h3 + p {
@@ -50,7 +51,8 @@ h4 {
 
 em {
   font-style: italic;
-  color: #555;
+  font-weight: 500;
+  color: #333;
 }
 
 p {
@@ -65,7 +67,7 @@ ul {
 }
 
 li {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 hr {
@@ -87,13 +89,13 @@ hr {
 .cv-title {
   font-size: 10pt;
   margin: 2px 0 0;
-  color: #333;
+  color: #111;
   font-weight: 600;
 }
 
 .cv-header-contact {
   text-align: right;
-  font-size: 9pt;
+  font-size: 9.5pt;
   line-height: 1.35;
   flex-shrink: 0;
 }
@@ -103,11 +105,13 @@ hr {
 }
 
 .cv-tail {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .cv-tail .cv-section-heading {
-  margin-top: 8px;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
 }
 
 .cv-subsection {
@@ -116,43 +120,88 @@ hr {
   margin: 8px 0 2px;
   border: none;
   padding: 0;
-  page-break-after: avoid;
-  break-after: avoid-page;
+}
+
+.cv-tail .cv-subsection {
+  margin: 4px 0 1px;
 }
 
 .cv-skill-line {
   margin-bottom: 2px;
 }
 
+.cv-tail .cv-skill-line,
+.cv-tail .cv-compact-list,
+.cv-tail .cv-education-line {
+  margin-bottom: 1px;
+  line-height: 1.34;
+  font-weight: 500;
+}
+
+.cv-company--divided,
+.cv-subsection--divided {
+  border-top: 1px solid #ccc;
+  margin-top: 3px;
+  padding-top: 2px;
+}
+
+.cv-company--divided > h3 {
+  margin-top: 2px;
+}
+
+.cv-company--compact-inline .cv-inline-block {
+  margin-bottom: 0;
+}
+
+.cv-company--compact-inline .cv-company-title-inline {
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.cv-company--compact-inline .cv-promotion {
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+
+.cv-company--compact-inline .cv-role-meta {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.cv-company--compact-inline .cv-role-bullets {
+  margin-top: 0;
+}
+
+/* Keep single inline entries (e.g. Maxim, Hungryhub) on one page */
+.cv-company--compact-inline,
+.cv-company--keep-together,
+.cv-entry-keep {
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+}
+
+.cv-company--page-start {
+  break-before: page;
+  page-break-before: always;
+}
+
 .cv-skill-line strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cv-compact-list,
 .cv-education-line {
-  font-size: 9.5pt;
   margin-bottom: 2px;
 }
 
-.cv-company:last-of-type {
-  margin-bottom: 4px;
-  page-break-after: avoid;
-  break-after: avoid-page;
-}
-
 .cv-company {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   page-break-inside: auto;
 }
 
-.cv-company > h3 {
-  page-break-after: avoid;
-  break-after: avoid-page;
-}
-
 .cv-company-title-inline .cv-title-sep {
-  font-weight: 400;
-  color: #555;
+  font-weight: 500;
+  color: #333;
 }
 
 .cv-company-dates {
@@ -162,15 +211,16 @@ hr {
 }
 
 .cv-company-meta {
-  font-size: 9pt;
-  color: #555;
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: #222;
   margin-bottom: 3px;
 }
 
 .cv-role {
-  margin-top: 6px;
-  margin-bottom: 2px;
-  padding-top: 4px;
+  margin-top: 4px;
+  margin-bottom: 1px;
+  padding-top: 2px;
   border-top: 1px solid #e8e8e8;
   page-break-inside: auto;
 }
@@ -178,39 +228,33 @@ hr {
 .cv-company > .cv-role:first-of-type,
 .cv-role--single {
   border-top: none;
-  padding-top: 4px;
-  margin-top: 4px;
-}
-
-.cv-role-header {
-  page-break-inside: avoid;
-  break-inside: avoid-page;
-  page-break-after: avoid;
-  break-after: avoid-page;
+  padding-top: 2px;
+  margin-top: 2px;
 }
 
 .cv-role-header h4 {
-  page-break-after: avoid;
-  break-after: avoid-page;
+  margin: 0 0 1px;
 }
 
 .cv-promotion {
-  font-size: 9pt;
-  color: #555;
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: #222;
   margin: 0 0 2px;
   font-style: italic;
 }
 
 .cv-role-meta {
-  font-size: 9pt;
-  color: #555;
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: #222;
   margin-bottom: 0;
 }
 
 .cv-role-desc {
-  font-size: 9.5pt;
+  font-weight: 500;
   margin-bottom: 4px;
-  color: #333;
+  color: #111;
 }
 
 .cv-role-bullets {
@@ -220,14 +264,22 @@ hr {
 }
 
 .cv-role-bullets li {
-  font-size: 9.5pt;
-  line-height: 1.38;
+  font-size: 10pt;
+  font-weight: 500;
+  line-height: 1.36;
   margin-bottom: 2px;
+  color: #000;
 }
 
 .cv-clients {
-  font-size: 9pt;
-  color: #555;
-  margin-top: 4px;
+  font-size: 9.5pt;
+  font-weight: 500;
+  color: #222;
+  margin-top: 2px;
   margin-bottom: 0;
+}
+
+.cv-clients strong {
+  font-weight: 700;
+  color: #222;
 }

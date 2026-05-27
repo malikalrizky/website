@@ -17,11 +17,11 @@ const CV_SKILLS = [
   {
     label: "Cloud & Platform",
     items:
-      "AWS, GCP, Alicloud, Kubernetes, Terraform, Docker, Ansible, Packer, Atlantis, ArgoCD, GitOps"
+      "AWS, GCP, Alicloud, Kubernetes, Terraform, Terragrunt, Docker, GitHub Actions, GitLab CI/CD, ArgoCD, Atlantis, GitOps, Ansible, Packer"
   },
   {
     label: "Observability & Infrastructure",
-    items: "ELK, Grafana, Prometheus, OpenTelemetry, Kyverno"
+    items: "ELK, Grafana, Prometheus, OpenTelemetry"
   },
   {
     label: "Security Engineering",
@@ -41,7 +41,7 @@ const CV_SKILLS = [
   {
     label: "Cloud & Infrastructure Security",
     items:
-      "Cloudflare WAF, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, API Gateway Security, mTLS, Rate Limiting"
+      "Cloudflare WAF, AWS WAF, Google Cloud Armor, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, Kyverno, mTLS"
   },
   {
     label: "Programming & Automation",
@@ -114,6 +114,17 @@ function appendCompactCertifications(lines, certifications) {
   lines.push(`<p class="cv-compact-list">${escapeHtml(names.join(", "))}</p>`);
 }
 
+function appendOpenSource(lines, openSource) {
+  const text = String(openSource || "").trim();
+  if (!text) {
+    return;
+  }
+  lines.push(
+    '<h3 class="cv-subsection cv-subsection--divided">Open source</h3>'
+  );
+  lines.push(`<p class="cv-compact-list">${escapeHtml(text)}</p>`);
+}
+
 function appendSkillLines(lines) {
   for (const skill of CV_SKILLS) {
     lines.push(
@@ -124,15 +135,32 @@ function appendSkillLines(lines) {
   }
 }
 
+function shouldDividerBeforeExperienceItem(item) {
+  if (item.kind === "single") {
+    return item.job.cvDividerBefore === true;
+  }
+  return item.roles.some(role => role.cvDividerBefore === true);
+}
+
+function companyDivClass(item) {
+  return shouldDividerBeforeExperienceItem(item)
+    ? ' class="cv-company cv-company--divided"'
+    : ' class="cv-company"';
+}
+
 function appendTailSections(lines, data) {
   lines.push('<div class="cv-tail">');
   lines.push('<h2 class="cv-section-heading">Skills</h2>');
   appendSkillLines(lines);
 
-  lines.push('<h3 class="cv-subsection">Certifications</h3>');
+  lines.push(
+    '<h3 class="cv-subsection cv-subsection--divided">Certifications</h3>'
+  );
   appendCompactCertifications(lines, data.certifications);
 
-  lines.push('<h3 class="cv-subsection">Education</h3>');
+  appendOpenSource(lines, data.openSource);
+
+  lines.push('<h3 class="cv-subsection cv-subsection--divided">Education</h3>');
   appendCompactEducation(lines, data.education);
   lines.push("</div>");
 }
@@ -246,7 +274,7 @@ function appendGroupedCompanyToCv(lines, item) {
   const primaryRole = roles[0];
   const inlineHeader = primaryRole.cvInlineRoleHeader === true;
 
-  lines.push('<div class="cv-company">');
+  lines.push(`<div${companyDivClass(item)}>`);
   if (inlineHeader) {
     appendInlineCompanyRoleHeader(lines, primaryRole);
   } else {
@@ -275,7 +303,10 @@ function appendConsultingJobToCv(lines, job) {
     Boolean
   );
 
-  lines.push('<div class="cv-company">');
+  const dividerClass = job.cvDividerBefore ? " cv-company--divided" : "";
+  lines.push(
+    `<div class="cv-company cv-company--keep-together${dividerClass}">`
+  );
   lines.push(`<h3>${escapeHtml(job.role)}</h3>`);
   lines.push(
     `<p class="cv-company-meta"><em>${escapeHtml(
@@ -307,6 +338,42 @@ function appendInlineCompanyRoleHeader(lines, job) {
   );
 }
 
+function appendCompactInlineSingleJob(
+  lines,
+  job,
+  maxBullets,
+  {dividerClass = "", pageBreakClass = ""} = {}
+) {
+  const omitDesc = shouldOmitRoleDesc(job);
+
+  lines.push(
+    `<div class="cv-company cv-company--compact-inline${dividerClass}${pageBreakClass}">`
+  );
+  lines.push('<div class="cv-entry-keep">');
+  lines.push('<div class="cv-inline-block">');
+  appendInlineCompanyRoleHeader(lines, job);
+  if (job.promotionFrom) {
+    lines.push(
+      `<p class="cv-promotion">${escapeHtml(
+        `Promoted from ${job.promotionFrom}`
+      )}</p>`
+    );
+  }
+  lines.push(
+    `<p class="cv-role-meta"><em>${escapeHtml(formatRoleMeta(job))}</em></p>`
+  );
+  lines.push("</div>");
+
+  if (!omitDesc) {
+    lines.push(`<p class="cv-role-desc">${escapeHtml(job.desc)}</p>`);
+  }
+
+  appendRoleBullets(lines, job, maxBullets);
+  appendCvClients(lines, job);
+  lines.push("</div>");
+  lines.push("</div>");
+}
+
 function appendSingleJobToCv(lines, job) {
   if (job.cvOnly) {
     appendConsultingJobToCv(lines, job);
@@ -319,20 +386,24 @@ function appendSingleJobToCv(lines, job) {
       : DEFAULT_SINGLE_MAX_BULLETS;
   const omitDesc = shouldOmitRoleDesc(job);
   const inlineHeader = job.cvInlineRoleHeader === true;
+  const dividerClass = job.cvDividerBefore ? " cv-company--divided" : "";
+  const pageBreakClass = job.cvPageBreakBefore ? " cv-company--page-start" : "";
 
-  lines.push('<div class="cv-company">');
   if (inlineHeader) {
-    appendInlineCompanyRoleHeader(lines, job);
-  } else {
-    lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
-    appendCompanyMeta(lines, resolveCvCompanyMeta(job));
+    appendCompactInlineSingleJob(lines, job, maxBullets, {
+      dividerClass,
+      pageBreakClass
+    });
+    return;
   }
+
+  lines.push(`<div class="cv-company${dividerClass}">`);
+  lines.push(`<h3>${escapeHtml(job.company)}</h3>`);
+  appendCompanyMeta(lines, resolveCvCompanyMeta(job));
 
   lines.push('<div class="cv-role cv-role--single">');
   lines.push('<div class="cv-role-header">');
-  if (!inlineHeader) {
-    lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
-  }
+  lines.push(`<h4>${escapeHtml(job.role)}</h4>`);
   if (job.promotionFrom) {
     lines.push(
       `<p class="cv-promotion">${escapeHtml(
@@ -373,7 +444,6 @@ function buildMarkdown(data) {
   lines.push("## Experience");
 
   for (const item of groupExperience(cvExperience)) {
-    lines.push("");
     if (item.kind === "single") {
       appendSingleJobToCv(lines, item.job);
       continue;
@@ -420,7 +490,7 @@ async function generateCV() {
       document_title: "Malikal Rizky - CV",
       pdf_options: {
         format: "A4",
-        margin: {top: "14mm", bottom: "14mm", left: "14mm", right: "14mm"},
+        margin: {top: "10mm", bottom: "10mm", left: "11mm", right: "11mm"},
         printBackground: false
       },
       launch_options: {

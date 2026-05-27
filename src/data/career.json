@@ -67,8 +67,7 @@
       "cvOmitDesc": true,
       "desc": "DevSecOps and AppSec automation for Grab and OVO: AI-assisted triage, CI/CD guardrails, and detection engineering.",
       "bullets": [
-        "Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.",
-        "Defined AI-assisted AppSec triage standards and scalable DevSecOps guardrails for globally distributed engineering teams and large-scale microservices platforms.",
+        "Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines and enabling scalable AI-assisted AppSec triage workflows for globally distributed engineering teams.",
         "Improved actionable detection quality across SIEM, EDR, and cloud-native monitoring systems by tuning detection logic for distributed production workloads and reducing operational alert noise for platform teams."
       ]
     },
@@ -84,14 +83,15 @@
       "cvOmitDesc": true,
       "desc": "Cloud security architecture for Grab and OVO on AWS and GCP: observability, IAM, and governance at scale.",
       "bullets": [
-        "Built centralized in-house cloud observability platform integrating logs, metrics, and threat intelligence pipelines improving investigation visibility and engineering monitoring coverage.",
-        "Designed enterprise IAM, SSO, and Zero Trust infrastructure access architecture improving governance, auditability, and operational scalability across cloud environments.",
-        "Enabled security evidence readiness and control mapping initiatives supporting regional compliance and audit requirements."
+        "Built centralized in-house cloud observability and security telemetry platform integrating logs, metrics, and threat intelligence pipelines—improving investigation visibility and monitoring coverage across distributed multi-cloud environments.",
+        "Designed enterprise IAM, SSO, and Zero Trust infrastructure access architecture improving identity governance, auditability, and operational scalability across multi-cloud environments."
       ]
     },
     {
       "role": "DevSecOps Engineer, Infrastructure and Platform",
       "company": "Maxim Order Service",
+      "cvDividerBefore": true,
+      "cvPageBreakBefore": true,
       "startMonth": "2022-06",
       "endMonth": "2023-06",
       "type": "Full-time",
@@ -150,6 +150,7 @@
     {
       "role": "DevOps Engineer / Site Reliability Engineer",
       "company": "Hungryhub",
+      "cvDividerBefore": true,
       "startMonth": "2020-06",
       "endMonth": "2022-06",
       "type": "Full-time",
@@ -167,13 +168,14 @@
     {
       "role": "Independent Security & DevSecOps Consultant",
       "company": "Independent",
+      "cvDividerBefore": true,
       "startMonth": "2021-01",
       "endMonth": null,
       "type": "Freelance",
       "engagement": "Project",
       "companyTagline": "Southeast Asia, Japan, and Europe",
       "cvOnly": true,
-      "cvMaxBullets": 4,
+      "cvMaxBullets": 3,
       "cvOmitDesc": true,
       "cvClients": [
         "Tofu (Japan & Europe)",
@@ -229,6 +231,7 @@
       "issuer": "Palo Alto Networks"
     }
   ],
+  "openSource": "Upstream contribution to a Google Cloud Storage Terraform module for IP-based access control workflows.",
   "skills": [
     "AWS",
     "GCP",
@@ -245,9 +248,7 @@
     "Grafana",
     "Prometheus",
     "OpenTelemetry",
-    "Service Mesh",
-    "Monitoring",
-    "Networking",
+    "Kyverno",
     "SIEM/SOAR",
     "Wazuh",
     "CrowdStrike",
@@ -276,7 +277,6 @@
     "Zero Trust",
     "API Gateway Security",
     "mTLS",
-    "Rate Limiting",
     "Python",
     "Bash",
     "Golang",
@@ -287,6 +287,7 @@
     "GDPR",
     "Sprinto",
     "NIST 800-53",
-    "Burp Suite"
+    "Burp Suite",
+    "Terragrunt"
   ]
 }
