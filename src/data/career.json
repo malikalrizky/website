@@ -1,7 +1,7 @@
 {
   "name": "Malikal Rizky",
   "title": "Tech Lead Senior Security Software Engineer — SOC / DevSecOps / Security Platform Engineering",
-  "summary": "Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud infrastructure, and security automation across AWS/GCP environments. Experienced building SOC, IAM, observability, and detection engineering platforms for multinational fintech and technology organizations.",
+  "summary": "Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud infrastructure, and security automation solutions across AWS, GCP, and Kubernetes environments. Experienced building SOC, IAM, observability, detection, and orchestration platforms for multinational fintech and technology organizations.",
   "contact": {
     "phone": "+6285161380913",
     "email": "hi@malikal.dpdns.org",
@@ -27,7 +27,8 @@
       "desc": "Led SOC engineering and response automation for Bank Jago and BFI: SOAR workflows, internal detection platform, and incident containment across multi-cloud and identity systems.",
       "bullets": [
         "Led SOC engineering and response automation initiatives across Bank Jago and BFI regulated fintech environments, reducing incident containment time by 60%+ through SOAR-driven enrichment, prioritization, and escalation workflows supporting critical banking operations.",
-        "Architected and led development of centralized SOC detection and response platform integrating threat intelligence, SOAR enrichment, EDL management, AI-assisted threat hunting, pentest workflows, and MITRE ATT&CK-aligned playbook orchestration pipelines—standardizing investigation and remediation workflows across critical cloud and identity assets while reducing manual investigations by 50%+.",
+        "Architected and led development of centralized SOC detection and response platform on Kubernetes/GKE integrating threat intelligence, SOAR enrichment, EDL management, \"AI-assisted threat modeling, threat analysis & pentest orchestration\", and MITRE ATT&CK-aligned playbook pipelines across distributed multi-cloud environments.",
+        "Built and operated cloud-native backend orchestration services and self-service security tooling on Kubernetes/GKE, including Wazuh-based detection infrastructure and automated remediation workflows—reducing manual investigations by 50%+ across critical cloud and identity assets.",
         "Designed IdP-integrated kill-switch and containment orchestration workflows across distributed cloud and SaaS environments—reducing high-risk account containment execution time by 90%+ from approximately 15 minutes to under 1 minute."
       ]
     },
@@ -66,13 +67,13 @@
       "cvOmitDesc": true,
       "desc": "DevSecOps and AppSec automation for Grab and OVO: AI-assisted triage, CI/CD guardrails, and detection engineering.",
       "bullets": [
-        "Built LLM-powered SAST/DAST triage platform reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.",
+        "Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.",
         "Defined AI-assisted AppSec triage standards and scalable DevSecOps guardrails for globally distributed engineering teams and large-scale microservices platforms.",
         "Improved actionable detection quality across SIEM, EDR, and cloud-native monitoring systems by tuning detection logic for distributed production workloads and reducing operational alert noise for platform teams."
       ]
     },
     {
-      "role": "Security Engineer — Cloud Infrastructure",
+      "role": "Security Engineer — Cloud Infrastructure Security",
       "company": "Grab",
       "group": "grab",
       "startMonth": "2023-06",
@@ -231,12 +232,22 @@
   "skills": [
     "AWS",
     "GCP",
+    "Alicloud",
     "Kubernetes",
     "Terraform",
     "Docker",
+    "Ansible",
+    "Packer",
+    "Atlantis",
+    "ArgoCD",
+    "GitOps",
     "ELK",
     "Grafana",
     "Prometheus",
+    "OpenTelemetry",
+    "Service Mesh",
+    "Monitoring",
+    "Networking",
     "SIEM/SOAR",
     "Wazuh",
     "CrowdStrike",
@@ -254,13 +265,18 @@
     "CI/CD Security",
     "SAST/DAST",
     "Semgrep",
-    "API Security",
+    "Container Security",
+    "Software Supply Chain Security",
     "Secret Scanning",
     "Threat Modeling",
     "Cloudflare WAF",
+    "Tyk API Gateway",
     "Google SCC",
     "Wiz CSPM",
     "Zero Trust",
+    "API Gateway Security",
+    "mTLS",
+    "Rate Limiting",
     "Python",
     "Bash",
     "Golang",
@@ -268,6 +284,9 @@
     "SQL",
     "ISO 27001",
     "SOC 2",
-    "Sprinto"
+    "GDPR",
+    "Sprinto",
+    "NIST 800-53",
+    "Burp Suite"
   ]
 }

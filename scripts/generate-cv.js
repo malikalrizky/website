@@ -16,7 +16,12 @@ const CV_OMIT_EDUCATION_PROJECTS = true;
 const CV_SKILLS = [
   {
     label: "Cloud & Platform",
-    items: "AWS, GCP, Kubernetes, Terraform, Docker, ELK, Grafana, Prometheus"
+    items:
+      "AWS, GCP, Alicloud, Kubernetes, Terraform, Docker, Ansible, Packer, Atlantis, ArgoCD, GitOps"
+  },
+  {
+    label: "Observability & Infrastructure",
+    items: "ELK, Grafana, Prometheus, OpenTelemetry, Kyverno"
   },
   {
     label: "Security Engineering",
@@ -31,11 +36,12 @@ const CV_SKILLS = [
   {
     label: "DevSecOps & Application Security",
     items:
-      "CI/CD Security, SAST/DAST, Semgrep, API Security, Secret Scanning, Threat Modeling"
+      "CI/CD Security, SAST/DAST, Semgrep, Burp Suite, Container Security, Software Supply Chain Security, Secret Scanning, Threat Modeling"
   },
   {
     label: "Cloud & Infrastructure Security",
-    items: "Cloudflare WAF, Google SCC, Wiz CSPM, Zero Trust"
+    items:
+      "Cloudflare WAF, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, API Gateway Security, mTLS, Rate Limiting"
   },
   {
     label: "Programming & Automation",
@@ -43,7 +49,7 @@ const CV_SKILLS = [
   },
   {
     label: "Governance & Compliance",
-    items: "ISO 27001, SOC 2, Sprinto"
+    items: "ISO 27001, SOC 2, GDPR, Sprinto"
   }
 ];
 

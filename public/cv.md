@@ -14,7 +14,7 @@
 ---
 ## Summary
 
-Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud infrastructure, and security automation across AWS/GCP environments. Experienced building SOC, IAM, observability, and detection engineering platforms for multinational fintech and technology organizations.
+Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud infrastructure, and security automation solutions across AWS, GCP, and Kubernetes environments. Experienced building SOC, IAM, observability, detection, and orchestration platforms for multinational fintech and technology organizations.
 
 ---
 ## Experience
@@ -28,7 +28,8 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 </div>
 <ul class="cv-role-bullets">
 <li>Led SOC engineering and response automation initiatives across Bank Jago and BFI regulated fintech environments, reducing incident containment time by 60%+ through SOAR-driven enrichment, prioritization, and escalation workflows supporting critical banking operations.</li>
-<li>Architected and led development of centralized SOC detection and response platform integrating threat intelligence, SOAR enrichment, EDL management, AI-assisted threat hunting, pentest workflows, and MITRE ATT&amp;CK-aligned playbook orchestration pipelines—standardizing investigation and remediation workflows across critical cloud and identity assets while reducing manual investigations by 50%+.</li>
+<li>Architected and led development of centralized SOC detection and response platform on Kubernetes/GKE integrating threat intelligence, SOAR enrichment, EDL management, &quot;AI-assisted threat modeling, threat analysis &amp; pentest orchestration&quot;, and MITRE ATT&amp;CK-aligned playbook pipelines across distributed multi-cloud environments.</li>
+<li>Built and operated cloud-native backend orchestration services and self-service security tooling on Kubernetes/GKE, including Wazuh-based detection infrastructure and automated remediation workflows—reducing manual investigations by 50%+ across critical cloud and identity assets.</li>
 <li>Designed IdP-integrated kill-switch and containment orchestration workflows across distributed cloud and SaaS environments—reducing high-risk account containment execution time by 90%+ from approximately 15 minutes to under 1 minute.</li>
 </ul>
 </div>
@@ -53,14 +54,14 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 <p class="cv-role-meta"><em>Dec 2023 – Jun 2024 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Built LLM-powered SAST/DAST triage platform reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.</li>
+<li>Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.</li>
 <li>Defined AI-assisted AppSec triage standards and scalable DevSecOps guardrails for globally distributed engineering teams and large-scale microservices platforms.</li>
 <li>Improved actionable detection quality across SIEM, EDR, and cloud-native monitoring systems by tuning detection logic for distributed production workloads and reducing operational alert noise for platform teams.</li>
 </ul>
 </div>
 <div class="cv-role">
 <div class="cv-role-header">
-<h4>Security Engineer — Cloud Infrastructure</h4>
+<h4>Security Engineer — Cloud Infrastructure Security</h4>
 <p class="cv-role-meta"><em>Jun 2023 – Dec 2023 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
@@ -112,13 +113,14 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 
 <div class="cv-tail">
 <h2 class="cv-section-heading">Skills</h2>
-<p class="cv-skill-line"><strong>Cloud &amp; Platform:</strong> AWS, GCP, Kubernetes, Terraform, Docker, ELK, Grafana, Prometheus</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Platform:</strong> AWS, GCP, Alicloud, Kubernetes, Terraform, Docker, Ansible, Packer, Atlantis, ArgoCD, GitOps</p>
+<p class="cv-skill-line"><strong>Observability &amp; Infrastructure:</strong> ELK, Grafana, Prometheus, OpenTelemetry, Kyverno</p>
 <p class="cv-skill-line"><strong>Security Engineering:</strong> SIEM/SOAR, Wazuh, CrowdStrike, Trend Micro XDR, Detection Engineering, Threat Hunting, MITRE ATT&amp;CK</p>
 <p class="cv-skill-line"><strong>Identity &amp; Access Management:</strong> OAuth2/OIDC, SAML, SSO, Auth0, CyberArk PAM, Google Workspace, Workload Identity Federation</p>
-<p class="cv-skill-line"><strong>DevSecOps &amp; Application Security:</strong> CI/CD Security, SAST/DAST, Semgrep, API Security, Secret Scanning, Threat Modeling</p>
-<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure Security:</strong> Cloudflare WAF, Google SCC, Wiz CSPM, Zero Trust</p>
+<p class="cv-skill-line"><strong>DevSecOps &amp; Application Security:</strong> CI/CD Security, SAST/DAST, Semgrep, Burp Suite, Container Security, Software Supply Chain Security, Secret Scanning, Threat Modeling</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure Security:</strong> Cloudflare WAF, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, API Gateway Security, mTLS, Rate Limiting</p>
 <p class="cv-skill-line"><strong>Programming &amp; Automation:</strong> Python, Bash, Golang, JavaScript, SQL</p>
-<p class="cv-skill-line"><strong>Governance &amp; Compliance:</strong> ISO 27001, SOC 2, Sprinto</p>
+<p class="cv-skill-line"><strong>Governance &amp; Compliance:</strong> ISO 27001, SOC 2, GDPR, Sprinto</p>
 <h3 class="cv-subsection">Certifications</h3>
 <p class="cv-compact-list">AWS/GCP Cloud Architect, CISSP, CEH, Palo Alto Networks Cybersecurity</p>
 <h3 class="cv-subsection">Education</h3>
