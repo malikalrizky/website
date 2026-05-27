@@ -18,7 +18,6 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 
 ---
 ## Experience
-
 <div class="cv-company">
 <h3 class="cv-company-title-inline">DKATALIS<span class="cv-title-sep"> | </span>Tech Lead — SOC &amp; Security Engineering (Bank Jago &amp; BFI)</h3>
 <div class="cv-role">
@@ -46,7 +45,6 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 </ul>
 </div>
 </div>
-
 <div class="cv-company">
 <h3 class="cv-company-title-inline">Grab<span class="cv-title-sep"> | </span>Security Engineer — DevSecOps</h3>
 <div class="cv-role">
@@ -54,8 +52,7 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 <p class="cv-role-meta"><em>Dec 2023 – Jun 2024 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines supporting globally distributed engineering environments.</li>
-<li>Defined AI-assisted AppSec triage standards and scalable DevSecOps guardrails for globally distributed engineering teams and large-scale microservices platforms.</li>
+<li>Built LLM-powered SAST/DAST triage platform on Kubernetes/GKE reducing false positives by 85% across high-volume CI/CD pipelines and enabling scalable AI-assisted AppSec triage workflows for globally distributed engineering teams.</li>
 <li>Improved actionable detection quality across SIEM, EDR, and cloud-native monitoring systems by tuning detection logic for distributed production workloads and reducing operational alert noise for platform teams.</li>
 </ul>
 </div>
@@ -65,17 +62,15 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 <p class="cv-role-meta"><em>Jun 2023 – Dec 2023 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
-<li>Built centralized in-house cloud observability platform integrating logs, metrics, and threat intelligence pipelines improving investigation visibility and engineering monitoring coverage.</li>
-<li>Designed enterprise IAM, SSO, and Zero Trust infrastructure access architecture improving governance, auditability, and operational scalability across cloud environments.</li>
-<li>Enabled security evidence readiness and control mapping initiatives supporting regional compliance and audit requirements.</li>
+<li>Built centralized in-house cloud observability and security telemetry platform integrating logs, metrics, and threat intelligence pipelines—improving investigation visibility and monitoring coverage across distributed multi-cloud environments.</li>
+<li>Designed enterprise IAM, SSO, and Zero Trust infrastructure access architecture improving identity governance, auditability, and operational scalability across multi-cloud environments.</li>
 </ul>
 </div>
 </div>
-
-<div class="cv-company">
+<div class="cv-company cv-company--compact-inline cv-company--divided cv-company--page-start">
+<div class="cv-entry-keep">
+<div class="cv-inline-block">
 <h3 class="cv-company-title-inline">Maxim Order Service<span class="cv-title-sep"> | </span>DevSecOps Engineer, Infrastructure and Platform</h3>
-<div class="cv-role cv-role--single">
-<div class="cv-role-header">
 <p class="cv-role-meta"><em>Jun 2022 – Jun 2023 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
@@ -85,11 +80,10 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 </ul>
 </div>
 </div>
-
-<div class="cv-company">
+<div class="cv-company cv-company--compact-inline cv-company--divided">
+<div class="cv-entry-keep">
+<div class="cv-inline-block">
 <h3 class="cv-company-title-inline">Hungryhub<span class="cv-title-sep"> | </span>DevOps Engineer / Site Reliability Engineer</h3>
-<div class="cv-role cv-role--single">
-<div class="cv-role-header">
 <p class="cv-role-meta"><em>Jun 2020 – Jun 2022 | Full-time | Contract</em></p>
 </div>
 <ul class="cv-role-bullets">
@@ -97,8 +91,7 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 </ul>
 </div>
 </div>
-
-<div class="cv-company">
+<div class="cv-company cv-company--keep-together cv-company--divided">
 <h3>Independent Security &amp; DevSecOps Consultant</h3>
 <p class="cv-company-meta"><em>Southeast Asia, Japan, and Europe · Jan 2021 – Present · Freelance · Project</em></p>
 <div class="cv-role cv-role--single">
@@ -113,17 +106,19 @@ Tech lead with 6+ years of experience in DevSecOps, platform engineering, cloud 
 
 <div class="cv-tail">
 <h2 class="cv-section-heading">Skills</h2>
-<p class="cv-skill-line"><strong>Cloud &amp; Platform:</strong> AWS, GCP, Alicloud, Kubernetes, Terraform, Docker, Ansible, Packer, Atlantis, ArgoCD, GitOps</p>
-<p class="cv-skill-line"><strong>Observability &amp; Infrastructure:</strong> ELK, Grafana, Prometheus, OpenTelemetry, Kyverno</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Platform:</strong> AWS, GCP, Alicloud, Kubernetes, Terraform, Terragrunt, Docker, GitHub Actions, GitLab CI/CD, ArgoCD, Atlantis, GitOps, Ansible, Packer</p>
+<p class="cv-skill-line"><strong>Observability &amp; Infrastructure:</strong> ELK, Grafana, Prometheus, OpenTelemetry</p>
 <p class="cv-skill-line"><strong>Security Engineering:</strong> SIEM/SOAR, Wazuh, CrowdStrike, Trend Micro XDR, Detection Engineering, Threat Hunting, MITRE ATT&amp;CK</p>
 <p class="cv-skill-line"><strong>Identity &amp; Access Management:</strong> OAuth2/OIDC, SAML, SSO, Auth0, CyberArk PAM, Google Workspace, Workload Identity Federation</p>
 <p class="cv-skill-line"><strong>DevSecOps &amp; Application Security:</strong> CI/CD Security, SAST/DAST, Semgrep, Burp Suite, Container Security, Software Supply Chain Security, Secret Scanning, Threat Modeling</p>
-<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure Security:</strong> Cloudflare WAF, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, API Gateway Security, mTLS, Rate Limiting</p>
+<p class="cv-skill-line"><strong>Cloud &amp; Infrastructure Security:</strong> Cloudflare WAF, AWS WAF, Google Cloud Armor, Tyk API Gateway, Google SCC, Wiz CSPM, Zero Trust, Kyverno, mTLS</p>
 <p class="cv-skill-line"><strong>Programming &amp; Automation:</strong> Python, Bash, Golang, JavaScript, SQL</p>
 <p class="cv-skill-line"><strong>Governance &amp; Compliance:</strong> ISO 27001, SOC 2, GDPR, Sprinto</p>
-<h3 class="cv-subsection">Certifications</h3>
+<h3 class="cv-subsection cv-subsection--divided">Certifications</h3>
 <p class="cv-compact-list">AWS/GCP Cloud Architect, CISSP, CEH, Palo Alto Networks Cybersecurity</p>
-<h3 class="cv-subsection">Education</h3>
+<h3 class="cv-subsection cv-subsection--divided">Open source</h3>
+<p class="cv-compact-list">Upstream contribution to a Google Cloud Storage Terraform module for IP-based access control workflows.</p>
+<h3 class="cv-subsection cv-subsection--divided">Education</h3>
 <p class="cv-education-line">Utel University — Computer Engineering · Jan 2023 – May 2025</p>
 <p class="cv-education-line">Gadjah Mada University — Engineering Physics · Aug 2016 – Jul 2020</p>
 </div>
